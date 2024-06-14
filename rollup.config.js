@@ -48,7 +48,7 @@ export default {
 		nodeResolve(),
 		commonjs(),
 		babel({
-			babelHelpers: 'runtime',
+			babelHelpers: 'bundled',
 			exclude: 'node_modules/**',
 			extensions: ['.ts', '.tsx'],
 			presets: ['@babel/env', '@babel/preset-react']
