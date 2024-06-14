@@ -1,7 +1,10 @@
 # GingerUI is a react UI library
 
 
+To develop : 
 
+>> pnpm i
+>> pnpm book
 
 Notices: 
 
