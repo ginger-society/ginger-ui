@@ -15,12 +15,24 @@ jobs:
     if: github.event.pull_request.draft == false
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
         with:
-          node-version: '16'
-          cache: yarn
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v2.2.4
+        with:
+          version: 8.7.1
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.5
+          cache: 'pnpm'
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Unit test
-        run: yarn run test
+        run: pnpm install --frozen-lockfile
+
+      - name: Run tests
+        run: pnpm test

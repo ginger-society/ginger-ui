@@ -1,31 +1,57 @@
 name: Release
+
 on:
   push:
     branches:
       - main
-env:
-  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
 jobs:
   release:
-    if: github.event.pull_request.draft == false
+    name: Release
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      id-token: write
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout Repo
+        uses: actions/checkout@v3
         with:
+          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-      - uses: actions/setup-node@v3
+
+      - uses: pnpm/action-setup@v2.2.4
         with:
-          node-version: '16'
-          cache: yarn
+          version: 8.7.1
+
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.5
+          cache: 'pnpm'
+
       - name: Install dependencies
-        run: yarn install --frozen-lockfile
-      - name: Build package
-        run: yarn run build
+        run: pnpm install --frozen-lockfile
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            email=admin@gingersociety.org
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Build prod release
+        run: pnpm build
+
       - name: Create Release Pull Request or Publish to npm
+        id: changesets
         uses: changesets/action@v1
         with:
-          publish: yarn run release
-          commit: 'ci: release packages'
-          title: 'ci: release packages'
+          publish: pnpm publish
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GIT_DEPLOY_KEY }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
