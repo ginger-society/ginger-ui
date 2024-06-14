@@ -7,10 +7,6 @@ settings:
 importers:
 
   .:
-    dependencies:
-      '@ginger-society/ginger-book':
-        specifier: ^4.0.9
-        version: 4.0.9(@types/node@18.19.34)(@types/react@18.3.3)(less@4.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.5)(terser@5.31.1)(typescript@4.9.5)
     devDependencies:
       '@babel/core':
         specifier: ^7.20.12
@@ -36,6 +32,9 @@ importers:
       '@commitlint/config-conventional':
         specifier: ^17.4.0
         version: 17.8.1
+      '@ginger-society/ginger-book':
+        specifier: ^4.0.9
+        version: 4.0.9(@types/node@18.19.34)(@types/react@18.3.3)(less@4.2.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(sass@1.77.5)(terser@5.31.1)(typescript@4.9.5)
       '@inquirer/prompts':
         specifier: ^1.0.3
         version: 1.2.3
