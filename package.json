@@ -29,7 +29,7 @@
 		"commitlint": "commitlint --edit",
 		"build-book": "ginger-book build",
 		"book": "ginger-book serve",
-		"gen-icons": "rimraf src/icons && npx @svgr/cli -d src/icons src/svgs/assets --icon --typescript --jsx-runtime 'automatic'",
+		"gen-icons": "rm -rf src/icons && npx @svgr/cli -d src/icons src/svgs/assets --icon --typescript --jsx-runtime 'automatic'",
 		"script1": "tsx scripts/main.ts"
 	},
 	"lint-staged": {
