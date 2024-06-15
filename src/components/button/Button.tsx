@@ -48,7 +48,7 @@ export const Button = ({
 			style={{ backgroundColor }}
 			{...props}
 		>
-			{label}
+			{label} <span className={styles['loader-icon']}></span>
 		</button>
 	)
 }

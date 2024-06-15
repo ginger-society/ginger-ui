@@ -1,0 +1,28 @@
+:root {
+	--font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	--font-weight: 700;
+	--border-radius: 0.5rem;
+	--primary-color: white;
+	--primary-bg-color: black;
+	--secondary-color: #333;
+	--secondary-bg-color: transparent;
+	--box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
+	--loader-border-color: #276ef1;
+	--loader-bg-color: #eeeeee;
+	--small-font-size: 12px;
+	--small-padding: 10px 16px;
+	--medium-font-size: 14px;
+	--medium-padding: 11px 20px;
+	--large-font-size: 16px;
+	--large-padding: 12px 24px;
+}
+
+html[data-theme='dark'] {
+	--primary-color: black;
+	--primary-bg-color: white;
+	--secondary-color: #ccc;
+	--secondary-bg-color: #333;
+	--box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 0px 1px inset;
+	--loader-border-color: #eeeeee;
+	--loader-bg-color: #276ef1;
+}
