@@ -5,10 +5,7 @@ export default {
 			enabled: true
 		},
 		gingerBook: {
-			enabled: false
+			enabled: true
 		}
-	},
-	assets: {
-		'global.css': '/global.css'
 	}
 }
