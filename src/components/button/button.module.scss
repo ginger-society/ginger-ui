@@ -41,34 +41,6 @@
 	padding: var(--large-padding);
 }
 
-.loader-icon {
-	height: 14px;
-	width: 14px;
-	line-height: 0;
-	border-radius: 50%;
-	border-style: solid;
-	border-width: 2px;
-	border-top-color: var(--loader-border-color);
-	border-left-color: var(--loader-bg-color);
-	border-bottom-color: var(--loader-bg-color);
-	border-right-color: var(--loader-bg-color);
-	box-sizing: border-box;
-	display: inline-block;
-	animation-duration: 700ms;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-name: animation-rotation;
-}
-
-@keyframes animation-rotation {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-
 html[data-theme='dark'] {
 	.button--primary {
 		color: var(

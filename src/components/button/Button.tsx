@@ -1,3 +1,4 @@
+import Loader from '../loader'
 import styles from './button.module.scss'
 
 interface ButtonProps {
@@ -23,7 +24,7 @@ export const Button = ({
 			className={[styles['button'], styles[`button--${size}`], mode].join(' ')}
 			{...props}
 		>
-			{label} {loading && <span className={styles['loader-icon']}></span>}
+			{label} {loading && <Loader />}
 		</button>
 	)
 }
