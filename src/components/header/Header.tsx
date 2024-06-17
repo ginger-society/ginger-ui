@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import Avatar from '../avatar'
-import Dropdown from './dropdown'
 import styles from './header.module.scss'
+import HeaderDropdownContent from './headerDropdown'
 
 type User = {
 	name: string
@@ -57,8 +57,9 @@ export const Header = ({
 				</div>
 				<div>
 					{user ? (
-						<div className={styles['welcome']} ref={dropdownRef}>
+						<div className={styles['welcome']}>
 							<div
+								ref={dropdownRef}
 								onClick={toggleDropdown}
 								className={styles['avatar-container']}
 								aria-hidden="true"
@@ -66,7 +67,7 @@ export const Header = ({
 								Welcome <Avatar name={user.name} />
 							</div>
 							{onLogout && (
-								<Dropdown
+								<HeaderDropdownContent
 									user={user}
 									onLogout={onLogout}
 									visible={dropdownVisible}

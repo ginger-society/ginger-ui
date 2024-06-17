@@ -77,3 +77,24 @@ html[data-theme='dark'] {
 	align-items: center;
 	gap: 10px;
 }
+
+.user-info {
+	padding: 12px 16px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.logout-button {
+	background-color: var(--primary-bg-color);
+	color: var(--primary-color);
+	border: none;
+	padding: 12px 16px;
+	text-align: center;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	cursor: pointer;
+
+	&:hover {
+		background-color: var(--secondary-bg-color);
+	}
+}
