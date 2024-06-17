@@ -1,7 +1,9 @@
+@import '../../global.module.scss';
+
 .dropdown {
 	position: relative;
 	display: inline-block;
-	top: 25px;
+	top: 15px;
 }
 
 .dropdown-content {
@@ -9,7 +11,7 @@
 	position: absolute;
 	background-color: var(--primary-bg-color);
 	color: var(--primary-color);
-	min-width: 160px;
+	min-width: 300px;
 	box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 	z-index: 1;
 	border: 1px solid rgba(0, 0, 0, 0.1);

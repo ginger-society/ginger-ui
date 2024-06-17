@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react'
+import Avatar from '../avatar'
 import Dropdown from './dropdown'
 import styles from './header.module.scss'
 
@@ -13,7 +14,7 @@ interface HeaderProps {
 	anonymousActions?: React.ReactNode
 	sticky?: boolean
 	brandName: string
-	onLogout: () => void
+	onLogout?: () => void
 }
 
 export const Header = ({
@@ -57,18 +58,20 @@ export const Header = ({
 				<div>
 					{user ? (
 						<div className={styles['welcome']} ref={dropdownRef}>
-							<span
+							<div
 								onClick={toggleDropdown}
 								className={styles['avatar-container']}
 								aria-hidden="true"
 							>
-								Welcome, <b>{user.name}</b>!
-							</span>
-							<Dropdown
-								user={user}
-								onLogout={onLogout}
-								visible={dropdownVisible}
-							/>
+								Welcome <Avatar name={user.name} />
+							</div>
+							{onLogout && (
+								<Dropdown
+									user={user}
+									onLogout={onLogout}
+									visible={dropdownVisible}
+								/>
+							)}
 						</div>
 					) : (
 						anonymousActions

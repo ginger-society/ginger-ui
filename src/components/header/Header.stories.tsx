@@ -53,9 +53,6 @@ export const LoggedOut = () => {
 				brandName="GingerUI"
 				icon={AcmeIcon}
 				anonymousActions={anonymousActions}
-				onLogout={() => {
-					console.log('logout clicked')
-				}}
 			/>
 		</Page>
 	)

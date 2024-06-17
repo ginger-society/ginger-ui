@@ -1,0 +1,20 @@
+@import '../../global.module.scss';
+
+.avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--primary-color);
+	color: var(--primary-bg-color);
+	border-radius: 50%;
+	width: 40px; /* Adjust size as needed */
+	height: 40px; /* Adjust size as needed */
+	font-size: var(--large-font-size);
+	font-weight: var(--font-weight);
+	text-transform: uppercase;
+}
+
+html[data-theme='dark'] .avatar {
+	background-color: var(--secondary-bg-color);
+	color: var(--secondary-color);
+}
