@@ -4,9 +4,10 @@ import styles from './dropdown.module.scss'
 interface DropdownProps {
 	children: ReactNode
 	label: ReactNode
+	align: 'right' | 'left'
 }
 
-const Dropdown = ({ children, label }: DropdownProps) => {
+const Dropdown = ({ children, label, align = 'right' }: DropdownProps) => {
 	const [visible, setDropdownVisible] = useState(false)
 	const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -39,7 +40,13 @@ const Dropdown = ({ children, label }: DropdownProps) => {
 			{label}
 			<div className={styles['dropdown']}>
 				{visible && (
-					<div className={styles['dropdown-content']}>{children}</div>
+					<div
+						className={`${styles['dropdown-content']} ${
+							styles[`dropdown-${align}`]
+						}`}
+					>
+						{children}
+					</div>
 				)}
 			</div>
 		</div>
