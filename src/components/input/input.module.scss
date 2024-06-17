@@ -15,6 +15,34 @@
 	}
 }
 
+.input-group {
+	display: flex;
+	flex-direction: column;
+
+	label {
+		margin-bottom: 10px;
+		font-weight: 700;
+		color: var(--primary-color);
+	}
+
+	span.info {
+		margin-top: 5px;
+		color: var(--secondary-color);
+	}
+
+	span.info.danger {
+		color: var(--danger-color);
+	}
+
+	span.info.success {
+		color: var(--success-color);
+	}
+
+	span.info.warning {
+		color: var(--warning-color);
+	}
+}
+
 html[data-theme='dark'] .input {
 	background-color: var(--primary-bg-color);
 	border: 1px solid transparent;
@@ -23,4 +51,50 @@ html[data-theme='dark'] .input {
 	&:focus {
 		border-color: var(--primary-color);
 	}
+}
+
+.input.danger {
+	border-color: var(--danger-color);
+	background-color: var(--danger-bg-color);
+}
+
+.input.success {
+	border-color: var(--success-color);
+	background-color: var(--success-bg-color);
+}
+
+.input.warning {
+	border-color: var(--warning-color);
+	background-color: var(--warning-bg-color);
+}
+
+html[data-theme='dark'] .input.danger {
+	border-color: var(--danger-dark-color);
+	background-color: var(--danger-bg-dark-color);
+}
+
+html[data-theme='dark'] .input.success {
+	border-color: var(--success-dark-color);
+	background-color: var(--success-bg-dark-color);
+}
+
+html[data-theme='dark'] .input.warning {
+	border-color: var(--warning-dark-color);
+	background-color: var(--warning-bg-dark-color);
+}
+
+html[data-theme='dark'] .input-group .info {
+	color: var(--secondary-color);
+}
+
+html[data-theme='dark'] .input-group .info.danger {
+	color: var(--danger-dark-color);
+}
+
+html[data-theme='dark'] .input-group .info.success {
+	color: var(--success-dark-color);
+}
+
+html[data-theme='dark'] .input-group .info.warning {
+	color: var(--warning-dark-color);
 }
