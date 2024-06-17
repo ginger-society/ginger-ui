@@ -16,7 +16,7 @@ export const Example = () => {
 							gap: '10px'
 						}}
 					>
-						Welcome <Avatar name={'John Doe'} />
+						<Avatar name={'John Doe'} />
 					</div>
 				}
 			>
