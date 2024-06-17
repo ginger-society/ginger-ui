@@ -6,11 +6,34 @@ import IconsView from './IconsView'
 
 <Meta title="Icons" />
 
+## Adding new icon
+
+Just copy your SVGs to `svgs` folder and then run
+
+```sh
+pnpm gen-icons
+```
+
 ## Usage guide
 ```js
 import { Icons8Adobe } from '@your-namespace/uilib'
 
 <Icons8Adobe stroke="#eeeeee" width="1rem" height="1rem" />
+```
+
+## Changing color based on the theme
+
+You shoule be able to change the color like this 
+
+```jsx
+<Icons8Adobe className={styles['icon']} width="1rem" height="1rem" />
+
+```
+and in yout `style.module.scss` file
+```css
+.icon {
+  fill: var(--primary-color);
+}
 ```
 
 <IconsView />

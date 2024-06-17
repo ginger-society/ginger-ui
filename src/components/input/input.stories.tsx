@@ -8,5 +8,11 @@ export const Example = () => {
 		setVal(value)
 	}
 
-	return <Input onChange={handleOnChange} value={val} />
+	return (
+		<Input
+			onChange={handleOnChange}
+			placeholder="A placeholder text"
+			value={val}
+		/>
+	)
 }
