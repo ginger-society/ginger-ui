@@ -38,14 +38,18 @@ export const Header = ({
 							align="left"
 							label={
 								<div className={styles['avatar-container']}>
+									Welcome
 									<Avatar name={user.name} />
 								</div>
 							}
 						>
 							<>
 								<div className={styles['user-info']}>
-									<div>{user.name}</div>
-									<div>{user.email}</div>
+									<Avatar name={user.name} />
+									<div>
+										<div>{user.name}</div>
+										<div>{user.email}</div>
+									</div>
 								</div>
 								<button className={styles['logout-button']} onClick={onLogout}>
 									Logout
