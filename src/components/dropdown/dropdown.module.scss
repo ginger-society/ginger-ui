@@ -3,7 +3,7 @@
 .dropdown {
 	position: relative;
 	display: inline-block;
-	top: 15px;
+	top: 50px;
 }
 
 .dropdown-content {
@@ -16,4 +16,7 @@
 	z-index: 1;
 	border: 1px solid rgba(0, 0, 0, 0.1);
 	right: 0;
+}
+.wrapper {
+	display: flex;
 }

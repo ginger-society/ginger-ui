@@ -1,7 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react'
+import { ReactNode } from 'react'
 import Avatar from '../avatar'
+import Dropdown from '../dropdown'
 import styles from './header.module.scss'
-import HeaderDropdownContent from './headerDropdown'
 
 type User = {
 	name: string
@@ -10,8 +10,8 @@ type User = {
 
 interface HeaderProps {
 	user?: User
-	icon?: React.ReactNode
-	anonymousActions?: React.ReactNode
+	icon?: ReactNode
+	anonymousActions?: ReactNode
 	sticky?: boolean
 	brandName: string
 	onLogout?: () => void
@@ -25,29 +25,6 @@ export const Header = ({
 	sticky = true,
 	onLogout
 }: HeaderProps) => {
-	const [dropdownVisible, setDropdownVisible] = useState(false)
-	const dropdownRef = useRef<HTMLDivElement>(null)
-
-	const toggleDropdown = () => {
-		setDropdownVisible(!dropdownVisible)
-	}
-
-	const handleClickOutside = (event: MouseEvent) => {
-		if (
-			dropdownRef.current &&
-			!dropdownRef.current.contains(event.target as Node)
-		) {
-			setDropdownVisible(false)
-		}
-	}
-
-	useEffect(() => {
-		document.addEventListener('mousedown', handleClickOutside)
-		return () => {
-			document.removeEventListener('mousedown', handleClickOutside)
-		}
-	}, [])
-
 	return (
 		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
 			<div className={styles['wrapper']}>
@@ -55,29 +32,29 @@ export const Header = ({
 					{icon}
 					<h1>{brandName}</h1>
 				</div>
-				<div>
-					{user ? (
-						<div className={styles['welcome']}>
-							<div
-								ref={dropdownRef}
-								onClick={toggleDropdown}
-								className={styles['avatar-container']}
-								aria-hidden="true"
-							>
-								Welcome <Avatar name={user.name} />
-							</div>
-							{onLogout && (
-								<HeaderDropdownContent
-									user={user}
-									onLogout={onLogout}
-									visible={dropdownVisible}
-								/>
-							)}
-						</div>
-					) : (
-						anonymousActions
-					)}
-				</div>
+				{user ? (
+					<div className={styles['welcome']}>
+						<Dropdown
+							label={
+								<div className={styles['avatar-container']}>
+									Welcome <Avatar name={user.name} />
+								</div>
+							}
+						>
+							<>
+								<div className={styles['user-info']}>
+									<div>{user.name}</div>
+									<div>{user.email}</div>
+								</div>
+								<button className={styles['logout-button']} onClick={onLogout}>
+									Logout
+								</button>
+							</>
+						</Dropdown>
+					</div>
+				) : (
+					anonymousActions
+				)}
 			</div>
 		</header>
 	)

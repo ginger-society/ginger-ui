@@ -1,15 +1,47 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useRef, useState } from 'react'
 import styles from './dropdown.module.scss'
 
 interface DropdownProps {
 	children: ReactNode
-	visible: boolean
+	label: ReactNode
 }
 
-const Dropdown = ({ children, visible }: DropdownProps) => {
+const Dropdown = ({ children, label }: DropdownProps) => {
+	const [visible, setDropdownVisible] = useState(false)
+	const dropdownRef = useRef<HTMLDivElement>(null)
+
+	const toggleDropdown = () => {
+		setDropdownVisible(!visible)
+	}
+
+	const handleClickOutside = (event: MouseEvent) => {
+		if (
+			dropdownRef.current &&
+			!dropdownRef.current.contains(event.target as Node)
+		) {
+			setDropdownVisible(false)
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener('mousedown', handleClickOutside)
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [])
 	return (
-		<div className={styles['dropdown']}>
-			{visible && <div className={styles['dropdown-content']}>{children}</div>}
+		<div
+			className={styles['wrapper']}
+			ref={dropdownRef}
+			onClick={toggleDropdown}
+			aria-hidden="true"
+		>
+			{label}
+			<div className={styles['dropdown']}>
+				{visible && (
+					<div className={styles['dropdown-content']}>{children}</div>
+				)}
+			</div>
 		</div>
 	)
 }
