@@ -1,4 +1,3 @@
-import { ReactNode } from 'react'
 import { Button } from '../button'
 import { Header } from './Header'
 
@@ -27,11 +26,16 @@ const AcmeIcon = (
 )
 
 export const LoggedIn = () => {
+	const handleLogout = () => {
+		console.log('User logged out')
+	}
+
 	return (
 		<Header
-			user={{ name: 'John Doe' }}
+			brandName="GingerUI"
+			user={{ name: 'John Doe', email: 'john.doe@example.com' }}
 			icon={AcmeIcon}
-			brandName="Ginger Society"
+			onLogout={handleLogout}
 		/>
 	)
 }
@@ -46,16 +50,17 @@ export const LoggedOut = () => {
 	return (
 		<Page>
 			<Header
+				brandName="GingerUI"
 				icon={AcmeIcon}
 				anonymousActions={anonymousActions}
-				brandName="Ginger Society"
+				onLogout={() => {
+					console.log('logout clicked')
+				}}
 			/>
 		</Page>
 	)
 }
 
-const Page = ({ children }: { children: ReactNode }) => {
-	return (
-		<div style={{ minHeight: '200vh', background: 'grey' }}>{children}</div>
-	)
+const Page = ({ children }: { children: any }) => {
+	return <div style={{ minHeight: '200vh' }}>{children}</div>
 }

@@ -1,16 +1,19 @@
-import { ReactNode } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
+import Dropdown from './dropdown'
 import styles from './header.module.scss'
 
 type User = {
 	name: string
+	email: string
 }
 
 interface HeaderProps {
 	user?: User
-	icon?: ReactNode
-	anonymousActions?: ReactNode
+	icon?: React.ReactNode
+	anonymousActions?: React.ReactNode
 	sticky?: boolean
 	brandName: string
+	onLogout: () => void
 }
 
 export const Header = ({
@@ -18,23 +21,60 @@ export const Header = ({
 	user,
 	icon,
 	anonymousActions,
-	sticky = true
-}: HeaderProps) => (
-	<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
-		<div className={styles['wrapper']}>
-			<div>
-				{icon}
-				<h1>{brandName}</h1>
+	sticky = true,
+	onLogout
+}: HeaderProps) => {
+	const [dropdownVisible, setDropdownVisible] = useState(false)
+	const dropdownRef = useRef<HTMLDivElement>(null)
+
+	const toggleDropdown = () => {
+		setDropdownVisible(!dropdownVisible)
+	}
+
+	const handleClickOutside = (event: MouseEvent) => {
+		if (
+			dropdownRef.current &&
+			!dropdownRef.current.contains(event.target as Node)
+		) {
+			setDropdownVisible(false)
+		}
+	}
+
+	useEffect(() => {
+		document.addEventListener('mousedown', handleClickOutside)
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside)
+		}
+	}, [])
+
+	return (
+		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
+			<div className={styles['wrapper']}>
+				<div>
+					{icon}
+					<h1>{brandName}</h1>
+				</div>
+				<div>
+					{user ? (
+						<div className={styles['welcome']} ref={dropdownRef}>
+							<span
+								onClick={toggleDropdown}
+								className={styles['avatar-container']}
+								aria-hidden="true"
+							>
+								Welcome, <b>{user.name}</b>!
+							</span>
+							<Dropdown
+								user={user}
+								onLogout={onLogout}
+								visible={dropdownVisible}
+							/>
+						</div>
+					) : (
+						anonymousActions
+					)}
+				</div>
 			</div>
-			<div>
-				{user ? (
-					<span className={styles['welcome']}>
-						Welcome, <b>{user.name}</b>!
-					</span>
-				) : (
-					anonymousActions
-				)}
-			</div>
-		</div>
-	</header>
-)
+		</header>
+	)
+}
