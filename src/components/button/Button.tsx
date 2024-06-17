@@ -16,17 +16,11 @@ export const Button = ({
 	...props
 }: ButtonProps) => {
 	console.log(styles)
-	const mode = primary
-		? styles['storybook-button--primary']
-		: styles['storybook-button--secondary']
+	const mode = primary ? styles['button--primary'] : styles['button--secondary']
 	return (
 		<button
 			type="button"
-			className={[
-				styles['storybook-button'],
-				styles[`storybook-button--${size}`],
-				mode
-			].join(' ')}
+			className={[styles['button'], styles[`button--${size}`], mode].join(' ')}
 			{...props}
 		>
 			{label} {loading && <span className={styles['loader-icon']}></span>}

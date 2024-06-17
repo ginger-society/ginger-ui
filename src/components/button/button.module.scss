@@ -1,6 +1,6 @@
 @import '../../global.module.scss';
 
-.storybook-button {
+.button {
 	font-family: var(--font-family);
 	font-weight: var(--font-weight);
 	border: 0;
@@ -8,9 +8,10 @@
 	cursor: pointer;
 	display: inline-block;
 	line-height: 1;
+	width: fit-content;
 }
 
-.storybook-button--primary {
+.button--primary {
 	color: var(
 		--primary-bg-color
 	); /* Light mode: text color should be the background color of primary */
@@ -19,23 +20,23 @@
 	); /* Light mode: background color should be the text color of primary */
 }
 
-.storybook-button--secondary {
+.button--secondary {
 	color: var(--secondary-color);
 	background-color: var(--secondary-bg-color);
 	box-shadow: var(--box-shadow);
 }
 
-.storybook-button--small {
+.button--small {
 	font-size: var(--small-font-size);
 	padding: var(--small-padding);
 }
 
-.storybook-button--medium {
+.button--medium {
 	font-size: var(--medium-font-size);
 	padding: var(--medium-padding);
 }
 
-.storybook-button--large {
+.button--large {
 	font-size: var(--large-font-size);
 	padding: var(--large-padding);
 }
@@ -69,7 +70,7 @@
 }
 
 html[data-theme='dark'] {
-	.storybook-button--primary {
+	.button--primary {
 		color: var(
 			--primary-bg-color
 		); /* Dark mode: text color should be the primary color */
@@ -78,7 +79,7 @@ html[data-theme='dark'] {
 		); /* Dark mode: background color should be the primary background color */
 	}
 
-	.storybook-button--secondary {
+	.button--secondary {
 		color: var(--primary-color);
 		background-color: var(--secondary-bg-color);
 		box-shadow: var(--box-shadow);

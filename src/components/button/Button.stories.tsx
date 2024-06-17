@@ -1,22 +1,21 @@
 import { Button } from './Button'
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const Primary = () => {
-	return <Button primary={true} label="Button" />
+	return (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			<Button primary={true} label="Button" />
+			<Button primary={true} loading label="Button" />
+			<Button primary={true} size="small" label="Button" />
+		</div>
+	)
 }
 
 export const Secondary = () => {
-	return <Button label="Button" />
-}
-
-export const Large = () => {
-	return <Button label="Button" size="large" />
-}
-
-export const Small = () => {
-	return <Button label="Button" size="small" />
-}
-
-export const Loading = () => {
-	return <Button label="Button" size="large" loading />
+	return (
+		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+			<Button label="Button" />
+			<Button loading label="Button" />
+			<Button size="small" label="Button" />
+		</div>
+	)
 }
