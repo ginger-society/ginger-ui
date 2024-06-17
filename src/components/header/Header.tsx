@@ -17,7 +17,7 @@ export const Header = ({
 	anonymousActions,
 	sticky = true
 }: HeaderProps) => (
-	<header className={sticky ? styles['sticky'] : ''}>
+	<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
 		<div className={styles['wrapper']}>
 			<div>
 				{icon}
@@ -25,11 +25,9 @@ export const Header = ({
 			</div>
 			<div>
 				{user ? (
-					<>
-						<span className={styles['welcome']}>
-							Welcome, <b>{user.name}</b>!
-						</span>
-					</>
+					<span className={styles['welcome']}>
+						Welcome, <b>{user.name}</b>!
+					</span>
 				) : (
 					anonymousActions
 				)}
