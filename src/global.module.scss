@@ -2,8 +2,8 @@
 	--font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	--font-weight: 700;
 	--border-radius: 0.5rem;
-	--primary-color: white;
-	--primary-bg-color: black;
+	--primary-color: black; /* Changed for light theme */
+	--primary-bg-color: white; /* Changed for light theme */
 	--secondary-color: #333;
 	--secondary-bg-color: transparent;
 	--box-shadow: rgba(0, 0, 0, 0.15) 0px 0px 0px 1px inset;
@@ -18,8 +18,8 @@
 }
 
 html[data-theme='dark'] {
-	--primary-color: black;
-	--primary-bg-color: white;
+	--primary-color: white; /* Changed for dark theme */
+	--primary-bg-color: black; /* Changed for dark theme */
 	--secondary-color: #ccc;
 	--secondary-bg-color: #333;
 	--box-shadow: rgba(255, 255, 255, 0.15) 0px 0px 0px 1px inset;

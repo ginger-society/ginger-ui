@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import styles from './header.module.scss'
 
 type User = {
@@ -6,12 +7,14 @@ type User = {
 
 interface HeaderProps {
 	user?: User
-	icon?: any
-	anonymousActions?: any
+	icon?: ReactNode
+	anonymousActions?: ReactNode
 	sticky?: boolean
+	brandName: string
 }
 
 export const Header = ({
+	brandName,
 	user,
 	icon,
 	anonymousActions,
@@ -21,7 +24,7 @@ export const Header = ({
 		<div className={styles['wrapper']}>
 			<div>
 				{icon}
-				<h1>Acme</h1>
+				<h1>{brandName}</h1>
 			</div>
 			<div>
 				{user ? (

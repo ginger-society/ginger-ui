@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import { Button } from '../button'
 import { Header } from './Header'
 
@@ -26,7 +27,13 @@ const AcmeIcon = (
 )
 
 export const LoggedIn = () => {
-	return <Header user={{ name: 'John Doe' }} icon={AcmeIcon} />
+	return (
+		<Header
+			user={{ name: 'John Doe' }}
+			icon={AcmeIcon}
+			brandName="Ginger Society"
+		/>
+	)
 }
 
 export const LoggedOut = () => {
@@ -38,11 +45,17 @@ export const LoggedOut = () => {
 
 	return (
 		<Page>
-			<Header icon={AcmeIcon} anonymousActions={anonymousActions} />
+			<Header
+				icon={AcmeIcon}
+				anonymousActions={anonymousActions}
+				brandName="Ginger Society"
+			/>
 		</Page>
 	)
 }
 
-const Page = ({ children }: { children: any }) => {
-	return <div style={{ minHeight: '200vh' }}>{children}</div>
+const Page = ({ children }: { children: ReactNode }) => {
+	return (
+		<div style={{ minHeight: '200vh', background: 'grey' }}>{children}</div>
+	)
 }

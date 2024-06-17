@@ -16,3 +16,7 @@ export const Large = () => {
 export const Small = () => {
 	return <Button label="Button" size="small" />
 }
+
+export const Loading = () => {
+	return <Button label="Button" size="large" loading />
+}

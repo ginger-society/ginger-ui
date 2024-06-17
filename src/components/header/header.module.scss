@@ -7,42 +7,30 @@
 	}
 
 	.wrapper {
-		font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-family: var(--font-family);
 		border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 		padding: 15px 20px;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		background-color: #fff;
-		color: #333;
-
-		[data-theme='dark'] & {
-			background-color: #333;
-			color: #fff;
-			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-		}
+		background-color: var(--primary-bg-color);
+		color: var(--primary-color);
 	}
 
 	svg {
 		display: inline-block;
 		vertical-align: top;
-
-		[data-theme='dark'] & {
-			fill: #fff;
-		}
+		fill: var(--primary-color);
 	}
 
 	h1 {
-		font-weight: 700;
+		font-weight: var(--font-weight);
 		font-size: 20px;
 		line-height: 1;
 		margin: 6px 0 6px 10px;
 		display: inline-block;
 		vertical-align: top;
-
-		[data-theme='dark'] & {
-			color: #fff;
-		}
+		color: var(--primary-color);
 	}
 
 	button + button {
@@ -50,12 +38,32 @@
 	}
 
 	.welcome {
-		color: #333;
-		font-size: 14px;
+		color: var(--secondary-color);
+		font-size: var(--medium-font-size);
 		margin-right: 10px;
+	}
+}
 
-		[data-theme='dark'] & {
-			color: #fff;
+html[data-theme='dark'] {
+	.header {
+		.wrapper {
+			border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+			background-color: var(
+				--primary-bg-color
+			); /* This should now be black for dark theme */
+			color: var(--primary-color); /* This should now be white for dark theme */
+		}
+
+		svg {
+			fill: var(--primary-color); /* This should now be white for dark theme */
+		}
+
+		h1 {
+			color: var(--primary-color); /* This should now be white for dark theme */
+		}
+
+		.welcome {
+			color: var(--primary-color); /* This should now be white for dark theme */
 		}
 	}
 }

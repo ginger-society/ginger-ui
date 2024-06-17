@@ -11,8 +11,12 @@
 }
 
 .storybook-button--primary {
-	color: var(--primary-color);
-	background-color: var(--primary-bg-color);
+	color: var(
+		--primary-bg-color
+	); /* Light mode: text color should be the background color of primary */
+	background-color: var(
+		--primary-color
+	); /* Light mode: background color should be the text color of primary */
 }
 
 .storybook-button--secondary {
@@ -61,5 +65,29 @@
 	}
 	100% {
 		transform: rotate(360deg);
+	}
+}
+
+html[data-theme='dark'] {
+	.storybook-button--primary {
+		color: var(
+			--primary-bg-color
+		); /* Dark mode: text color should be the primary color */
+		background-color: var(
+			--primary-color
+		); /* Dark mode: background color should be the primary background color */
+	}
+
+	.storybook-button--secondary {
+		color: var(--primary-color);
+		background-color: var(--secondary-bg-color);
+		box-shadow: var(--box-shadow);
+	}
+
+	.loader-icon {
+		border-top-color: var(--loader-bg-color);
+		border-left-color: var(--loader-border-color);
+		border-bottom-color: var(--loader-border-color);
+		border-right-color: var(--loader-border-color);
 	}
 }
