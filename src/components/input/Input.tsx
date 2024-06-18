@@ -1,3 +1,4 @@
+import { Icons8Close } from '@src/icons'
 import React, { useState } from 'react'
 import { classNames } from '@src/utils/classNames'
 import styles from './input.module.scss'
@@ -80,7 +81,7 @@ const Input: React.FC<InputProps> = ({
 						onClick={handleClear}
 						className={styles['clear-input']}
 					>
-						Clear
+						<Icons8Close fill="var(--primary-color)" />
 					</span>
 				)}
 				{endEnhancer && (

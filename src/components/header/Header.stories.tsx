@@ -1,4 +1,5 @@
 import { Button } from '../button'
+import { ButtonSize } from '../button/Button'
 import { Header } from './Header'
 
 const AcmeIcon = (
@@ -43,7 +44,7 @@ export const LoggedIn = () => {
 export const LoggedOut = () => {
 	const anonymousActions = (
 		<>
-			<Button size="small" label="Login" />
+			<Button size={ButtonSize.Small} label="Login" />
 		</>
 	)
 

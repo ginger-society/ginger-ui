@@ -26,6 +26,18 @@
 	box-shadow: var(--box-shadow);
 }
 
+.button--tertiary {
+	background: none;
+	border: none;
+	color: var(--primary-color);
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
 .button--small {
 	font-size: var(--small-font-size);
 	padding: var(--small-padding);
@@ -55,6 +67,14 @@ html[data-theme='dark'] {
 		color: var(--primary-color);
 		background-color: var(--secondary-bg-color);
 		box-shadow: var(--box-shadow);
+	}
+
+	.button--tertiary {
+		color: var(--primary-color);
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 
 	.loader-icon {
