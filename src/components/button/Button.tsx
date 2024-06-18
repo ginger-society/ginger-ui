@@ -22,7 +22,7 @@ interface ButtonProps {
 	onClick?: () => void
 }
 
-export const Button = ({
+const Button = ({
 	type = ButtonType.Secondary,
 	size = ButtonSize.Medium,
 	label,
@@ -41,3 +41,5 @@ export const Button = ({
 		</button>
 	)
 }
+
+export default Button
