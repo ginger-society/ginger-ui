@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import Input from '../components/input'
+import { Input } from '../components/input'
 import * as Icons from '../icons'
 import styles from './iconsView.module.scss'
 
