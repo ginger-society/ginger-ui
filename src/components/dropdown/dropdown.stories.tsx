@@ -1,5 +1,5 @@
-import Dropdown from '.'
-import Avatar from '../avatar'
+import { Avatar } from '../avatar'
+import Dropdown from './Dropdown'
 
 export const Example = () => {
 	return (

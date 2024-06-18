@@ -1,7 +1,7 @@
 import SvgIcons8Document from '@src/icons/Icons8Document'
 import SvgIcons8Refresh from '@src/icons/Icons8Done'
 import { useState } from 'react'
-import Input from '.'
+import Input from './Input'
 
 export const InputLengthExample = () => {
 	const [val, setVal] = useState<string>('')
