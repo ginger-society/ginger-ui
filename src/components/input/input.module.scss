@@ -9,11 +9,17 @@
 	color: var(--primary-color);
 	outline: none;
 	transition: border 0.3s;
-	padding-right: 40px; /* Adding space for the clear and toggle buttons */
-	padding-left: 40px; /* Adding space for the start enhancer */
 
 	&:focus {
 		border-color: black;
+	}
+
+	&.with-start-enhancer {
+		padding-left: 40px; /* Space for the start enhancer */
+	}
+
+	&.with-end-enhancer {
+		padding-right: 40px; /* Space for the end enhancer */
 	}
 }
 
@@ -63,8 +69,8 @@
 		font-size: var(--medium-font-size);
 	}
 
-	.toggle-password {
-		right: 40px; /* Position toggle-password button to the left of clear button */
+	.toggle-password.with-clearable {
+		right: 60px; /* Position toggle-password button to the left of clear button */
 	}
 
 	.start-enhancer,

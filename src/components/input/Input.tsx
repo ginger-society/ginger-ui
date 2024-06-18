@@ -1,4 +1,3 @@
-import SvgIcons8Close from '@src/icons/Icons8Close'
 import React, { useState } from 'react'
 import { classNames } from '@src/utils/classNames'
 import styles from './input.module.scss'
@@ -50,7 +49,14 @@ const Input: React.FC<InputProps> = ({
 					<div className={styles['start-enhancer']}>{startEnhancer}</div>
 				)}
 				<input
-					className={classNames(styles['input'], state && styles[state])}
+					className={classNames(
+						styles['input'],
+						state && styles[state],
+						startEnhancer ? styles['with-start-enhancer'] : '',
+						endEnhancer || (type === 'password' && !clearable)
+							? styles['with-end-enhancer']
+							: ''
+					)}
 					type={type === 'password' && showPassword ? 'text' : type}
 					value={props.value}
 					onChange={handleChange}
@@ -59,7 +65,10 @@ const Input: React.FC<InputProps> = ({
 				{type === 'password' && (
 					<span
 						onClick={handleTogglePassword}
-						className={styles['toggle-password']}
+						className={classNames(
+							styles['toggle-password'],
+							clearable ? styles['with-clearable'] : ''
+						)}
 						aria-hidden="true"
 					>
 						{showPassword ? 'Hide' : 'Show'}
@@ -71,7 +80,7 @@ const Input: React.FC<InputProps> = ({
 						onClick={handleClear}
 						className={styles['clear-input']}
 					>
-						<SvgIcons8Close fill="var(--primary-color)" />
+						Clear
 					</span>
 				)}
 				{endEnhancer && (
