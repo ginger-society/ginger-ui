@@ -1,4 +1,4 @@
-import { Button } from '../button'
+import Button from '../button'
 import { ButtonSize } from '../button/Button'
 import { Header } from './Header'
 

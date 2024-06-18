@@ -1,4 +1,4 @@
-import { Button, ButtonSize, ButtonType } from './Button'
+import Button, { ButtonSize, ButtonType } from './Button'
 
 export const Primary = () => {
 	return (
