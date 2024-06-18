@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
-import Avatar from '../avatar'
-import Dropdown from '../dropdown'
+import { Avatar } from '../avatar'
+import { Dropdown } from '../dropdown'
 import styles from './header.module.scss'
 
 type User = {

@@ -1,4 +1,4 @@
-import Loader from '../loader'
+import { Loader } from '../loader'
 import styles from './button.module.scss'
 
 // Define and export the ButtonType and ButtonSize enums
