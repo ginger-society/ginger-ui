@@ -9,6 +9,7 @@
 	color: var(--primary-color);
 	outline: none;
 	transition: border 0.3s;
+	padding-right: 40px; /* Adding space for the clear and toggle buttons */
 
 	&:focus {
 		border-color: black;
@@ -40,6 +41,25 @@
 
 	span.info.warning {
 		color: var(--warning-color);
+	}
+}
+
+.input-wrapper {
+	position: relative;
+	display: flex;
+	align-items: center;
+
+	.input {
+		flex: 1;
+	}
+
+	.clear-input,
+	.toggle-password {
+		position: absolute;
+		right: 10px;
+		cursor: pointer;
+		color: var(--primary-color);
+		font-size: var(--medium-font-size);
 	}
 }
 

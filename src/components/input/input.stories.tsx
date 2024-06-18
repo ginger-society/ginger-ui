@@ -24,7 +24,7 @@ export const InputLengthExample = () => {
 
 	return (
 		<Input
-			label="A number input"
+			label="A lengthy input example"
 			info={inputState}
 			onChange={handleOnChange}
 			placeholder="A placeholder text"
@@ -65,6 +65,50 @@ export const EmailExample = () => {
 				placeholder="Enter your email"
 				value={email}
 				state={inputState}
+				clearable={true}
+			/>
+		</div>
+	)
+}
+
+export const PasswordExample = () => {
+	const [password, setPassword] = useState<string>('')
+
+	const handleOnChange = ({ target: { value } }) => {
+		setPassword(value)
+	}
+
+	return (
+		<div>
+			<Input
+				label="Password"
+				id="email"
+				onChange={handleOnChange}
+				placeholder="Enter a password"
+				value={password}
+				type="password"
+			/>
+		</div>
+	)
+}
+
+export const ClearableExample = () => {
+	const [password, setPassword] = useState<string>('')
+
+	const handleOnChange = ({ target: { value } }) => {
+		setPassword(value)
+	}
+
+	return (
+		<div>
+			<Input
+				label="Text Input Example"
+				id="email"
+				onChange={handleOnChange}
+				placeholder="Enter a value"
+				value={password}
+				type="text"
+				clearable={true}
 			/>
 		</div>
 	)
