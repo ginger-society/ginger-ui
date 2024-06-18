@@ -2,13 +2,21 @@ import React, { ReactNode, useEffect, useRef } from 'react'
 import styles from './modal.module.scss'
 import ModalFooter from './ModalFooter'
 
+export enum ModalSize {
+	Medium = 'medium',
+	Small = 'small',
+	Large = 'large',
+	XLarge = 'xlarge'
+}
+
 interface ModalProps {
 	isOpen: boolean
 	onClose: () => void
 	children: ReactNode
 	preventCancelOnOverlay?: boolean
 	showFooter?: boolean
-	onOk?: () => void // Optional onOk handler for custom ok logic
+	onOk?: () => void
+	size?: ModalSize
 }
 
 const Modal: React.FC<ModalProps> = ({
@@ -17,8 +25,10 @@ const Modal: React.FC<ModalProps> = ({
 	children,
 	preventCancelOnOverlay = false,
 	showFooter = false,
+	size = ModalSize.Medium,
 	onOk
 }) => {
+	console.log({ size })
 	const dialogRef = useRef<HTMLDialogElement>(null)
 
 	useEffect(() => {
@@ -56,7 +66,7 @@ const Modal: React.FC<ModalProps> = ({
 	return (
 		<dialog
 			ref={dialogRef}
-			className={`${styles['modal']} ${isOpen ? styles['open'] : ''}`}
+			className={`${styles['modal']} ${styles[`modal-${size}`]}`}
 			onClick={handleDialogClick}
 			aria-hidden="true"
 		>
