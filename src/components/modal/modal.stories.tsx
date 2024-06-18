@@ -1,20 +1,26 @@
 import { useState } from 'react'
 import Modal from './Modal'
 import ModalBody from './ModalBody'
-import ModalFooter from './ModalFooter'
 import ModalHeader from './ModalHeader'
 
 export const ModalExample = () => {
 	const [isOpen, setIsOpen] = useState(false)
 
 	const handleOk = () => {
-		console.log('handle ok')
+		console.log('handling ok')
+		setIsOpen(false)
 	}
 
 	return (
 		<div>
 			<button onClick={() => setIsOpen(true)}>Open Modal</button>
-			<Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+			<Modal
+				isOpen={isOpen}
+				onClose={() => setIsOpen(false)}
+				showFooter
+				preventCancelOnOverlay
+				onOk={handleOk}
+			>
 				<ModalHeader>Hello world</ModalHeader>
 				<ModalBody>
 					<p>
@@ -24,7 +30,6 @@ export const ModalExample = () => {
 						natus voluptatum aperiam?
 					</p>
 				</ModalBody>
-				<ModalFooter onCancel={() => setIsOpen(false)} onOk={handleOk} />
 			</Modal>
 		</div>
 	)

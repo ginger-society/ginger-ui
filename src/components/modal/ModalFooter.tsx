@@ -4,7 +4,7 @@ import styles from './modal.module.scss'
 
 interface ModalFooterProps {
 	onCancel: () => void
-	onOk: () => void
+	onOk?: () => void
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({ onCancel, onOk }) => {
