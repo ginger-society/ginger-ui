@@ -26,14 +26,12 @@ import { Icons8Adobe } from '@your-namespace/uilib'
 You shoule be able to change the color like this 
 
 ```jsx
-<Icons8Adobe className={styles['icon']} width="1rem" height="1rem" />
-
+<Icons8Adobe fill="var(--primary-color)" width="1rem" height="1rem" />
 ```
-and in your `style.module.scss` file
-```css
-.icon {
-  fill: var(--primary-color);
-}
+
+and for inverted color for a given theme
+```jsx
+<Icons8Adobe fill="var(--primary-bg-color)" width="1rem" height="1rem" />
 ```
 
 <IconsView />
