@@ -77,11 +77,6 @@ export const ExampleMultiSelect: React.FC = () => {
 				options={options}
 				onChange={handleChange}
 				value={selectedOptions}
-				renderer={(option) => (
-					<div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-						<SvgIcons8Bookmark /> {option.label}
-					</div>
-				)}
 			/>
 			<div>
 				Selected Options:{' '}

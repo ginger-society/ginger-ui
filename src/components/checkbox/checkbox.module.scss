@@ -50,13 +50,13 @@ html[data-theme='dark'] {
 	}
 
 	.input {
-		border: 2px solid var(--primary-accent-color);
+		border: 2px solid var(--primary-color);
 		background-color: var(--primary-bg-color);
 	}
 
 	.input:checked {
-		background-color: var(--primary-accent-color);
-		border-color: var(--primary-accent-color);
+		background-color: var(--primary-color);
+		border-color: var(--primary-color);
 	}
 
 	.input:checked::after {
