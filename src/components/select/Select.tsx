@@ -1,5 +1,5 @@
 // Select.tsx
-import React, { useState } from 'react'
+import React from 'react'
 import { Dropdown } from '../dropdown'
 import styles from './select.module.scss'
 
@@ -10,7 +10,7 @@ export interface Option {
 
 interface SelectProps {
 	options: Option[]
-	renderer: (option: Option) => React.ReactNode
+	renderer?: (option: Option) => React.ReactNode
 	onChange: (value: Option) => void
 	value: Option | null | undefined
 }
@@ -42,7 +42,7 @@ const Select: React.FC<SelectProps> = ({
 						onClick={() => handleSelect(option)}
 						aria-hidden
 					>
-						{renderer(option)}
+						{renderer ? renderer(option) : option.label}
 					</div>
 				))}
 			</div>

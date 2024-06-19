@@ -20,6 +20,7 @@ interface ButtonProps {
 	label: string
 	loading?: boolean
 	onClick?: () => void
+	fullWidth?: boolean
 }
 
 const Button = ({
@@ -27,6 +28,7 @@ const Button = ({
 	size = ButtonSize.Medium,
 	label,
 	loading = false,
+	fullWidth = false,
 	...props
 }: ButtonProps) => {
 	const mode = styles[`button--${type}`]
@@ -34,7 +36,12 @@ const Button = ({
 	return (
 		<button
 			type="button"
-			className={[styles['button'], sizeClass, mode].join(' ')}
+			className={[
+				styles['button'],
+				sizeClass,
+				mode,
+				fullWidth ? styles['button-block'] : ''
+			].join(' ')}
 			{...props}
 		>
 			{label} {loading && <Loader />}

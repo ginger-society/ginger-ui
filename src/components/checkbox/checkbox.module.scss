@@ -21,6 +21,7 @@
 	align-items: center;
 	transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
 	background-color: var(--primary-bg-color);
+	cursor: pointer;
 }
 
 .input:checked {

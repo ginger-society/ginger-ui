@@ -22,6 +22,7 @@
 .select-option {
 	padding: 8px 12px;
 	cursor: pointer;
+	display: flex;
 	&:hover {
 		background-color: var(--hover-bg-color);
 	}
@@ -41,4 +42,8 @@ html[data-theme='dark'] .select {
 			--accent-color
 		); /* Change focus border color for dark theme */
 	}
+}
+
+.action-container {
+	padding: 10px;
 }

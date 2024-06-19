@@ -3,14 +3,14 @@ import React from 'react'
 import styles from './checkbox.module.scss'
 
 interface CheckboxProps {
-	label: string
+	label?: string
 	checked: boolean
-	onChange: (checked: boolean) => void
+	onChange?: (checked: boolean) => void
 }
 
 const Checkbox: React.FC<CheckboxProps> = ({ label, checked, onChange }) => {
 	const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-		onChange(event.target.checked)
+		onChange && onChange(event.target.checked)
 	}
 
 	return (

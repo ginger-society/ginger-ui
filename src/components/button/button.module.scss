@@ -52,6 +52,9 @@
 	font-size: var(--large-font-size);
 	padding: var(--large-padding);
 }
+.button-block {
+	width: 100%;
+}
 
 html[data-theme='dark'] {
 	.button--primary {
