@@ -10,6 +10,8 @@ export interface Option {
 	value: string
 }
 
+const FEATURE_BREAK_COUNT = 10
+
 interface SelectProps {
 	options: Option[]
 	renderer?: (option: Option) => React.ReactNode
@@ -51,34 +53,43 @@ const MultiSelect: React.FC<SelectProps> = ({
 			}
 			align="left"
 		>
-			<div>
-				<div
-					onClick={(e) => e.stopPropagation()}
-					aria-hidden
-					className={styles['action-container']}
-				>
-					<Input
-						placeholder="Search..."
-						value={searchTxt}
-						onChange={({ target: { value } }) => setSearchTxt(value)}
-					/>
-				</div>
-				{filteredOptions.map((option) => (
+			<div
+				className={
+					styles[`${options.length < FEATURE_BREAK_COUNT ? 'padded' : ''}`]
+				}
+			>
+				{options.length > FEATURE_BREAK_COUNT && (
 					<div
-						key={option.value}
-						className={styles['select-option']}
-						onClick={(e) => {
-							handleSelect(option)
-							e.stopPropagation()
-						}}
+						onClick={(e) => e.stopPropagation()}
 						aria-hidden
+						className={styles['action-container']}
 					>
-						<Checkbox
-							checked={!!value && value.some((v) => v.value === option.value)}
+						<Input
+							placeholder="Search..."
+							value={searchTxt}
+							onChange={({ target: { value } }) => setSearchTxt(value)}
+							clearable
 						/>
-						{renderer ? renderer(option) : option.label}
 					</div>
-				))}
+				)}
+				<div className={styles['options-container']}>
+					{filteredOptions.map((option) => (
+						<div
+							key={option.value}
+							className={styles['select-option']}
+							onClick={(e) => {
+								handleSelect(option)
+								e.stopPropagation()
+							}}
+							aria-hidden
+						>
+							<Checkbox
+								checked={!!value && value.some((v) => v.value === option.value)}
+							/>
+							{renderer ? renderer(option) : option.label}
+						</div>
+					))}
+				</div>
 				<div className={styles['action-container']}>
 					<Button type={ButtonType.Primary} label="Done" fullWidth />
 				</div>

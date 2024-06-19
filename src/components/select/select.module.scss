@@ -47,3 +47,11 @@ html[data-theme='dark'] .select {
 .action-container {
 	padding: 10px;
 }
+
+.options-container {
+	max-height: 400px;
+	overflow-y: auto;
+}
+.padded {
+	padding-top: 20px;
+}
