@@ -18,11 +18,23 @@
 	padding: var(--medium-padding);
 	border-radius: var(--border-radius);
 	box-shadow: var(--box-shadow);
-	transition: top 1s ease-in-out, opacity 1s ease-in-out;
+	transition: top 0.5s ease-in-out, opacity 1s ease-in-out;
 	opacity: 1;
 	z-index: 1000;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
 }
 
 .snackbar-exit {
 	opacity: 0;
+}
+
+.cancel-button {
+	background: none;
+	border: none;
+	color: var(--primary-bg-color);
+	margin-left: 10px;
+	cursor: pointer;
+	font-size: var(--small-font-size);
 }

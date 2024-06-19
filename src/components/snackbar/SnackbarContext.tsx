@@ -15,13 +15,18 @@ export enum SnackbarTimer {
 }
 
 interface SnackbarContextType {
-	show: (component: ReactNode, duration: SnackbarTimer) => void
+	show: (
+		component: ReactNode,
+		duration: SnackbarTimer,
+		cancellable?: boolean
+	) => void
 }
 
 interface SnackbarItem {
 	id: number
 	component: ReactNode
 	duration: SnackbarTimer
+	cancellable: boolean
 }
 
 const SnackbarContext = createContext<SnackbarContextType | undefined>(
@@ -35,13 +40,23 @@ export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({
 }) => {
 	const [snackbars, setSnackbars] = useState<SnackbarItem[]>([])
 
-	const show = useCallback((component: ReactNode, duration: SnackbarTimer) => {
-		const id = idCounter++
-		setSnackbars((prev) => [...prev, { id, component, duration }])
+	const show = useCallback(
+		(component: ReactNode, duration: SnackbarTimer, cancellable = false) => {
+			const id = idCounter++
+			setSnackbars((prev) => [
+				...prev,
+				{ id, component, duration, cancellable }
+			])
 
-		setTimeout(() => {
-			setSnackbars((prev) => prev.filter((snackbar) => snackbar.id !== id))
-		}, duration)
+			setTimeout(() => {
+				setSnackbars((prev) => prev.filter((snackbar) => snackbar.id !== id))
+			}, duration)
+		},
+		[]
+	)
+
+	const removeSnackbar = useCallback((id: number) => {
+		setSnackbars((prev) => prev.filter((snackbar) => snackbar.id !== id))
 	}, [])
 
 	return (
@@ -52,9 +67,8 @@ export const SnackbarProvider: React.FC<{ children: ReactNode }> = ({
 					<Snackbar
 						key={snackbar.id}
 						duration={snackbar.duration}
-						onClose={() => {
-							console.log('closing')
-						}}
+						onClose={() => removeSnackbar(snackbar.id)}
+						cancellable={snackbar.cancellable}
 					>
 						{snackbar.component}
 					</Snackbar>
