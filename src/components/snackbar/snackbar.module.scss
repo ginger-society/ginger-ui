@@ -1,0 +1,28 @@
+@import '../../global.module.scss';
+
+.snackbar-container {
+	position: fixed;
+	top: 20px;
+	left: 50%;
+	transform: translateX(-50%);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 10px;
+	z-index: 1000;
+}
+
+.snackbar {
+	background-color: var(--secondary-color);
+	color: var(--primary-bg-color);
+	padding: var(--medium-padding);
+	border-radius: var(--border-radius);
+	box-shadow: var(--box-shadow);
+	transition: top 1s ease-in-out, opacity 1s ease-in-out;
+	opacity: 1;
+	z-index: 1000;
+}
+
+.snackbar-exit {
+	opacity: 0;
+}
