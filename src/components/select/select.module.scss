@@ -1,0 +1,44 @@
+@import '../../global.module.scss';
+
+.select {
+	padding: 8px 16px 8px 12px; /* Updated padding values */
+	font-size: var(--medium-font-size);
+	border: 1px solid var(--primary-color);
+	border-radius: 4px;
+	width: 100%;
+	background-color: var(--primary-bg-color);
+	color: var(--primary-color);
+	transition: background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+
+	&:hover {
+		background-color: var(--hover-bg-color);
+	}
+
+	&:focus {
+		border-color: var(--accent-color); /* Change focus border color */
+	}
+}
+
+.select-option {
+	padding: 8px 12px;
+	cursor: pointer;
+	&:hover {
+		background-color: var(--hover-bg-color);
+	}
+}
+
+html[data-theme='dark'] .select {
+	background-color: var(--primary-bg-color);
+	color: var(--primary-color);
+	border-color: var(--primary-color);
+
+	&:hover {
+		background-color: var(--hover-bg-color); /* Hover effect for dark theme */
+	}
+
+	&:focus {
+		border-color: var(
+			--accent-color
+		); /* Change focus border color for dark theme */
+	}
+}

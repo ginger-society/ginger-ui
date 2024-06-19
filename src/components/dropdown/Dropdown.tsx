@@ -4,7 +4,7 @@ import styles from './dropdown.module.scss'
 interface DropdownProps {
 	children: ReactNode
 	label: ReactNode
-	align: 'right' | 'left'
+	align?: 'right' | 'left'
 }
 
 const Dropdown = ({ children, label, align = 'right' }: DropdownProps) => {
