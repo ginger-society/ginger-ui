@@ -127,11 +127,32 @@ export const WithEnhancerExample = () => {
 		<div>
 			<Input
 				label="Text Input Example"
-				id="email"
 				onChange={handleOnChange}
 				placeholder="Enter a value"
 				value={password}
 				type="text"
+				endEnhancer={<SvgIcons8Refresh fill="var(--primary-color)" />}
+				startEnhancer={<SvgIcons8Document fill="var(--primary-color)" />}
+			/>
+		</div>
+	)
+}
+
+export const NumberExample = () => {
+	const [password, setPassword] = useState<string>('')
+
+	const handleOnChange = ({ target: { value } }) => {
+		setPassword(value)
+	}
+
+	return (
+		<div>
+			<Input
+				label="Number Input Example"
+				onChange={handleOnChange}
+				placeholder="Enter a value"
+				value={password}
+				type="number"
 				endEnhancer={<SvgIcons8Refresh fill="var(--primary-color)" />}
 				startEnhancer={<SvgIcons8Document fill="var(--primary-color)" />}
 			/>

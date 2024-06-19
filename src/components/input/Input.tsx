@@ -10,6 +10,7 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 	clearable?: boolean
 	startEnhancer?: React.ReactNode
 	endEnhancer?: React.ReactNode
+	type?: 'text' | 'password' | 'number'
 }
 
 const Input: React.FC<InputProps> = ({
