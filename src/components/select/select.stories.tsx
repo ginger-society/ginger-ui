@@ -1,7 +1,8 @@
 import SvgIcons8Bookmark from '@src/icons/Icons8Bookmark'
 import React, { useState } from 'react'
 import MultiSelect from './MultiSelect'
-import Select, { Option } from './Select'
+import Select from './Select'
+import { Option } from './types'
 
 const options = [
 	{ label: 'United States', value: 'US' },
@@ -34,18 +35,17 @@ export const ExampleWithRenderer: React.FC = () => {
 	const [selected, setSelected] = useState<Option | null>(null)
 
 	return (
-		<div style={{ width: '400px' }}>
-			<Select
-				value={selected}
-				options={options}
-				renderer={(option) => (
-					<div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-						<SvgIcons8Bookmark /> {option.label}
-					</div>
-				)}
-				onChange={handleChange}
-			/>
-		</div>
+		<Select
+			label="A select field"
+			value={selected}
+			options={options}
+			renderer={(option) => (
+				<div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
+					<SvgIcons8Bookmark /> {option.label}
+				</div>
+			)}
+			onChange={handleChange}
+		/>
 	)
 }
 
@@ -57,9 +57,12 @@ export const Example: React.FC = () => {
 	const [selected, setSelected] = useState<Option | null>(null)
 
 	return (
-		<div style={{ width: '400px' }}>
-			<Select value={selected} options={options} onChange={handleChange} />
-		</div>
+		<Select
+			label="Simple select"
+			value={selected}
+			options={options}
+			onChange={handleChange}
+		/>
 	)
 }
 
@@ -72,18 +75,12 @@ export const ExampleMultiSelect: React.FC = () => {
 
 	return (
 		<div>
-			<h2>Select Options</h2>
 			<MultiSelect
+				label={'Select multiple Options'}
 				options={options}
 				onChange={handleChange}
 				value={selectedOptions}
 			/>
-			<div>
-				Selected Options:{' '}
-				{selectedOptions.length > 0
-					? selectedOptions.map((option) => option.label).join(', ')
-					: 'None selected'}
-			</div>
 		</div>
 	)
 }
@@ -107,8 +104,8 @@ export const ExampleMultiSelectLessOptions: React.FC = () => {
 
 	return (
 		<div>
-			<h2>Select Options</h2>
 			<MultiSelect
+				label="Select from a Small list"
 				options={fruits}
 				onChange={handleChange}
 				value={selectedOptions}
@@ -118,12 +115,6 @@ export const ExampleMultiSelectLessOptions: React.FC = () => {
 					</div>
 				)}
 			/>
-			<div>
-				Selected Options:{' '}
-				{selectedOptions.length > 0
-					? selectedOptions.map((option) => option.label).join(', ')
-					: 'None selected'}
-			</div>
 		</div>
 	)
 }

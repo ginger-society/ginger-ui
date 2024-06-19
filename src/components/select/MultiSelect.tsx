@@ -3,6 +3,7 @@ import { Button, ButtonType } from '../button'
 import { Checkbox } from '../checkbox'
 import { Dropdown } from '../dropdown'
 import { Input } from '../input'
+import Tags from '../tags/Tags'
 import styles from './select.module.scss'
 
 export interface Option {
@@ -17,13 +18,15 @@ interface SelectProps {
 	renderer?: (option: Option) => React.ReactNode
 	onChange: (value: Option[]) => void
 	value: Option[]
+	label?: string
 }
 
 const MultiSelect: React.FC<SelectProps> = ({
 	options,
 	renderer,
 	onChange,
-	value
+	value,
+	label
 }) => {
 	const [searchTxt, setSearchTxt] = useState<string>('')
 
@@ -43,58 +46,61 @@ const MultiSelect: React.FC<SelectProps> = ({
 	)
 
 	return (
-		<Dropdown
-			label={
-				<div className={styles['select']}>
-					{value?.length > 0
-						? value.map((v) => v.label).join(', ')
-						: 'Select an option'}
-				</div>
-			}
-			align="left"
-		>
-			<div
-				className={
-					styles[`${options.length < FEATURE_BREAK_COUNT ? 'padded' : ''}`]
-				}
-			>
-				{options.length > FEATURE_BREAK_COUNT && (
-					<div
-						onClick={(e) => e.stopPropagation()}
-						aria-hidden
-						className={styles['action-container']}
-					>
-						<Input
-							placeholder="Search..."
-							value={searchTxt}
-							onChange={({ target: { value } }) => setSearchTxt(value)}
-							clearable
-						/>
+		<div className={styles['container']}>
+			<label>{label}</label>
+			<Dropdown
+				label={
+					<div className={styles['select']}>
+						<Tags value={value} onChange={onChange} />
 					</div>
-				)}
-				<div className={styles['options-container']}>
-					{filteredOptions.map((option) => (
+				}
+				align="left"
+			>
+				<div
+					className={
+						styles[`${options.length < FEATURE_BREAK_COUNT ? 'padded' : ''}`]
+					}
+				>
+					{options.length > FEATURE_BREAK_COUNT && (
 						<div
-							key={option.value}
-							className={styles['select-option']}
-							onClick={(e) => {
-								handleSelect(option)
-								e.stopPropagation()
-							}}
+							onClick={(e) => e.stopPropagation()}
 							aria-hidden
+							className={styles['action-container']}
 						>
-							<Checkbox
-								checked={!!value && value.some((v) => v.value === option.value)}
+							<Input
+								placeholder="Search..."
+								value={searchTxt}
+								onChange={({ target: { value } }) => setSearchTxt(value)}
+								clearable
 							/>
-							{renderer ? renderer(option) : option.label}
 						</div>
-					))}
+					)}
+					<div className={styles['options-container']}>
+						{filteredOptions.map((option) => (
+							<div
+								key={option.value}
+								className={styles['select-option']}
+								onClick={(e) => {
+									handleSelect(option)
+									e.stopPropagation()
+								}}
+								aria-hidden
+							>
+								<Checkbox
+									checked={
+										!!value && value.some((v) => v.value === option.value)
+									}
+								/>
+								{renderer ? renderer(option) : option.label}
+							</div>
+						))}
+					</div>
+					<div className={styles['action-container']}>
+						<Button type={ButtonType.Primary} label="Done" fullWidth />
+					</div>
 				</div>
-				<div className={styles['action-container']}>
-					<Button type={ButtonType.Primary} label="Done" fullWidth />
-				</div>
-			</div>
-		</Dropdown>
+			</Dropdown>
+		</div>
 	)
 }
 

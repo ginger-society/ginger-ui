@@ -1,0 +1,46 @@
+.container {
+	display: flex;
+}
+@import '../../global.module.scss';
+
+.container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 8px;
+}
+
+.tag {
+	display: flex;
+	align-items: center;
+	background-color: var(--primary-color);
+	color: var(--primary-bg-color);
+	border-radius: var(--border-radius);
+	padding: 4px 8px;
+	font-size: var(--medium-font-size);
+	box-shadow: var(--box-shadow);
+	transition: background-color 0.3s, color 0.3s;
+
+	span {
+		margin-right: 8px;
+	}
+
+	.closeButton {
+		background: none;
+		border: none;
+		cursor: pointer;
+		font-size: var(--medium-font-size);
+		transition: color 0.3s;
+	}
+}
+
+html[data-theme='dark'] .tag {
+	background-color: var(--primary-accent-color);
+	color: var(--primary-color);
+	box-shadow: var(--box-shadow);
+}
+
+html[data-theme='dark'] .tag .closeButton {
+	&:hover {
+		color: var(--danger-dark-color);
+	}
+}

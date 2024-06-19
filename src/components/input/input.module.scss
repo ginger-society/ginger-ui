@@ -9,7 +9,7 @@
 	color: var(--primary-color);
 	outline: none;
 	transition: border 0.3s;
-
+	height: 25px;
 	&:focus {
 		border-color: black;
 	}
