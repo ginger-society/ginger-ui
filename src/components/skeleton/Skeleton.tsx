@@ -5,18 +5,16 @@ interface SkeletonProps {
 	width: string | number
 	height: string | number
 	borderRadius?: string | number
-	className?: string
 }
 
 const Skeleton: React.FC<SkeletonProps> = ({
 	width,
 	height,
-	borderRadius = '0',
-	className = ''
+	borderRadius = '0'
 }) => {
 	return (
 		<div
-			className={`${styles['skeleton']} ${className}`}
+			className={`${styles['skeleton']}`}
 			style={{ width, height, borderRadius }}
 		></div>
 	)
