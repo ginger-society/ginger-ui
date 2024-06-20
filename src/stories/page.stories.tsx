@@ -17,7 +17,7 @@ import {
 	Table,
 	Tabs
 } from '..'
-import { options, sideMenuOptions, tableData } from './mocks'
+import { AcmeIcon, options, sideMenuOptions, tableData } from './mocks'
 
 export const PageExample = () => {
 	const [password, setPassword] = useState<string>('')
@@ -70,13 +70,13 @@ export const PageExample = () => {
 	return (
 		<div>
 			<Header
-				brandName="Wber"
+				brandName="GingerUI"
 				user={{ name: 'John Doe', email: 'john.doe@example.com' }}
-				// icon={AcmeIcon}
+				icon={AcmeIcon}
 				onLogout={handleLogout}
 			/>
 
-			<div style={{ display: 'flex', height: 'calc(100vh - 70px)' }}>
+			<div style={{ display: 'flex', height: 'calc(100vh - 50px)' }}>
 				<SideMenu
 					options={sideMenuOptions}
 					active={activeItem}
