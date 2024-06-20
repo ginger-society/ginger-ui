@@ -8,6 +8,7 @@ export const Example = () => {
 	})
 
 	const handleOnChange = (limit: number, offset: number) => {
+		console.log('limg', limit)
 		setState({ offset, limit })
 	}
 

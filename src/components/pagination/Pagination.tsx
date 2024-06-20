@@ -23,13 +23,10 @@ const Pagination = ({
 
 	const totalPages = Math.ceil(totalRows / rowsPerPage)
 
-	useEffect(() => {
-		onChange(rowsPerPage, (currentPage - 1) * rowsPerPage)
-	}, [rowsPerPage, currentPage, onChange])
-
 	const handleRowsPerPageChange = (newRowsPerPage: number) => {
 		setRowsPerPage(newRowsPerPage)
 		setCurrentPage(1) // Reset to the first page whenever rows per page change
+		onChange(newRowsPerPage, 0 * newRowsPerPage)
 	}
 
 	const handlePageChange = (newPage: number) => {
@@ -39,19 +36,21 @@ const Pagination = ({
 	const handlePrevPage = () => {
 		if (currentPage > 1) {
 			setCurrentPage(currentPage - 1)
+			onChange(rowsPerPage, (currentPage - 1) * rowsPerPage)
 		}
 	}
 
 	const handleNextPage = () => {
 		if (currentPage < totalPages) {
 			setCurrentPage(currentPage + 1)
+			onChange(rowsPerPage, (currentPage + 1) * rowsPerPage)
 		}
 	}
 
 	return (
 		<div className={styles['container']}>
 			<Dropdown
-				align="left"
+				align="top"
 				width="150px"
 				label={
 					<Button
@@ -84,7 +83,7 @@ const Pagination = ({
 					disabled={currentPage === 1}
 				/>
 				<Dropdown
-					align="left"
+					align="top"
 					width="100px"
 					label={
 						<Button

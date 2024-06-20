@@ -233,14 +233,14 @@ export const FormExample = () => {
 									<td>France</td>
 								</tr>
 								<tr>
-									<td>Eastern Connection</td>
-									<td>Ann Devon</td>
-									<td>Australia</td>
+									<td>Wolski Zajazd</td>
+									<td>Zbyszek</td>
+									<td>Poland</td>
 								</tr>
 								<tr>
-									<td>Rattlesnake Canyon Grocery</td>
-									<td>Paula Wilson</td>
-									<td>USA</td>
+									<td>Berglunds snabbköp</td>
+									<td>Christina Berglund</td>
+									<td>Sweden</td>
 								</tr>
 								<tr>
 									<td>Simons bistro</td>

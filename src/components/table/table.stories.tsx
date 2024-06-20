@@ -73,31 +73,6 @@ export const Example = () => {
 						<td>Paula Wilson</td>
 						<td>USA</td>
 					</tr>
-					<tr>
-						<td>Simons bistro</td>
-						<td>Jytte Petersen</td>
-						<td>Denmark</td>
-					</tr>
-					<tr>
-						<td>The Big Cheese</td>
-						<td>Elizabeth Brown</td>
-						<td>USA</td>
-					</tr>
-					<tr>
-						<td>Vaffeljernet</td>
-						<td>Palle Ibsen</td>
-						<td>Norway</td>
-					</tr>
-					<tr>
-						<td>Wolski Zajazd</td>
-						<td>Zbyszek</td>
-						<td>Poland</td>
-					</tr>
-					<tr>
-						<td>Berglunds snabbköp</td>
-						<td>Christina Berglund</td>
-						<td>Sweden</td>
-					</tr>
 				</tbody>
 			</Table>
 			<Pagination
