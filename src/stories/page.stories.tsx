@@ -15,7 +15,8 @@ import {
 	SideMenu,
 	Tab,
 	Table,
-	Tabs
+	Tabs,
+	TextArea
 } from '..'
 import { AcmeIcon, options, sideMenuOptions, tableData } from './mocks'
 
@@ -26,7 +27,13 @@ export const PageExample = () => {
 	const [selected, setSelected] = useState<Option | null>(null)
 
 	const [activeItem, setActiveItem] = useState('home')
+	const [description, setDescription] = useState<string>('')
 
+	const handleDescriptionOnChange = ({
+		target: { value }
+	}: React.ChangeEvent<HTMLTextAreaElement>) => {
+		setDescription(value)
+	}
 	const handleMenuChange = (newId: string) => {
 		setActiveItem(newId)
 	}
@@ -142,6 +149,12 @@ export const PageExample = () => {
 									label="Enable notifications"
 									checked={isChecked}
 									onChange={handleChange}
+								/>
+								<TextArea
+									label="Description"
+									onChange={handleDescriptionOnChange}
+									placeholder="Enter a description"
+									value={description}
 								/>
 
 								<Button label="Save" type={ButtonType.Primary} />

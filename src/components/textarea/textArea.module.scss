@@ -11,7 +11,7 @@
 	}
 
 	.textarea {
-		width: 100%;
+		width: calc(100% - 30px);
 		min-height: 120px;
 		padding: var(--small-padding);
 		border: 1px solid var(--primary-accent-color);
