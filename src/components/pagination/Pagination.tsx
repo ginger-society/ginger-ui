@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { Button, ButtonType } from '../button'
 import { Dropdown } from '../dropdown'
 import styles from './pagination.module.scss'
