@@ -1,0 +1,47 @@
+@import '../../global.module.scss';
+
+.tabs-container {
+	overflow: hidden;
+}
+
+.tabs-header {
+	display: flex;
+	border-bottom: 1px solid var(--primary-color);
+}
+
+.tab-heading {
+	padding: 16px;
+	cursor: pointer;
+	transition: background-color 0.3s, color 0.3s;
+	border-bottom: solid 3px transparent;
+	color: var(--primary-color);
+}
+
+.tab-heading:hover {
+	background-color: var(--hover-bg-color);
+}
+
+.tab-heading.active {
+	border-bottom: solid 3px var(--primary-color);
+}
+
+.tab-heading.disabled {
+	cursor: not-allowed;
+	color: var(--secondary-color);
+}
+
+.tabs-content {
+	padding: 16px;
+}
+
+html[data-theme='dark'] .tabs-container {
+	border-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .tabs-header {
+	border-bottom-color: var(--primary-color);
+}
+
+html[data-theme='dark'] .tab-heading:hover {
+	background-color: var(--hover-bg-color);
+}
