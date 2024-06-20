@@ -1,6 +1,7 @@
 @import '../../global.module.scss';
 
 .header {
+	z-index: 1;
 	&.sticky {
 		position: sticky;
 		top: 0;

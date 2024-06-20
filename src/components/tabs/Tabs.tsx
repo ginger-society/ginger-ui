@@ -24,7 +24,7 @@ const Tabs: React.FC<TabsProps> = ({ children }) => {
 		if (initialActiveIndex !== -1) {
 			setActiveIndex(initialActiveIndex)
 		}
-	}, [children])
+	}, [])
 
 	const handleTabClick = (index: number, disabled: boolean | undefined) => {
 		if (!disabled) {
@@ -33,7 +33,7 @@ const Tabs: React.FC<TabsProps> = ({ children }) => {
 	}
 
 	return (
-		<div className={styles['tabs-container']}>
+		<div>
 			<div className={styles['tabs-header']}>
 				{children.map((tab, index) => (
 					<div

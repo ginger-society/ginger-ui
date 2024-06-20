@@ -1,12 +1,8 @@
 @import '../../global.module.scss';
 
-.tabs-container {
-	overflow: hidden;
-}
-
 .tabs-header {
 	display: flex;
-	border-bottom: 1px solid var(--primary-color);
+	border-bottom: 1px solid var(--primary-accent-color);
 }
 
 .tab-heading {

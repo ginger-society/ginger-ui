@@ -10,7 +10,9 @@ import {
 	Input,
 	MultiSelect,
 	Option,
-	Select
+	Select,
+	Tab,
+	Tabs
 } from '..'
 
 const options = [
@@ -99,58 +101,74 @@ export const FormExample = () => {
 				icon={AcmeIcon}
 				onLogout={handleLogout}
 			/>
-			<div
-				style={{
-					width: '500px',
-					display: 'flex',
-					gap: '20px',
-					flexDirection: 'column',
-					padding: '50px'
-				}}
-			>
-				<Input
-					label="Text Input Example"
-					onChange={handleTextOnChange}
-					placeholder="Enter a value"
-					value={text}
-					type="text"
-					endEnhancer={<SvgIcons8Refresh fill="var(--primary-color)" />}
-					startEnhancer={<SvgIcons8Document fill="var(--primary-color)" />}
-				/>
-				<Select
-					label="A select field"
-					value={selected}
-					options={options}
-					renderer={(option) => (
-						<div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-							<SvgIcons8Bookmark /> {option.label}
-						</div>
-					)}
-					onChange={handleSelectChange}
-				/>
-				<Input
-					label="Text Input Example"
-					id="email"
-					onChange={handleOnChange}
-					placeholder="Enter a value"
-					value={password}
-					type="password"
-					clearable={true}
-				/>
-				<MultiSelect
-					label={'Select multiple Options'}
-					options={options}
-					onChange={handleMultiSelectChange}
-					value={selectedMultiOptions}
-				/>
-				<Checkbox
-					label="Enable notifications"
-					checked={isChecked}
-					onChange={handleChange}
-				/>
 
-				<Button label="Save" type={ButtonType.Primary} />
-			</div>
+			<Tabs>
+				<Tab heading={<span>Form</span>}>
+					<div
+						style={{
+							width: '500px',
+							display: 'flex',
+							gap: '20px',
+							flexDirection: 'column',
+							padding: '50px'
+						}}
+					>
+						<Input
+							label="Text Input Example"
+							onChange={handleTextOnChange}
+							placeholder="Enter a value"
+							value={text}
+							type="text"
+							endEnhancer={<SvgIcons8Refresh fill="var(--primary-color)" />}
+							startEnhancer={<SvgIcons8Document fill="var(--primary-color)" />}
+						/>
+						<Select
+							label="A select field"
+							value={selected}
+							options={options}
+							renderer={(option) => (
+								<div
+									style={{ display: 'flex', alignItems: 'center', gap: '20px' }}
+								>
+									<SvgIcons8Bookmark /> {option.label}
+								</div>
+							)}
+							onChange={handleSelectChange}
+						/>
+						<Input
+							label="Text Input Example"
+							id="email"
+							onChange={handleOnChange}
+							placeholder="Enter a value"
+							value={password}
+							type="password"
+							clearable={true}
+						/>
+						<MultiSelect
+							label={'Select multiple Options'}
+							options={options}
+							onChange={handleMultiSelectChange}
+							value={selectedMultiOptions}
+						/>
+						<Checkbox
+							label="Enable notifications"
+							checked={isChecked}
+							onChange={handleChange}
+						/>
+
+						<Button label="Save" type={ButtonType.Primary} />
+					</div>
+				</Tab>
+
+				<Tab disabled heading={<span>Some another text</span>}>
+					<h1>Heading...</h1>
+					<p>Lorem ipsum etcddß</p>
+				</Tab>
+				<Tab active heading={<span>Some another text</span>}>
+					<h1>Heading...</h1>
+					<p>Lorem ipsum etcdsadsad</p>
+				</Tab>
+			</Tabs>
 		</div>
 	)
 }
