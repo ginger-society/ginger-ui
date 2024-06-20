@@ -5,9 +5,15 @@ interface DropdownProps {
 	children: ReactNode
 	label: ReactNode
 	align?: 'right' | 'left'
+	width?: string
 }
 
-const Dropdown = ({ children, label, align = 'right' }: DropdownProps) => {
+const Dropdown = ({
+	children,
+	label,
+	align = 'right',
+	width = '300px'
+}: DropdownProps) => {
 	const [visible, setDropdownVisible] = useState(false)
 	const dropdownRef = useRef<HTMLDivElement>(null)
 
@@ -41,6 +47,7 @@ const Dropdown = ({ children, label, align = 'right' }: DropdownProps) => {
 			<div className={styles['dropdown']}>
 				{visible && (
 					<div
+						style={{ minWidth: width }}
 						className={`${styles['dropdown-content']} ${
 							styles[`dropdown-${align}`]
 						}`}

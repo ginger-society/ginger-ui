@@ -28,6 +28,7 @@ export const Tertiary = () => {
 	return (
 		<div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
 			<Button type={ButtonType.Tertiary} label="Button" />
+			<Button disabled type={ButtonType.Tertiary} label="Button" />
 			<Button type={ButtonType.Tertiary} loading label="Button" />
 			<Button
 				type={ButtonType.Tertiary}

@@ -32,9 +32,10 @@
 	color: var(--primary-color);
 	text-decoration: none;
 	cursor: pointer;
+	font-weight: normal;
 
 	&:hover {
-		text-decoration: underline;
+		background-color: var(--primary-accent-color);
 	}
 }
 
@@ -85,5 +86,15 @@ html[data-theme='dark'] {
 		border-left-color: var(--loader-border-color);
 		border-bottom-color: var(--loader-border-color);
 		border-right-color: var(--loader-border-color);
+	}
+}
+
+.enhancer {
+	margin: 0 4px;
+	&:first-child {
+		margin-right: 8px;
+	}
+	&:last-child {
+		margin-left: 8px;
 	}
 }

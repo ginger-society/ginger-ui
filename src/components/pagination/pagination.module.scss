@@ -1,0 +1,30 @@
+.list {
+	list-style: none;
+	padding-inline-start: 0;
+	max-height: 200px;
+	overflow-y: auto;
+}
+
+.list li {
+	padding: 10px;
+	text-align: center;
+}
+.list li:hover {
+	background: var(--primary-accent-color);
+	cursor: pointer;
+}
+
+.controls-container {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.container {
+	display: flex;
+}
+
+.container span {
+	color: var(--primary-color);
+}

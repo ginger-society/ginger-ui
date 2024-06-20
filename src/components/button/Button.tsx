@@ -1,3 +1,4 @@
+import React from 'react'
 import { Loader } from '../loader'
 import styles from './button.module.scss'
 
@@ -21,20 +22,28 @@ interface ButtonProps {
 	loading?: boolean
 	onClick?: () => void
 	fullWidth?: boolean
+	startEnhancer?: React.ReactNode
+	endEnhancer?: React.ReactNode
+	disabled?: boolean
 }
 
-const Button = ({
+const Button: React.FC<ButtonProps> = ({
 	type = ButtonType.Secondary,
 	size = ButtonSize.Medium,
 	label,
 	loading = false,
 	fullWidth = false,
+	startEnhancer,
+	endEnhancer,
+	disabled = false,
 	...props
-}: ButtonProps) => {
+}) => {
 	const mode = styles[`button--${type}`]
 	const sizeClass = styles[`button--${size}`]
+
 	return (
 		<button
+			disabled={disabled}
 			type="button"
 			className={[
 				styles['button'],
@@ -44,7 +53,12 @@ const Button = ({
 			].join(' ')}
 			{...props}
 		>
-			{label} {loading && <Loader />}
+			{startEnhancer && (
+				<span className={styles['enhancer']}>{startEnhancer}</span>
+			)}
+			{label}
+			{loading && <Loader />}
+			{endEnhancer && <span className={styles['enhancer']}>{endEnhancer}</span>}
 		</button>
 	)
 }
