@@ -35,10 +35,10 @@
 html[data-theme='dark'] .select {
 	background-color: var(--primary-bg-color);
 	color: var(--primary-color);
-	border-color: var(--secondary-color);
+	// border-color: var(--secondary-color);
 
 	&:hover {
-		background-color: var(--hover-bg-color); /* Hover effect for dark theme */
+		// background-color: var(--hover-bg-color); /* Hover effect for dark theme */
 	}
 
 	&:focus {
