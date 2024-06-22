@@ -1,0 +1,30 @@
+@import '../../global.module.scss';
+
+.breadcrumb {
+	display: flex;
+	align-items: center;
+	font-size: var(--medium-font-size);
+	color: var(--primary-color);
+}
+
+.breadcrumb-item {
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+	margin-right: 8px;
+	color: var(--secondary-color);
+}
+
+.breadcrumb-item:last-child {
+	cursor: default;
+	color: var(--primary-color);
+}
+
+.breadcrumb-item:hover:not(:last-child) {
+	text-decoration: underline;
+}
+
+.breadcrumb-separator {
+	margin-right: 8px;
+	color: var(--secondary-color);
+}
