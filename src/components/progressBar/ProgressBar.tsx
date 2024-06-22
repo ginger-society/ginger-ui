@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from './ProgressBar.module.scss'
+import styles from './progressBar.module.scss'
 
 interface ProgressBarProps {
 	value: number // Progress value in percentage
