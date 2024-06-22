@@ -1,9 +1,17 @@
+import { Test } from '@src/icons'
 import { useState } from 'react'
 import { SideMenu } from '.'
 
 const sideMenuOptions = [
 	{ id: 'home', label: <span>Home</span> },
-	{ id: 'accounts', label: <span>Accounts</span> },
+	{
+		id: 'accounts',
+		label: (
+			<span>
+				<Test fill="white" stroke="white" /> Accounts
+			</span>
+		)
+	},
 	{
 		id: 'finance',
 		label: <span>Finance</span>,

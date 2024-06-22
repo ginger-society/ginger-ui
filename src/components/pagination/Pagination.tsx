@@ -1,3 +1,4 @@
+import { Test } from '@src/icons'
 import { useState } from 'react'
 import { Button, ButtonType } from '../button'
 import { Dropdown } from '../dropdown'
@@ -87,9 +88,9 @@ const Pagination = ({
 					width="100px"
 					label={
 						<Button
-							label={`Page ${currentPage}`}
+							label={`Page ${currentPage} of ${totalPages} pages`}
 							type={ButtonType.Tertiary}
-							endEnhancer={<>&darr;</>}
+							endEnhancer={<Test stroke="var(--primary-color)" />}
 						/>
 					}
 				>
@@ -106,7 +107,6 @@ const Pagination = ({
 						))}
 					</ul>
 				</Dropdown>
-				<span>of {totalPages} pages</span>
 				<Button
 					type={ButtonType.Tertiary}
 					label="Next"
