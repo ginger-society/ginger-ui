@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './typography.module.scss'
 
-export enum TextSizes {
+export enum TextSize {
 	XLarge = 'xlarge',
 	Large = 'large',
 	Normal = 'normal',
@@ -17,28 +17,28 @@ export enum TextColor {
 	Muted = 'muted'
 }
 
-export enum TextWeights {
+export enum TextWeight {
 	Normal = 'normal',
 	Bold = 'bold'
 }
 
 interface TextProps {
 	tag: keyof JSX.IntrinsicElements
-	size?: TextSizes
+	size?: TextSize
 	color?: TextColor
 	children: React.ReactNode
 	underline?: boolean
 	italics?: boolean
-	weight?: TextWeights
+	weight?: TextWeight
 }
 
 const Text: React.FC<TextProps> = ({
 	tag: Tag,
-	size = TextSizes.Normal,
+	size = TextSize.Normal,
 	color = TextColor.Primary,
 	underline = false,
 	italics = false,
-	weight = TextWeights.Normal,
+	weight = TextWeight.Normal,
 	children
 }) => {
 	return (
