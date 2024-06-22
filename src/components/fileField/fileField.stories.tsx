@@ -2,7 +2,7 @@ import { useState } from 'react'
 import FileField from './FileField'
 
 export const Example = () => {
-	const [selectedFile, setSelectedFile] = useState<File | null>(null)
+	const [, setSelectedFile] = useState<File | null>(null)
 
 	const handleFileChange = (file: File | null) => {
 		setSelectedFile(file)
