@@ -3,7 +3,7 @@ import { Button, ButtonType } from '../button'
 import { Checkbox } from '../checkbox'
 import { Dropdown } from '../dropdown'
 import { Input } from '../input'
-import Tags from '../tags/Tags'
+import { Tags } from '../tags'
 import styles from './select.module.scss'
 
 export interface Option {
