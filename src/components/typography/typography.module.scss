@@ -1,0 +1,59 @@
+@import '../../global.module.scss';
+
+.text {
+	&.xlarge {
+		font-size: 2rem;
+	}
+
+	&.large {
+		font-size: 1.5rem;
+	}
+
+	&.normal {
+		font-size: 1rem;
+	}
+
+	&.small {
+		font-size: 0.875rem;
+	}
+
+	&.primary {
+		color: var(--primary-color);
+	}
+
+	&.danger {
+		color: var(--danger-color);
+	}
+
+	&.success {
+		color: var(--success-color);
+	}
+
+	&.warning {
+		color: var(--warning-color);
+	}
+
+	&.info {
+		color: var(--info-color);
+	}
+
+	&.muted {
+		color: var(--muted-color);
+	}
+
+	&.underline {
+		text-decoration: underline;
+	}
+
+	&.italics {
+		font-style: italic;
+	}
+
+	&.weight-normal {
+		font-weight: normal;
+	}
+
+	&.weight-bold {
+		font-weight: bold;
+	}
+}

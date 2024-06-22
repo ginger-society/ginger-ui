@@ -24,6 +24,8 @@
 	--warning-color: orange;
 	--warning-bg-color: #fff8e1;
 	--hover-bg-color: #f0f0f0;
+	--info-color: blue;
+	--muted-color: #6c757d;
 }
 
 html[data-theme='dark'] {
@@ -43,5 +45,6 @@ html[data-theme='dark'] {
 	--warning-dark-color: darkorange;
 	--warning-bg-dark-color: #4e342e;
 	--hover-bg-color: #444444;
-	--ginger-book-bg-color-primary: #252525;
+	--info-color: lightblue;
+	--muted-color: #aaa;
 }
