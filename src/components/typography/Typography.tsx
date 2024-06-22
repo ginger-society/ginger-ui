@@ -23,7 +23,7 @@ export enum TextWeight {
 }
 
 interface TextProps {
-	tag: keyof JSX.IntrinsicElements
+	tag?: keyof JSX.IntrinsicElements
 	size?: TextSize
 	color?: TextColor
 	children: React.ReactNode
@@ -33,7 +33,7 @@ interface TextProps {
 }
 
 const Text: React.FC<TextProps> = ({
-	tag: Tag,
+	tag: Tag = 'span',
 	size = TextSize.Normal,
 	color = TextColor.Primary,
 	underline = false,
