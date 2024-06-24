@@ -10,7 +10,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	z-index: 3;
+	z-index: 999;
 }
 
 .sliderDialog {
@@ -18,7 +18,7 @@
 	max-width: 600px;
 	padding: 20px;
 	background-color: var(--primary-bg-color);
-	z-index: 4;
+	z-index: 1000;
 	position: fixed;
 	right: 0;
 	height: 100vh;

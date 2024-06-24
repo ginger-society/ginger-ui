@@ -3,6 +3,7 @@ import SvgIcons8Document from '@src/icons/Icons8Document'
 import SvgIcons8Refresh from '@src/icons/Icons8Refresh'
 import { useState } from 'react'
 import {
+	Breadcrumb,
 	Button,
 	ButtonType,
 	Checkbox,
@@ -74,6 +75,17 @@ export const PageExample = () => {
 		console.log('User logged out')
 	}
 
+	const handleBreadcrumbClick = (path: string) => {
+		console.log('Breadcrumb clicked:', path)
+		// Implement navigation or any other logic here
+	}
+
+	const paths = [
+		{ path: 'home', label: 'Home' },
+		{ path: 'home/accounts', label: 'Accounts' },
+		{ path: 'home/accounts/receivables', label: 'Receivables' }
+	]
+
 	return (
 		<div>
 			<Header
@@ -91,6 +103,7 @@ export const PageExample = () => {
 				/>
 
 				<div style={{ flex: 1, padding: '20px' }}>
+					<Breadcrumb value={paths} onClick={handleBreadcrumbClick} />
 					<Tabs>
 						<Tab heading={<span>Form</span>}>
 							<div
