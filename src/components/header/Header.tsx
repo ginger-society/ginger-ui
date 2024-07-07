@@ -17,6 +17,7 @@ interface HeaderProps {
 	brandName: string
 	onLogout?: () => void
 	showThemeSwitcher?: boolean
+	arbitaryContent?: ReactNode
 }
 
 export const Header = ({
@@ -26,7 +27,8 @@ export const Header = ({
 	anonymousActions,
 	sticky = true,
 	onLogout,
-	showThemeSwitcher = true
+	showThemeSwitcher = true,
+	arbitaryContent
 }: HeaderProps) => {
 	return (
 		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
@@ -35,7 +37,7 @@ export const Header = ({
 					{icon}
 					<h1>{brandName}</h1>
 				</div>
-
+				{arbitaryContent}
 				{user ? (
 					<div className={styles['welcome']}>
 						<Dropdown

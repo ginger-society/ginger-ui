@@ -14,6 +14,7 @@ export const LoggedIn = () => {
 			user={{ name: 'John Doe', email: 'john.doe@example.com' }}
 			icon={AcmeIcon}
 			onLogout={handleLogout}
+			arbitaryContent={<span>Random text</span>}
 		/>
 	)
 }
