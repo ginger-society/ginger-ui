@@ -2,6 +2,7 @@ import { ReactNode } from 'react'
 import { Avatar } from '../avatar'
 import { Dropdown } from '../dropdown'
 import styles from './header.module.scss'
+import ThemeToggle from './ThemeSwitcher'
 
 type User = {
 	name: string
@@ -15,6 +16,7 @@ interface HeaderProps {
 	sticky?: boolean
 	brandName: string
 	onLogout?: () => void
+	showThemeSwitcher?: boolean
 }
 
 export const Header = ({
@@ -23,7 +25,8 @@ export const Header = ({
 	icon,
 	anonymousActions,
 	sticky = true,
-	onLogout
+	onLogout,
+	showThemeSwitcher = true
 }: HeaderProps) => {
 	return (
 		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
@@ -32,6 +35,7 @@ export const Header = ({
 					{icon}
 					<h1>{brandName}</h1>
 				</div>
+
 				{user ? (
 					<div className={styles['welcome']}>
 						<Dropdown
@@ -60,6 +64,7 @@ export const Header = ({
 				) : (
 					anonymousActions
 				)}
+				{showThemeSwitcher && <ThemeToggle />}
 			</div>
 		</header>
 	)

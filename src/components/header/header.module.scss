@@ -34,14 +34,11 @@
 		color: var(--primary-color);
 	}
 
-	button + button {
-		margin-left: 10px;
-	}
-
 	.welcome {
 		color: var(--secondary-color);
 		font-size: var(--medium-font-size);
 		margin-right: 10px;
+		margin-left: auto;
 	}
 }
 

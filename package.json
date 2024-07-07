@@ -51,9 +51,10 @@
 		"not ie 11",
 		"not op_mini all"
 	],
-	"dependencies": {},
+	"dependencies": {
+		"react-icons": "^5.2.1"
+	},
 	"devDependencies": {
-		"@ginger-society/ginger-book": "^4.0.9",
 		"@babel/core": "^7.20.12",
 		"@babel/plugin-transform-runtime": "^7.19.6",
 		"@babel/preset-env": "^7.21.5",
@@ -62,6 +63,7 @@
 		"@babel/runtime": "^7.20.7",
 		"@commitlint/cli": "^17.4.1",
 		"@commitlint/config-conventional": "^17.4.0",
+		"@ginger-society/ginger-book": "^4.0.9",
 		"@mdx-js/react": "^1.6.22",
 		"@rollup/plugin-babel": "^6.0.3",
 		"@rollup/plugin-commonjs": "^24.0.0",
