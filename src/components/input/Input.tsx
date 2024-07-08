@@ -3,7 +3,8 @@ import React, { useState } from 'react'
 import { classNames } from '@src/utils/classNames'
 import styles from './input.module.scss'
 
-interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+interface InputProps
+	extends Omit<React.InputHTMLAttributes<HTMLInputElement>, 'className'> {
 	state?: 'danger' | 'success' | 'warning'
 	label?: string
 	info?: string
