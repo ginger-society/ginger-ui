@@ -14,7 +14,7 @@ interface HeaderProps {
 	icon?: ReactNode
 	anonymousActions?: ReactNode
 	sticky?: boolean
-	brandName: string
+	brandName: ReactNode
 	onLogout?: () => void
 	showThemeSwitcher?: boolean
 	arbitaryContent?: ReactNode
