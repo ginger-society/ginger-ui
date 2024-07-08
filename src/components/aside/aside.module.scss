@@ -17,7 +17,6 @@
 	width: 80%;
 	max-width: 600px;
 	padding: 20px;
-	background-color: var(--primary-accent-color);
 	z-index: 1000;
 	position: fixed;
 	right: 0;
@@ -26,4 +25,9 @@
 	margin-right: 0px;
 	box-shadow: var(--box-shadow);
 	border: none;
+	background-color: var(--primary-bg-color);
+}
+
+html[data-theme='dark'] .sliderDialog {
+	background-color: var(--primary-accent-color);
 }
