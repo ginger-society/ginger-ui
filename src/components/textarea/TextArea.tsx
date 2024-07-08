@@ -3,7 +3,7 @@ import { classNames } from '@src/utils/classNames'
 import styles from './textArea.module.scss'
 
 interface TextAreaProps
-	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+	extends Omit<React.TextareaHTMLAttributes<HTMLTextAreaElement>, 'className'> {
 	state?: 'danger' | 'success' | 'warning'
 	label?: string
 	info?: string
