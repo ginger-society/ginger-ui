@@ -40,3 +40,7 @@
 	flex-direction: row-reverse;
 	padding: 20px;
 }
+
+html[data-theme='dark'] .modal {
+	background-color: unset;
+}
