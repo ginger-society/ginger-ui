@@ -97,3 +97,9 @@ html[data-theme='dark'] {
 		background-color: var(--secondary-bg-color);
 	}
 }
+
+.left-section {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}

@@ -33,9 +33,9 @@ export const Header = ({
 	return (
 		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
 			<div className={styles['wrapper']}>
-				<div>
+				<div className={styles['left-section']}>
 					{icon}
-					<h1>{brandName}</h1>
+					<>{brandName}</>
 				</div>
 				{arbitaryContent}
 				{user ? (
