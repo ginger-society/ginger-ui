@@ -1,12 +1,22 @@
+## 0.3.0 - 2024-07-08
+
+feat:
+
+- [247d92f419](247d92f419933637a2c98974b44c351267d83ea4) (Ginger Society Admin) feat: remove inset from box-shadow variable
+
 ## 0.2.0 - 2024-07-07
+
+fix:
+
+- [9b9dad8752](9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
 
 feat:
 
 - [f3aac684e5](f3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
 
-fix:
+chore:
 
-- [9b9dad8752](9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
+- [f8e0960f64](f8e0960f6430c2adb8bb277a5e042ebfb642e31f) (Ginger Society Admin) chore: version bump to 0.2.0
 
 ## 0.1.0 - 2024-07-07
 
