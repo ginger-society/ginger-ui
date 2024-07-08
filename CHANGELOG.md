@@ -1,8 +1,18 @@
+## 0.12.0 - 2024-07-08
+
+fix:
+
+- [2df8678bac](2df8678bac4d2983d538f2b75080e134d14d9113) (Ginger Society Admin) fix: modal background color
+
 ## 0.11.0 - 2024-07-08
 
 fix:
 
 - [5dc547829e](5dc547829ed3d6b1a74f6c806d0d2e6ae3cd7e88) (Ginger Society Admin) fix: textare width
+
+chore:
+
+- [6ff8c5ebd0](6ff8c5ebd02a039e0d901eb7cdd868fe439552b9) (Ginger Society Admin) chore: version bump to 0.11.0
 
 ## 0.10.0 - 2024-07-08
 
@@ -76,15 +86,19 @@ feat:
 
 ## 0.3.0 - 2024-07-08
 
-feat:
-
-- [247d92f419](247d92f419933637a2c98974b44c351267d83ea4) (Ginger Society Admin) feat: remove inset from box-shadow variable
-
 chore:
 
 - [f540c61d0c](f540c61d0ceaaee3513c5c664cbce49e03e8848b) (Ginger Society Admin) chore: version bump to 0.3.0
 
+feat:
+
+- [247d92f419](247d92f419933637a2c98974b44c351267d83ea4) (Ginger Society Admin) feat: remove inset from box-shadow variable
+
 ## 0.2.0 - 2024-07-07
+
+fix:
+
+- [9b9dad8752](9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
 
 chore:
 
@@ -94,11 +108,26 @@ feat:
 
 - [f3aac684e5](f3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
 
-fix:
-
-- [9b9dad8752](9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
-
 ## 0.1.0 - 2024-07-07
+
+chore:
+
+- [aa96db232e](aa96db232e2b0bf79adbe7f66ba9b7307dfb6b56) (Ginger Society Admin) chore: version bump to 0.1.0
+- [beb59801fb](beb59801fb2d0341293f89cff93eece19fce7f90) (Ginger Society Admin) chore: version bump
+- [b913233f0f](b913233f0f84aee6691927e53f0e583cea955dc5) (Ginger Society Admin) chore: changed aside css to update z-index
+- [27b1f8c887](27b1f8c8876a737a80461720f588477eccce05d0) (Ginger Society Admin) chore: version bump
+- [69ea1a8336](69ea1a8336970410df7218c52b688d55ade7ed13) (Ginger Society Admin) chore: version bump
+- [e2d746d2a9](e2d746d2a97b4fc65967ef88baf389046459c966) (Ginger Society Admin) chore: renamed Enum names for Typography
+- [f249f538c2](f249f538c2c5d949c326cfebc84ba5edd63c45cf) (Ginger Society Admin) chore: version bump
+- [685e28b962](685e28b96251c4d750403a9a7872ba76e0271b61) (Ginger Society Admin) chore: cleanup
+- [b549f6d668](b549f6d668af1391aa53ae252f569f4645300df3) (Ginger Society Admin) chore: minor
+- [0d4bfd9d6c](0d4bfd9d6cea285aa2f44474436b3ae49b9832b3) (Ginger Society Admin) chore: commiting lock file
+- [f6e3b1d96d](f6e3b1d96dd9923b6ef7b295b4cbc6caa273b98d) (Ginger Society Admin) chore: cleanup
+- [bab50be93c](bab50be93cf4fd81693a4caea92198d3610a0dd3) (Ginger Society Admin) chore: minor readme update
+- [a767194def](a767194defa848a2cc9ec0189ed35fff27ec4a14) (Ginger Society Admin) chore: updated readme
+- [f39f59e73c](f39f59e73c8847b4629275f8cec695f63f251b7f) (Ginger Society Admin) chore: added readme to the project
+- [5e055ef961](5e055ef961c85909486be20ec2b2192df547b7cb) (Ginger Society Admin) chore: cleanup
+- [f6a9cb91b5](f6a9cb91b5b9e75b0b05f5816b046a6711d09616) (Ginger Society Admin) chore: first commit
 
 feat:
 
@@ -160,25 +189,6 @@ feat:
 - [d42957cb83](d42957cb837ec1c724bb3f62107764df3a029c37) (Ginger Society Admin) feat: exported Header
 - [3cff9d512e](3cff9d512eeb993fb84a7607036afffd3a44663c) (Ginger Society Admin) feat: updated build script to generate icons and
 - [e1a37ff950](e1a37ff950e6620205752a0ad5e1aa7bed2d0322) (Ginger Society Admin) feat: cleanup and pipeline fixes
-
-chore:
-
-- [aa96db232e](aa96db232e2b0bf79adbe7f66ba9b7307dfb6b56) (Ginger Society Admin) chore: version bump to 0.1.0
-- [beb59801fb](beb59801fb2d0341293f89cff93eece19fce7f90) (Ginger Society Admin) chore: version bump
-- [b913233f0f](b913233f0f84aee6691927e53f0e583cea955dc5) (Ginger Society Admin) chore: changed aside css to update z-index
-- [27b1f8c887](27b1f8c8876a737a80461720f588477eccce05d0) (Ginger Society Admin) chore: version bump
-- [69ea1a8336](69ea1a8336970410df7218c52b688d55ade7ed13) (Ginger Society Admin) chore: version bump
-- [e2d746d2a9](e2d746d2a97b4fc65967ef88baf389046459c966) (Ginger Society Admin) chore: renamed Enum names for Typography
-- [f249f538c2](f249f538c2c5d949c326cfebc84ba5edd63c45cf) (Ginger Society Admin) chore: version bump
-- [685e28b962](685e28b96251c4d750403a9a7872ba76e0271b61) (Ginger Society Admin) chore: cleanup
-- [b549f6d668](b549f6d668af1391aa53ae252f569f4645300df3) (Ginger Society Admin) chore: minor
-- [0d4bfd9d6c](0d4bfd9d6cea285aa2f44474436b3ae49b9832b3) (Ginger Society Admin) chore: commiting lock file
-- [f6e3b1d96d](f6e3b1d96dd9923b6ef7b295b4cbc6caa273b98d) (Ginger Society Admin) chore: cleanup
-- [bab50be93c](bab50be93cf4fd81693a4caea92198d3610a0dd3) (Ginger Society Admin) chore: minor readme update
-- [a767194def](a767194defa848a2cc9ec0189ed35fff27ec4a14) (Ginger Society Admin) chore: updated readme
-- [f39f59e73c](f39f59e73c8847b4629275f8cec695f63f251b7f) (Ginger Society Admin) chore: added readme to the project
-- [5e055ef961](5e055ef961c85909486be20ec2b2192df547b7cb) (Ginger Society Admin) chore: cleanup
-- [f6a9cb91b5](f6a9cb91b5b9e75b0b05f5816b046a6711d09616) (Ginger Society Admin) chore: first commit
 
 fix:
 
