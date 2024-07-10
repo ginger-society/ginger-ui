@@ -1,48 +1,58 @@
+## 0.16.0 - 2024-07-10
+
+fix:
+
+- [dcd27ae0b9](dcd27ae0b9c9a8c7d40af2c05eeaa05f88d3fdfb) (Ginger Society Admin) fix: minor css changes
+
 ## 0.15.0 - 2024-07-10
 
 fix:
 
 - [c21448a882](c21448a8821dcc240c65ba42e6b99f998af5aff8) (Ginger Society Admin) fix: box shadow for modal component
 
-## 0.14.0 - 2024-07-08
-
 chore:
 
-- [07ec801a4c](07ec801a4cc6f2af700bfe223a863490571c0b16) (Ginger Society Admin) chore: version bump to 0.14.0
+- [29295c66ed](29295c66ed9ad44520e2971c66c841a770f15c58) (Ginger Society Admin) chore: version bump to 0.15.0
+
+## 0.14.0 - 2024-07-08
 
 fix:
 
 - [eab594740a](eab594740a4918b9c6b4a13b4c19c83cb92b3968) (Ginger Society Admin) fix: modal background color
 
-## 0.13.0 - 2024-07-08
-
 chore:
 
-- [c116d10479](c116d104799c64ca58d0c7ad7e796c52c83220ce) (Ginger Society Admin) chore: version bump to 0.13.0
+- [07ec801a4c](07ec801a4cc6f2af700bfe223a863490571c0b16) (Ginger Society Admin) chore: version bump to 0.14.0
+
+## 0.13.0 - 2024-07-08
 
 fix:
 
 - [1ef99fdc47](1ef99fdc47138c784a5251021a933e1f3bf84464) (Ginger Society Admin) fix: modal background color
 
+chore:
+
+- [c116d10479](c116d104799c64ca58d0c7ad7e796c52c83220ce) (Ginger Society Admin) chore: version bump to 0.13.0
+
 ## 0.12.0 - 2024-07-08
-
-fix:
-
-- [2df8678bac](2df8678bac4d2983d538f2b75080e134d14d9113) (Ginger Society Admin) fix: modal background color
 
 chore:
 
 - [00e1431513](00e14315133933168137df29d1e00cb5c92df2a3) (Ginger Society Admin) chore: version bump to 0.12.0
 
+fix:
+
+- [2df8678bac](2df8678bac4d2983d538f2b75080e134d14d9113) (Ginger Society Admin) fix: modal background color
+
 ## 0.11.0 - 2024-07-08
-
-chore:
-
-- [6ff8c5ebd0](6ff8c5ebd02a039e0d901eb7cdd868fe439552b9) (Ginger Society Admin) chore: version bump to 0.11.0
 
 fix:
 
 - [5dc547829e](5dc547829ed3d6b1a74f6c806d0d2e6ae3cd7e88) (Ginger Society Admin) fix: textare width
+
+chore:
+
+- [6ff8c5ebd0](6ff8c5ebd02a039e0d901eb7cdd868fe439552b9) (Ginger Society Admin) chore: version bump to 0.11.0
 
 ## 0.10.0 - 2024-07-08
 
@@ -56,53 +66,53 @@ fix:
 
 ## 0.9.0 - 2024-07-08
 
-chore:
-
-- [5cf6e08ded](5cf6e08ded836ac122a0df6b0f1d05d4a4dd9c40) (Ginger Society Admin) chore: version bump to 0.9.0
-
 fix:
 
 - [f7a723f242](f7a723f242183379c3c4780e89b2b1eaf58c09d5) (Ginger Society Admin) fix: theme fixes for textarea
 
-## 0.8.0 - 2024-07-08
-
 chore:
 
-- [b3a9b4acae](b3a9b4acaee04f100cb187f14a31499295a020d8) (Ginger Society Admin) chore: version bump to 0.8.0
+- [5cf6e08ded](5cf6e08ded836ac122a0df6b0f1d05d4a4dd9c40) (Ginger Society Admin) chore: version bump to 0.9.0
+
+## 0.8.0 - 2024-07-08
 
 fix:
 
 - [322c10c331](322c10c3319e3a6980eb78e83fc8880490b5fefc) (Ginger Society Admin) fix: aside bg color change
 
-## 0.7.0 - 2024-07-08
-
 chore:
 
-- [69e2d3f8f8](69e2d3f8f85bfaa50edacd927a872cd571b896b7) (Ginger Society Admin) chore: version bump to 0.7.0
+- [b3a9b4acae](b3a9b4acaee04f100cb187f14a31499295a020d8) (Ginger Society Admin) chore: version bump to 0.8.0
+
+## 0.7.0 - 2024-07-08
 
 fix:
 
 - [a481400501](a4814005019823bc554b7e46dba9153a4c7e93bd) (Ginger Society Admin) fix: bg color for Aside
 
+chore:
+
+- [69e2d3f8f8](69e2d3f8f85bfaa50edacd927a872cd571b896b7) (Ginger Society Admin) chore: version bump to 0.7.0
+
 ## 0.6.0 - 2024-07-08
-
-fix:
-
-- [92cc123a16](92cc123a16a29b7959eb326276388a212f55bb84) (Ginger Society Admin) fix: padding in Input component
 
 chore:
 
 - [92586e6864](92586e68643bd7b77cedbfc14bb2506bda4d49ff) (Ginger Society Admin) chore: version bump to 0.6.0
 
+fix:
+
+- [92cc123a16](92cc123a16a29b7959eb326276388a212f55bb84) (Ginger Society Admin) fix: padding in Input component
+
 ## 0.5.0 - 2024-07-08
-
-feat:
-
-- [b0fc8d7142](b0fc8d7142492af7650e876b2a63491d874d8037) (Ginger Society Admin) feat: removed h1 from header
 
 chore:
 
 - [1362a89e28](1362a89e285f6a13f91c69bfc4cce18ca771a121) (Ginger Society Admin) chore: version bump to 0.5.0
+
+feat:
+
+- [b0fc8d7142](b0fc8d7142492af7650e876b2a63491d874d8037) (Ginger Society Admin) feat: removed h1 from header
 
 ## 0.4.0 - 2024-07-08
 
@@ -130,13 +140,13 @@ chore:
 
 - [f8e0960f64](f8e0960f6430c2adb8bb277a5e042ebfb642e31f) (Ginger Society Admin) chore: version bump to 0.2.0
 
-feat:
-
-- [f3aac684e5](f3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
-
 fix:
 
 - [9b9dad8752](9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
+
+feat:
+
+- [f3aac684e5](f3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
 
 ## 0.1.0 - 2024-07-07
 
