@@ -12,8 +12,6 @@
 	},
 	"description": "",
 	"devDependencies": {
-		"@types/css-modules": "^1.0.5",
-		"typescript-plugin-css-modules": "^5.1.0",
 		"@babel/core": "^7.20.12",
 		"@babel/plugin-transform-runtime": "^7.19.6",
 		"@babel/preset-env": "^7.21.5",
@@ -33,6 +31,7 @@
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
 		"@trivago/prettier-plugin-sort-imports": "^4.0.0",
+		"@types/css-modules": "^1.0.5",
 		"@types/jest": "^29.2.5",
 		"@types/node": "^18.11.18",
 		"@types/react": "^18.0.26",
@@ -75,6 +74,7 @@
 		"tsx": "^3.12.7",
 		"ttypescript": "^1.5.15",
 		"typescript": "^4.9.4",
+		"typescript-plugin-css-modules": "^5.1.0",
 		"typescript-transform-paths": "^3.4.6"
 	},
 	"engines": {
@@ -126,5 +126,5 @@
 	},
 	"sideEffects": false,
 	"types": "dist/esm/index.d.ts",
-	"version": "0.21.0"
+	"version": "0.22.0"
 }
