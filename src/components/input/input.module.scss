@@ -1,5 +1,10 @@
 @import '../../global.module.scss';
 
+.input::placeholder {
+	color: var(--muted-color);
+	opacity: 1; /* Firefox */
+}
+
 .input {
 	background-color: var(--primary-accent-color);
 	border: 1px solid transparent;

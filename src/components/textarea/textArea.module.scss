@@ -9,6 +9,10 @@
 		color: var(--primary-color);
 		font-weight: 700;
 	}
+	.textarea::placeholder {
+		color: var(--muted-color);
+		opacity: 1; /* Firefox */
+	}
 
 	.textarea {
 		width: 100%;
