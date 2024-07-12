@@ -1,3 +1,4 @@
+import { Text } from '../typography'
 import Tooltip from './Tooltip'
 
 export const TooltipExample = () => {
@@ -10,20 +11,20 @@ export const TooltipExample = () => {
 				gap: '20px'
 			}}
 		>
-			<Tooltip position="right" label={<span>Hover over me</span>}>
-				<span>
+			<Tooltip position="right" label={<Text>Hover over me</Text>}>
+				<Text invertTheme>
 					Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ex, nihil
 					dignissimos. Sunt
-				</span>
+				</Text>
 			</Tooltip>
-			<Tooltip position="left" label={<span>Left tooltip</span>}>
-				<span>Lorem ipsum dolo</span>
+			<Tooltip position="left" label={<Text>Left tooltip</Text>}>
+				<Text invertTheme>Lorem ipsum dolo</Text>
 			</Tooltip>
-			<Tooltip position="bottom" label={<span>Bottom tooltip</span>}>
-				<span>Lorem ipsum dolo</span>
+			<Tooltip position="bottom" label={<Text>Bottom tooltip</Text>}>
+				<Text invertTheme>Lorem ipsum dolo</Text>
 			</Tooltip>
-			<Tooltip position="top" label={<span>Top tooltip</span>}>
-				<span>Lorem ipsum dolo</span>
+			<Tooltip position="top" label={<Text>Top tooltip</Text>}>
+				<Text invertTheme>Lorem ipsum dolo</Text>
 			</Tooltip>
 		</div>
 	)

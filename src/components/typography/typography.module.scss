@@ -17,6 +17,24 @@
 		font-size: 0.875rem;
 	}
 
+	&.underline {
+		text-decoration: underline;
+	}
+
+	&.italics {
+		font-style: italic;
+	}
+
+	&.weight-normal {
+		font-weight: normal;
+	}
+
+	&.weight-bold {
+		font-weight: bold;
+	}
+}
+
+.text {
 	&.primary {
 		color: var(--primary-color);
 	}
@@ -40,20 +58,30 @@
 	&.muted {
 		color: var(--muted-color);
 	}
+}
 
-	&.underline {
-		text-decoration: underline;
+.text-inverted {
+	&.primary {
+		color: var(--primary-bg-color);
 	}
 
-	&.italics {
-		font-style: italic;
+	&.danger {
+		color: var(--danger-bg-color);
 	}
 
-	&.weight-normal {
-		font-weight: normal;
+	&.success {
+		color: var(--success-bg-color);
 	}
 
-	&.weight-bold {
-		font-weight: bold;
+	&.warning {
+		color: var(--warning-bg-color);
+	}
+
+	&.info {
+		color: var(--info-bg-color);
+	}
+
+	&.muted {
+		color: var(--muted-color);
 	}
 }

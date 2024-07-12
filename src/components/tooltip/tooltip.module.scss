@@ -11,8 +11,8 @@
 .tooltiptext {
 	visibility: hidden;
 	min-width: 220px;
-	background-color: var(--primary-bg-color);
-	color: #fff;
+	background-color: var(--primary-color);
+	color: var(--primary-bg-color);
 	text-align: center;
 	padding: 5px 0;
 	border-radius: 6px;

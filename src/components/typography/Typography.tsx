@@ -30,25 +30,29 @@ interface TextProps {
 	underline?: boolean
 	italics?: boolean
 	weight?: TextWeight
+	invertTheme?: boolean
 }
 
 const Text: React.FC<TextProps> = ({
-	tag: Tag = 'span',
+	tag: HTMLTag = 'span',
 	size = TextSize.Normal,
 	color = TextColor.Primary,
 	underline = false,
 	italics = false,
 	weight = TextWeight.Normal,
+	invertTheme = false,
 	children
 }) => {
 	return (
-		<Tag
-			className={`${styles['text']} ${styles[size]} ${styles[color]} ${
-				underline ? styles['underline'] : ''
-			} ${italics ? styles['italics'] : ''} ${styles[`weight-${weight}`]}`}
+		<HTMLTag
+			className={`${styles[invertTheme ? 'text-inverted' : 'text']} ${
+				styles[size]
+			} ${styles[color]} ${underline ? styles['underline'] : ''} ${
+				italics ? styles['italics'] : ''
+			} ${styles[`weight-${weight}`]}`}
 		>
 			{children}
-		</Tag>
+		</HTMLTag>
 	)
 }
 
