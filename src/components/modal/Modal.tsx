@@ -18,7 +18,7 @@ interface ModalProps {
 	footerConfig?: {
 		okBtnLabel?: React.ReactNode
 		cancelBtnLabel?: React.ReactNode
-		OkBtnType?: ButtonType
+		okBtnType?: ButtonType
 	}
 	onOk?: () => void
 	size?: ModalSize

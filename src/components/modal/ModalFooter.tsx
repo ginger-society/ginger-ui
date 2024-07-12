@@ -7,7 +7,7 @@ interface ModalFooterProps {
 	onOk?: () => void
 	okBtnLabel?: React.ReactNode
 	cancelBtnLabel?: React.ReactNode
-	OkBtnType?: ButtonType
+	okBtnType?: ButtonType
 }
 
 const ModalFooter: React.FC<ModalFooterProps> = ({
@@ -15,11 +15,11 @@ const ModalFooter: React.FC<ModalFooterProps> = ({
 	onOk,
 	okBtnLabel = 'Okay',
 	cancelBtnLabel = 'Cancel',
-	OkBtnType = ButtonType.Primary
+	okBtnType = ButtonType.Primary
 }) => {
 	return (
 		<div className={styles['modal-footer']}>
-			<Button type={OkBtnType} label={okBtnLabel} onClick={onOk} />
+			<Button type={okBtnType} label={okBtnLabel} onClick={onOk} />
 			<Button label={cancelBtnLabel} onClick={onCancel} />
 		</div>
 	)

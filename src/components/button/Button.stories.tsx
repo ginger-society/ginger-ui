@@ -16,7 +16,8 @@ export const Primary = () => {
 				confirmConfig={{
 					title: 'Are you sure ?',
 					description: 'This is not reversible',
-					confirmButtonLabel: 'Yes, I am sure'
+					confirmButtonLabel: 'Yes, I am sure',
+					okBtnType: ButtonType.Danger
 				}}
 				onClick={() => {
 					console.log('ok')

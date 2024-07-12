@@ -31,7 +31,7 @@ interface ButtonProps {
 		title: React.ReactNode
 		confirmButtonLabel?: React.ReactNode
 		description?: React.ReactNode
-		OkBtnType?: ButtonType
+		okBtnType?: ButtonType
 	}
 }
 
@@ -88,7 +88,7 @@ const Button: React.FC<ButtonProps> = ({
 					onClose={() => setConfirmOpen(false)}
 					footerConfig={{
 						okBtnLabel: confirmConfig.confirmButtonLabel,
-						OkBtnType: ButtonType.Danger
+						okBtnType: confirmConfig.okBtnType
 					}}
 					onOk={() => {
 						setConfirmOpen(false)
