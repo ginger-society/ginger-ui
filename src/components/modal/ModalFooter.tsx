@@ -5,13 +5,22 @@ import styles from './modal.module.scss'
 interface ModalFooterProps {
 	onCancel: () => void
 	onOk?: () => void
+	okBtnLabel?: React.ReactNode
+	cancelBtnLabel?: React.ReactNode
+	OkBtnType?: ButtonType
 }
 
-const ModalFooter: React.FC<ModalFooterProps> = ({ onCancel, onOk }) => {
+const ModalFooter: React.FC<ModalFooterProps> = ({
+	onCancel,
+	onOk,
+	okBtnLabel = 'Okay',
+	cancelBtnLabel = 'Cancel',
+	OkBtnType = ButtonType.Primary
+}) => {
 	return (
 		<div className={styles['modal-footer']}>
-			<Button type={ButtonType.Primary} label="Ok" onClick={onOk} />
-			<Button label="Cancel" onClick={onCancel} />
+			<Button type={OkBtnType} label={okBtnLabel} onClick={onOk} />
+			<Button label={cancelBtnLabel} onClick={onCancel} />
 		</div>
 	)
 }

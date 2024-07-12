@@ -17,7 +17,7 @@ export const ModalExample = () => {
 			<Modal
 				isOpen={isOpen}
 				onClose={() => setIsOpen(false)}
-				showFooter
+				footerConfig={{}}
 				preventCancelOnOverlay
 				onOk={handleOk}
 			>
@@ -49,7 +49,7 @@ export const OverlayCancellableExample = () => {
 			<Modal
 				isOpen={isOpen}
 				onClose={() => setIsOpen(false)}
-				showFooter
+				footerConfig={{}}
 				onOk={handleOk}
 			>
 				<ModalHeader>Hello world</ModalHeader>

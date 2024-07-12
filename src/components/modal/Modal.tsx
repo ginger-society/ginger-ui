@@ -1,4 +1,5 @@
 import React, { ReactNode, useEffect, useRef } from 'react'
+import { ButtonType } from '../button'
 import styles from './modal.module.scss'
 import ModalFooter from './ModalFooter'
 
@@ -14,7 +15,11 @@ interface ModalProps {
 	onClose: () => void
 	children: ReactNode
 	preventCancelOnOverlay?: boolean
-	showFooter?: boolean
+	footerConfig?: {
+		okBtnLabel?: React.ReactNode
+		cancelBtnLabel?: React.ReactNode
+		OkBtnType?: ButtonType
+	}
 	onOk?: () => void
 	size?: ModalSize
 }
@@ -24,11 +29,10 @@ const Modal: React.FC<ModalProps> = ({
 	onClose,
 	children,
 	preventCancelOnOverlay = false,
-	showFooter = false,
+	footerConfig,
 	size = ModalSize.Medium,
 	onOk
 }) => {
-	console.log({ size })
 	const dialogRef = useRef<HTMLDialogElement>(null)
 
 	useEffect(() => {
@@ -71,7 +75,9 @@ const Modal: React.FC<ModalProps> = ({
 			aria-hidden="true"
 		>
 			{children}
-			{showFooter && <ModalFooter onCancel={onClose} onOk={onOk} />}
+			{footerConfig && (
+				<ModalFooter onCancel={onClose} onOk={onOk} {...footerConfig} />
+			)}
 		</dialog>
 	)
 }

@@ -10,6 +10,18 @@ export const Primary = () => {
 				size={ButtonSize.Small}
 				label="Button"
 			/>
+			<Button
+				type={ButtonType.Primary}
+				label="Delete"
+				confirmConfig={{
+					title: 'Are you sure ?',
+					description: 'This is not reversible',
+					confirmButtonLabel: 'Yes, I am sure'
+				}}
+				onClick={() => {
+					console.log('ok')
+				}}
+			/>
 		</div>
 	)
 }

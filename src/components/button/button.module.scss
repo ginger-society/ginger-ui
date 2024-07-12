@@ -39,6 +39,12 @@
 	}
 }
 
+.button--danger {
+	color: var(--danger-bg-color);
+	background-color: var(--danger-color);
+	box-shadow: var(--box-shadow);
+}
+
 .button--small {
 	font-size: var(--small-font-size);
 	padding: var(--small-padding);

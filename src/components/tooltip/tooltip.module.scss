@@ -3,7 +3,7 @@
 .tooltip {
 	position: relative;
 	display: inline-block;
-	border-bottom: 1px dotted black;
+	border-bottom: 1px dotted var(--primary-color);
 	width: fit-content;
 	cursor: pointer;
 }
@@ -11,7 +11,7 @@
 .tooltiptext {
 	visibility: hidden;
 	min-width: 220px;
-	background-color: black;
+	background-color: var(--primary-bg-color);
 	color: #fff;
 	text-align: center;
 	padding: 5px 0;
