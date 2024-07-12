@@ -18,7 +18,7 @@ export enum ButtonSize {
 interface ButtonProps {
 	type?: ButtonType
 	size?: ButtonSize
-	label: string
+	label: React.ReactNode
 	loading?: boolean
 	onClick?: () => void
 	fullWidth?: boolean
