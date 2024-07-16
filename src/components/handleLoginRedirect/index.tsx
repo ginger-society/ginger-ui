@@ -1,5 +1,4 @@
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
 import LoadingPage from '../loadingPage'
 
 interface HandleAuthProps {
@@ -7,21 +6,16 @@ interface HandleAuthProps {
 }
 
 const HandleLoginRedirect = ({ handleNavigation }: HandleAuthProps) => {
-	const { access_token, refresh_token } = useParams<{
-		access_token: string
-		refresh_token: string
-	}>()
-
-	console.log(access_token, refresh_token)
-
 	useEffect(() => {
-		if (access_token && refresh_token) {
-			localStorage.setItem('access_token', access_token)
-			localStorage.setItem('refresh_token', refresh_token)
+		const urlParts = location.hash.split('/')
+
+		if (urlParts[2] && urlParts[3]) {
+			localStorage.setItem('access_token', urlParts[2])
+			localStorage.setItem('refresh_token', urlParts[3])
 
 			handleNavigation()
 		}
-	}, [access_token, refresh_token, handleNavigation])
+	}, [handleNavigation])
 
 	return <LoadingPage />
 }
