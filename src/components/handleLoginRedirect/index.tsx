@@ -12,6 +12,8 @@ const HandleLoginRedirect = ({ handleNavigation }: HandleAuthProps) => {
 		refresh_token: string
 	}>()
 
+	console.log(access_token, refresh_token)
+
 	useEffect(() => {
 		if (access_token && refresh_token) {
 			localStorage.setItem('access_token', access_token)
