@@ -6,7 +6,7 @@ interface AuthHeartBeatProps {
 
 const AuthHeartBeat = ({ refreshTokenFn }: AuthHeartBeatProps) => {
 	useEffect(() => {
-		setInterval(async () => {
+		const intervalId = setInterval(async () => {
 			const refresh_token = localStorage.getItem('refresh_token')
 			if (!refresh_token) {
 				return
@@ -14,7 +14,12 @@ const AuthHeartBeat = ({ refreshTokenFn }: AuthHeartBeatProps) => {
 			const access_token = await refreshTokenFn(refresh_token)
 			localStorage.setItem('access_token', access_token)
 		}, 100000) // 100 seconds
+
+		return () => {
+			clearInterval(intervalId)
+		}
 	}, [])
+	return <></>
 }
 
 export default AuthHeartBeat
