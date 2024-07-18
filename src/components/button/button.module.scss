@@ -6,9 +6,11 @@
 	border: 0;
 	border-radius: var(--border-radius);
 	cursor: pointer;
-	display: inline-block;
 	line-height: 1;
 	width: fit-content;
+	align-items: center;
+	display: flex;
+	gap: 5px;
 }
 
 .button--primary {

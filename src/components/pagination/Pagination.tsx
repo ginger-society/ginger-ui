@@ -1,5 +1,5 @@
-import { Test } from '@src/icons'
 import { useState } from 'react'
+import { FaAngleDown, FaAngleLeft, FaAngleRight } from 'react-icons/fa'
 import { Button, ButtonType } from '../button'
 import { Dropdown } from '../dropdown'
 import styles from './pagination.module.scss'
@@ -57,7 +57,7 @@ const Pagination = ({
 					<Button
 						label={`${rowsPerPage} Rows per page`}
 						type={ButtonType.Tertiary}
-						endEnhancer={<>&darr;</>}
+						endEnhancer={<FaAngleDown />}
 					/>
 				}
 			>
@@ -79,7 +79,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Prev"
-					startEnhancer={<>&lt;</>}
+					startEnhancer={<FaAngleLeft />}
 					onClick={handlePrevPage}
 					disabled={currentPage === 1}
 				/>
@@ -90,7 +90,7 @@ const Pagination = ({
 						<Button
 							label={`Page ${currentPage} of ${totalPages} pages`}
 							type={ButtonType.Tertiary}
-							endEnhancer={<Test stroke="var(--primary-color)" />}
+							endEnhancer={<FaAngleDown />}
 						/>
 					}
 				>
@@ -110,7 +110,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Next"
-					endEnhancer={<>&gt;</>}
+					endEnhancer={<FaAngleRight />}
 					onClick={handleNextPage}
 					disabled={currentPage === totalPages}
 				/>
