@@ -18,6 +18,7 @@ interface HeaderProps {
 	onLogout?: () => void
 	showThemeSwitcher?: boolean
 	arbitaryContent?: ReactNode
+	version?: string
 }
 
 export const Header = ({
@@ -28,7 +29,8 @@ export const Header = ({
 	sticky = true,
 	onLogout,
 	showThemeSwitcher = true,
-	arbitaryContent
+	arbitaryContent,
+	version
 }: HeaderProps) => {
 	return (
 		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
@@ -56,6 +58,9 @@ export const Header = ({
 										<div>{user.name}</div>
 										<div>{user.email}</div>
 									</div>
+								</div>
+								<div className={styles['version-details']}>
+									Version : {version}
 								</div>
 								<button className={styles['logout-button']} onClick={onLogout}>
 									Logout

@@ -10,7 +10,6 @@
 	"dependencies": {
 		"react-icons": "^5.2.1"
 	},
-	"description": "",
 	"devDependencies": {
 		"@babel/core": "^7.20.12",
 		"@babel/plugin-transform-runtime": "^7.19.6",
@@ -100,6 +99,7 @@
 	"main": "dist/cjs/index.js",
 	"module": "dist/esm/index.js",
 	"name": "@ginger-society/ginger-ui",
+	"description": "UI library for react",
 	"peerDependencies": {
 		"react": "^16.8.0 || ^17 || ^18",
 		"react-dom": "^16.8.0 || ^17 || ^18"

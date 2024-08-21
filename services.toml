@@ -1,0 +1,6 @@
+dir = "."
+lang = "TS"
+
+[portals_refs]
+
+[services]

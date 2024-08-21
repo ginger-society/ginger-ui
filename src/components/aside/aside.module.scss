@@ -28,6 +28,13 @@
 	background-color: var(--primary-bg-color);
 }
 
+.sliderDialog-medium {
+	max-width: 800px;
+}
+
+.sliderDialog-large {
+	max-width: 1000px;
+}
 html[data-theme='dark'] .sliderDialog {
 	background-color: var(--primary-accent-color);
 }

@@ -15,6 +15,7 @@ export const LoggedIn = () => {
 			icon={AcmeIcon}
 			onLogout={handleLogout}
 			arbitaryContent={<span>Random text</span>}
+			version="0.0.1"
 		/>
 	)
 }
