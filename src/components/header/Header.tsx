@@ -59,9 +59,11 @@ export const Header = ({
 										<div>{user.email}</div>
 									</div>
 								</div>
-								<div className={styles['version-details']}>
-									Version : {version}
-								</div>
+								{version && (
+									<div className={styles['version-details']}>
+										Version : {version}
+									</div>
+								)}
 								<button className={styles['logout-button']} onClick={onLogout}>
 									Logout
 								</button>
