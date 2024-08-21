@@ -7,7 +7,7 @@ revision = 0
 
 [[references]]
 file_name = "package.json"
-output_type = "Tuple"
+output_type = "String"
 variable = "version"
 
 [settings]
