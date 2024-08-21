@@ -1,13 +1,13 @@
 [version]
 channel = "Final"
 major = 0
-minor = 36
+minor = 37
 patch = 0
 revision = 0
 
 [[references]]
 file_name = "package.json"
-output_type = "String"
+output_type = "Tuple"
 variable = "version"
 
 [settings]
