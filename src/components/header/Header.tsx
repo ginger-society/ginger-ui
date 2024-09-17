@@ -38,7 +38,7 @@ export const Header = ({
 	version
 }: HeaderProps) => {
 	return (
-		<header className={`${styles['header']} ${position}`}>
+		<header className={`${styles['header']} ${styles[position]}`}>
 			<div className={styles['wrapper']}>
 				<div className={styles['left-section']}>
 					{icon}
