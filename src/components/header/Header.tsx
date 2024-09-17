@@ -9,11 +9,16 @@ type User = {
 	email: string
 }
 
+export enum HeaderPositionEnum {
+	Fixed = 'fixed',
+	Sticky = 'sticky'
+}
+
 interface HeaderProps {
 	user?: User
 	icon?: ReactNode
 	anonymousActions?: ReactNode
-	sticky?: boolean
+	position?: HeaderPositionEnum
 	brandName: ReactNode
 	onLogout?: () => void
 	showThemeSwitcher?: boolean
@@ -26,14 +31,14 @@ export const Header = ({
 	user,
 	icon,
 	anonymousActions,
-	sticky = true,
+	position = HeaderPositionEnum.Sticky,
 	onLogout,
 	showThemeSwitcher = true,
 	arbitaryContent,
 	version
 }: HeaderProps) => {
 	return (
-		<header className={`${styles['header']} ${sticky ? styles['sticky'] : ''}`}>
+		<header className={`${styles['header']} ${position}`}>
 			<div className={styles['wrapper']}>
 				<div className={styles['left-section']}>
 					{icon}
