@@ -54,6 +54,17 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
 
+      - name: Publish stories
+        run: |
+          docker buildx build . \
+            -t deb-portal-builder \
+            -f Dockerfile.book \
+            --build-arg GINGER_TOKEN=${{ secrets.GINGER_TOKEN }} \
+            --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+            --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+            --build-arg AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
+            --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} \
+            --load
       - name: Build prod release
         run: pnpm build
 
