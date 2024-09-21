@@ -1,2 +1,26 @@
 lang = "TS"
 package_type = "library"
+
+[[links]]
+icon = "FaLink"
+internal = true
+label = "Stories"
+link = "https://ginger-ui-stories.gingersociety.org"
+
+[[links]]
+icon = "FaNpm"
+internal = true
+label = "View on NPM"
+link = "https://www.npmjs.com/package/@ginger-society/ginger-ui"
+
+[[links]]
+icon = "FaRegPlayCircle"
+internal = true
+label = "Pipelines"
+link = "https://github.com/ginger-society/ginger-ui/actions"
+
+[[links]]
+icon = "FaGithub"
+internal = true
+label = "Browse Repo"
+link = "https://github.com/ginger-society/ginger-ui"
