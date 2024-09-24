@@ -6,13 +6,15 @@ interface SectionProps {
 	children: ReactNode
 	disabled?: boolean
 	open?: boolean
+	onOpen?: () => void
 }
 
 const Section: React.FC<SectionProps> = ({
 	head,
 	children,
 	disabled = false,
-	open = false
+	open = false,
+	onOpen = () => null
 }) => {
 	const [isOpen, setIsOpen] = useState(open)
 
@@ -20,6 +22,7 @@ const Section: React.FC<SectionProps> = ({
 		if (!disabled) {
 			setIsOpen(!isOpen)
 		}
+		onOpen()
 	}
 
 	return (
