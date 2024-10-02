@@ -21,13 +21,8 @@ jobs:
         with:
           # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
-
-      - uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 8.7.1
-
       - name: Install ginger-apps
-        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-all-clis.sh)"
+        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-pipeline-clis.sh)"
 
       - name: Authenticate with ginger-auth
         id: ginger-auth
@@ -35,6 +30,10 @@ jobs:
 
       - name: Update pipeline to running
         run: ginger-connector update-pipeline stage running
+
+      - uses: pnpm/action-setup@v4.0.0
+        with:
+          version: 8.7.1
 
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
@@ -64,7 +63,7 @@ jobs:
             --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
             --build-arg AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
             --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} \
-            --load
+
       - name: Build prod release
         run: pnpm build
 
@@ -73,3 +72,6 @@ jobs:
 
       - name: Update pipeline to passing
         run: ginger-connector update-pipeline stage passing
+
+      - name: Trigger dependent pipelines
+        run: ginger-connector trigger-dependent-pipelines ${{ secrets.GH_TOKEN }}
