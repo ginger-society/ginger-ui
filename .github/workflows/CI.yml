@@ -19,8 +19,8 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v3
         with:
-          # This makes Actions fetch all Git history so that Changesets can generate changelogs with the correct commits
           fetch-depth: 0
+
       - name: Install ginger-apps
         run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-pipeline-clis.sh)"
 
@@ -62,16 +62,36 @@ jobs:
             --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
             --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
             --build-arg AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
-            --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }} \
+            --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }}
+        continue-on-error: false
+
+      - name: Fail if Publish stories failed
+        if: failure()
+        run: ginger-connector update-pipeline stage failing
+        continue-on-error: false
 
       - name: Build prod release
         run: pnpm build
+        continue-on-error: false
+
+      - name: Fail if Build prod release failed
+        if: failure()
+        run: ginger-connector update-pipeline stage failing
+        continue-on-error: false
 
       - name: Publish to npm
+        if: success()
         run: pnpm publish --no-git-checks
+        continue-on-error: false
 
       - name: Update pipeline to passing
+        if: success()
         run: ginger-connector update-pipeline stage passing
 
       - name: Trigger dependent pipelines
+        if: success()
         run: ginger-connector trigger-dependent-pipelines ${{ secrets.GH_TOKEN }}
+
+      - name: Stop execution if any step failed
+        if: failure()
+        run: exit 1
