@@ -67,7 +67,7 @@ jobs:
 
       - name: Fail if Publish stories failed
         if: failure()
-        run: ginger-connector update-pipeline stage failing
+        run: ginger-connector update-pipeline stage failed
         continue-on-error: false
 
       - name: Build prod release
@@ -76,7 +76,7 @@ jobs:
 
       - name: Fail if Build prod release failed
         if: failure()
-        run: ginger-connector update-pipeline stage failing
+        run: ginger-connector update-pipeline stage failed
         continue-on-error: false
 
       - name: Publish to npm
@@ -86,7 +86,7 @@ jobs:
 
       - name: Fail if prod publish failed
         if: failure()
-        run: ginger-connector update-pipeline stage failing
+        run: ginger-connector update-pipeline stage failed
         continue-on-error: false
 
       - name: Update pipeline to passing
