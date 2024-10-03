@@ -84,7 +84,7 @@ jobs:
         run: pnpm publish --no-git-checks
         continue-on-error: false
 
-      - name: Fail if Build prod release failed
+      - name: Fail if prod publish failed
         if: failure()
         run: ginger-connector update-pipeline stage failing
         continue-on-error: false
