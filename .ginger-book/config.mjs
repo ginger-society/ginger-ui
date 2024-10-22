@@ -7,5 +7,6 @@ export default {
 		gingerBook: {
 			enabled: true
 		}
-	}
+	},
+	base: '/products/ginger-ui/stories/'
 }
