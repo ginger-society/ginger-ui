@@ -5,7 +5,7 @@ package_type = "library"
 icon = "FaLink"
 internal = true
 label = "Stories"
-link = "https://ginger-ui-stories.gingersociety.org"
+link = "https://www.gingersociety.org/products/ginger-ui/stories/"
 
 [[links]]
 icon = "FaNpm"

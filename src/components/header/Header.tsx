@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { Avatar } from '../avatar'
 import { Dropdown } from '../dropdown'
 import styles from './header.module.scss'
@@ -37,6 +37,32 @@ export const Header = ({
 	arbitaryContent,
 	version
 }: HeaderProps) => {
+	// Automatically detect and apply system theme if showThemeSwitcher is false
+	useEffect(() => {
+		if (!showThemeSwitcher) {
+			const html = document.documentElement
+			const applySystemTheme = () => {
+				const prefersDarkScheme = window.matchMedia(
+					'(prefers-color-scheme: dark)'
+				).matches
+				html.setAttribute('data-theme', prefersDarkScheme ? 'dark' : 'light')
+			}
+
+			applySystemTheme()
+
+			const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
+			const handleChange = (e: MediaQueryListEvent) => {
+				const newTheme = e.matches ? 'dark' : 'light'
+				html.setAttribute('data-theme', newTheme)
+			}
+			// Watch for changes in system theme
+			mediaQuery.addEventListener('change', handleChange)
+			return () => {
+				mediaQuery.removeEventListener('change', handleChange)
+			}
+		}
+	}, [showThemeSwitcher])
+
 	return (
 		<header className={`${styles['header']} ${styles[position]}`}>
 			<div className={styles['wrapper']}>
