@@ -5,8 +5,8 @@ take_snapshots = false
 [version]
 channel = "Final"
 major = 0
-minor = 47
-patch = 1
+minor = 48
+patch = 0
 revision = 0
 
 [[references]]
