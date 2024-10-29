@@ -28,3 +28,4 @@ export { default as HandleLoginRedirect } from './components/handleLoginRedirect
 export { default as AuthHeartBeat } from './components/authHeartbeat'
 export { Header, HeaderPositionEnum } from './components/header'
 export { default as LoadingPage } from './components/loadingPage'
+export { default as SystemThemePreferred } from './components/theme/SystemThemePreferred'
