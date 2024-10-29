@@ -22,7 +22,7 @@ interface ButtonProps {
 	size?: ButtonSize
 	label: React.ReactNode
 	loading?: boolean
-	onClick?: (e?: React.MouseEventHandler<HTMLButtonElement>) => void
+	onClick?: (e?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void
 	fullWidth?: boolean
 	startEnhancer?: React.ReactNode
 	endEnhancer?: React.ReactNode
@@ -64,11 +64,11 @@ const Button: React.FC<ButtonProps> = ({
 					mode,
 					fullWidth ? styles['button-block'] : ''
 				].join(' ')}
-				onClick={() => {
+				onClick={(e) => {
 					if (confirmConfig) {
 						setConfirmOpen(true)
 					} else {
-						onClick && onClick()
+						onClick && onClick(e)
 					}
 				}}
 				{...props}
