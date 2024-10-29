@@ -1,6 +1,6 @@
-import { useEffect } from 'react'
+import { ReactNode, useEffect } from 'react'
 
-const SystemThemePreferred = () => {
+const SystemThemePreferred = ({ children }: { children: ReactNode }) => {
 	useEffect(() => {
 		// Function to set the theme based on system preference
 		const setTheme = (theme: 'dark' | 'light') => {
@@ -24,6 +24,6 @@ const SystemThemePreferred = () => {
 		}
 	}, [])
 
-	return null
+	return <>{children}</>
 }
 export default SystemThemePreferred
