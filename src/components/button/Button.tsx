@@ -22,7 +22,7 @@ interface ButtonProps {
 	size?: ButtonSize
 	label: React.ReactNode
 	loading?: boolean
-	onClick?: () => void
+	onClick?: (e?: React.MouseEventHandler<HTMLButtonElement>) => void
 	fullWidth?: boolean
 	startEnhancer?: React.ReactNode
 	endEnhancer?: React.ReactNode
