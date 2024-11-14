@@ -67,7 +67,7 @@
 		"rollup-plugin-peer-deps-external": "^2.2.4",
 		"rollup-plugin-postcss": "^4.0.2",
 		"rollup-plugin-typescript2": "^0.34.1",
-		"sass": "^1.62.1",
+		"sass": "^1.80.7",
 		"ts-jest": "^29.0.4",
 		"tsconfig-paths-webpack-plugin": "^4.0.1",
 		"tslib": "^2.4.1",
