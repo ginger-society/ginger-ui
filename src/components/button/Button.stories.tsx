@@ -13,12 +13,6 @@ export const Primary = () => {
 			<Button
 				type={ButtonType.Primary}
 				label="Delete"
-				confirmConfig={{
-					title: 'Are you sure ?',
-					description: 'This is not reversible',
-					confirmButtonLabel: 'Yes, I am sure',
-					okBtnType: ButtonType.Danger
-				}}
 				onClick={() => {
 					console.log('ok')
 				}}

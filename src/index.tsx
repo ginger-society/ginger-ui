@@ -1,4 +1,5 @@
 export * from './components/button'
+export * from './components/confirmationButton'
 export * from './components/avatar'
 export * from './components/dropdown'
 export * from './components/input'

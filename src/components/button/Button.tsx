@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Loader } from '../loader'
-import { Modal, ModalBody, ModalHeader } from '../modal'
 import styles from './button.module.scss'
 
 // Define and export the ButtonType and ButtonSize enums
@@ -17,7 +16,7 @@ export enum ButtonSize {
 	Large = 'large'
 }
 
-interface ButtonProps {
+export interface ButtonProps {
 	type?: ButtonType
 	size?: ButtonSize
 	label: React.ReactNode
@@ -27,12 +26,6 @@ interface ButtonProps {
 	startEnhancer?: React.ReactNode
 	endEnhancer?: React.ReactNode
 	disabled?: boolean
-	confirmConfig?: {
-		title: React.ReactNode
-		confirmButtonLabel?: React.ReactNode
-		description?: React.ReactNode
-		okBtnType?: ButtonType
-	}
 }
 
 const Button: React.FC<ButtonProps> = ({
@@ -44,14 +37,11 @@ const Button: React.FC<ButtonProps> = ({
 	startEnhancer,
 	endEnhancer,
 	disabled = false,
-	confirmConfig,
 	onClick,
 	...props
 }) => {
 	const mode = styles[`button--${type}`]
 	const sizeClass = styles[`button--${size}`]
-
-	const [isConfirmOpen, setConfirmOpen] = useState<boolean>(false)
 
 	return (
 		<>
@@ -65,11 +55,11 @@ const Button: React.FC<ButtonProps> = ({
 					fullWidth ? styles['button-block'] : ''
 				].join(' ')}
 				onClick={(e) => {
-					if (confirmConfig) {
-						setConfirmOpen(true)
-					} else {
-						onClick && onClick(e)
-					}
+					// if (confirmConfig) {
+					// 	setConfirmOpen(true)
+					// } else {
+					// }
+					onClick && onClick(e)
 				}}
 				{...props}
 			>
@@ -82,23 +72,6 @@ const Button: React.FC<ButtonProps> = ({
 					<span className={styles['enhancer']}>{endEnhancer}</span>
 				)}
 			</button>
-			{confirmConfig && (
-				<Modal
-					isOpen={isConfirmOpen}
-					onClose={() => setConfirmOpen(false)}
-					footerConfig={{
-						okBtnLabel: confirmConfig.confirmButtonLabel,
-						okBtnType: confirmConfig.okBtnType
-					}}
-					onOk={() => {
-						setConfirmOpen(false)
-						onClick && onClick()
-					}}
-				>
-					<ModalHeader>{confirmConfig.title}</ModalHeader>
-					<ModalBody>{confirmConfig.description}</ModalBody>
-				</Modal>
-			)}
 		</>
 	)
 }
