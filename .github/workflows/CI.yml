@@ -97,6 +97,10 @@ jobs:
         if: success()
         run: ginger-connector trigger-dependent-pipelines ${{ secrets.GH_TOKEN }}
 
+      - name: Trigger Homepage pipeline
+        if: success()
+        run: ginger-connector trigger-pipeline homepage ${{ secrets.GH_TOKEN }}
+
       - name: Stop execution if any step failed
         if: failure()
         run: exit 1
