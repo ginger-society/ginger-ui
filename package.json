@@ -1,5 +1,4 @@
 {
-	"bin": "scripts/main.ts",
 	"browserslist": [
 		"> 1%",
 		"not dead",
