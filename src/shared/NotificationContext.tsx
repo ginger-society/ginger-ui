@@ -1,10 +1,4 @@
-import React, {
-	createContext,
-	useContext,
-	useEffect,
-	useRef,
-	useState
-} from 'react'
+import React, { createContext, useEffect, useRef, useState } from 'react'
 
 // Define the shape of the WebSocket message
 interface WebSocketMessage {
