@@ -71,7 +71,7 @@ export const NotificationProvider = <TUser extends { userId?: string }>({
 					const callback = subscriptions.current[message.topic]
 
 					if (callback) {
-						callback(message.payload)
+						callback(JSON.parse(message.payload))
 					}
 				}
 
