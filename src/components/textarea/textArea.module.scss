@@ -25,6 +25,7 @@
 		background-color: var(--primary-accent-color);
 		resize: vertical;
 		transition: border 0.3s ease;
+		box-sizing: border-box;
 
 		&:focus {
 			border-color: var(--accent-color);
