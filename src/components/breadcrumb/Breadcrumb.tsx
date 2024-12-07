@@ -1,7 +1,7 @@
 import React from 'react'
 import styles from './breadcrumb.module.scss'
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
 	path: string
 	label: string
 }
