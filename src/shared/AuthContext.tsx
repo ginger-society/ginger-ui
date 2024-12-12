@@ -1,5 +1,5 @@
 // authContext.ts
-import { createContext, useEffect, useState } from 'react'
+import { createContext, useCallback, useEffect, useState } from 'react'
 
 export interface AuthContextInterface<T> {
 	isAuthenticated: boolean | null
@@ -8,6 +8,7 @@ export interface AuthContextInterface<T> {
 	setLoading?: (value: boolean) => void
 	user: T | null
 	clearSession?: () => void
+	checkSession?: () => Promise<void>
 }
 
 export const AuthContext = createContext<AuthContextInterface<any>>({
@@ -38,29 +39,29 @@ export function AuthProvider<T>({
 		setLoading(false)
 	}
 
-	useEffect(() => {
-		const checkSession = async () => {
-			try {
-				const userData = await validateToken()
-				setIsAuthenticated(true)
-				setUser(userData)
-				setLoading(false)
+	const checkSession = useCallback(async () => {
+		try {
+			const userData = await validateToken()
+			setIsAuthenticated(true)
+			setUser(userData)
+			setLoading(false)
 
-				// Navigate post-login if function is provided
-				if (postLoginNavigate && window.location.hash.length < 3) {
-					postLoginNavigate()
-				}
-			} catch (e) {
-				setUser(null)
-				navigateToLogin()
-				setIsAuthenticated(false)
+			// Navigate post-login if function is provided
+			if (postLoginNavigate && window.location.hash.length < 3) {
+				postLoginNavigate()
 			}
+		} catch (e) {
+			setUser(null)
+			navigateToLogin()
+			setIsAuthenticated(false)
 		}
+	}, [navigateToLogin, postLoginNavigate, validateToken])
 
+	useEffect(() => {
 		if (!window.location.hash.startsWith('#/public')) {
 			checkSession()
 		}
-	}, [validateToken, navigateToLogin, postLoginNavigate])
+	}, [checkSession])
 
 	const value = {
 		isAuthenticated,
@@ -68,7 +69,8 @@ export function AuthProvider<T>({
 		loading,
 		setLoading,
 		user,
-		clearSession
+		clearSession,
+		checkSession
 	}
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
