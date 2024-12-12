@@ -77,7 +77,7 @@ const Input: React.FC<InputProps> = ({
 						{showPassword ? 'Hide' : 'Show'}
 					</span>
 				)}
-				{clearable && props.value && (
+				{!props.disabled && clearable && props.value && (
 					<span
 						aria-hidden="true"
 						onClick={handleClear}

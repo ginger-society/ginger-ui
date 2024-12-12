@@ -5,6 +5,8 @@
 	opacity: 1; /* Firefox */
 }
 
+
+
 .input {
 	background-color: var(--primary-accent-color);
 	border: 1px solid transparent;
@@ -23,7 +25,9 @@
 		background-color: var(--hover-bg-color);
 		border: 1px solid var(--secondary-color);
 	}
-
+	&:disabled{
+		cursor: not-allowed;
+	}
 	&.with-start-enhancer {
 		padding-left: 40px; /* Space for the start enhancer */
 	}

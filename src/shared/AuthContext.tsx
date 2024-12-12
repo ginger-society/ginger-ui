@@ -7,6 +7,7 @@ export interface AuthContextInterface<T> {
 	setIsAuthenticated?: (value: boolean) => void
 	setLoading?: (value: boolean) => void
 	user: T | null
+	clearSession?: () => void
 }
 
 export const AuthContext = createContext<AuthContextInterface<any>>({
@@ -31,6 +32,11 @@ export function AuthProvider<T>({
 	const [isAuthenticated, setIsAuthenticated] = useState(false)
 	const [user, setUser] = useState<T | null>(null)
 	const [loading, setLoading] = useState(true)
+
+	const clearSession = () => {
+		setUser(null)
+		setLoading(false)
+	}
 
 	useEffect(() => {
 		const checkSession = async () => {
@@ -61,7 +67,8 @@ export function AuthProvider<T>({
 		setIsAuthenticated,
 		loading,
 		setLoading,
-		user
+		user,
+		clearSession
 	}
 
 	return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
