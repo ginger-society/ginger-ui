@@ -54,6 +54,7 @@ export function AuthProvider<T>({
 			setUser(null)
 			navigateToLogin()
 			setIsAuthenticated(false)
+			setLoading(false)
 		}
 	}, [navigateToLogin, postLoginNavigate, validateToken])
 
