@@ -44,6 +44,7 @@ export const NotificationProvider = <TUser extends { userId?: string }>({
 
 	useEffect(() => {
 		if (!user && !channel) {
+			console.log('Neither user nor the channel is provided')
 			return
 		}
 
