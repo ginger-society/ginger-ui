@@ -1,4 +1,3 @@
-// authContext.ts
 import { createContext, useCallback, useEffect, useState } from 'react'
 
 export interface AuthContextInterface<T> {
@@ -39,28 +38,36 @@ export function AuthProvider<T>({
 		setLoading(false)
 	}
 
-	const checkSession = useCallback(async () => {
-		try {
-			const userData = await validateToken()
-			setIsAuthenticated(true)
-			setUser(userData)
-			setLoading(false)
+	const checkSession = useCallback((): Promise<void> => {
+		return new Promise((resolve, reject) => {
+			validateToken()
+				.then((userData) => {
+					setIsAuthenticated(true)
+					setUser(userData)
+					setLoading(false)
 
-			// Navigate post-login if function is provided
-			if (postLoginNavigate && window.location.hash.length < 3) {
-				postLoginNavigate()
-			}
-		} catch (e) {
-			setUser(null)
-			navigateToLogin()
-			setIsAuthenticated(false)
-			setLoading(false)
-		}
+					// Navigate post-login if function is provided
+					if (postLoginNavigate && window.location.hash.length < 3) {
+						postLoginNavigate()
+					}
+
+					resolve()
+				})
+				.catch((e) => {
+					setUser(null)
+					navigateToLogin()
+					setIsAuthenticated(false)
+					setLoading(false)
+					reject(e)
+				})
+		})
 	}, [navigateToLogin, postLoginNavigate, validateToken])
 
 	useEffect(() => {
 		if (!window.location.hash.startsWith('#/public')) {
-			checkSession()
+			checkSession().catch((e) => {
+				console.error('Error during session check:', e)
+			})
 		}
 	}, [checkSession])
 
