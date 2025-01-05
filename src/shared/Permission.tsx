@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from 'react'
 import { AuthContext } from './AuthContext'
+import { PermissionContext } from './PermissionContext'
 
 // Adjust the import paths as needed.
 
@@ -15,7 +16,8 @@ interface PermissionProps {
 }
 
 export function Permission({ type, groupId, children }: PermissionProps) {
-	const { lookupPermission, loading, isAuthenticated } = useContext(AuthContext)
+	const { lookupPermission } = useContext(PermissionContext)
+	const { isAuthenticated, loading } = useContext(AuthContext)
 	const [hasPermission, setHasPermission] = useState(false)
 	const [permissionLoading, setPermissionLoading] = useState(true)
 
