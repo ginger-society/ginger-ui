@@ -3,7 +3,7 @@ import { AuthContext } from './AuthContext'
 
 // Adjust the import paths as needed.
 
-enum PermissionType {
+export enum PermissionType {
 	OWNER = 'isAdmin',
 	MEMBER = 'isMember'
 }
