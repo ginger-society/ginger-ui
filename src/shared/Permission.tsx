@@ -11,7 +11,7 @@ export enum PermissionType {
 
 interface PermissionProps {
 	type: PermissionType
-	groupId: string
+	groupId?: string
 	children: JSX.Element
 }
 
@@ -24,7 +24,7 @@ export function Permission({ type, groupId, children }: PermissionProps) {
 	useEffect(() => {
 		let isMounted = true
 
-		if (!isAuthenticated || loading) {
+		if (!isAuthenticated || loading || !groupId) {
 			setHasPermission(false)
 			setPermissionLoading(false)
 			return
