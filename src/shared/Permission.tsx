@@ -11,7 +11,7 @@ export enum PermissionType {
 
 interface PermissionProps {
 	type: PermissionType
-	groupId?: string
+	groupId?: string | null
 	children: JSX.Element
 }
 
