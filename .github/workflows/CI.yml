@@ -21,8 +21,8 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Install ginger-apps
-        run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-pipeline-clis.sh)"
+      # - name: Install ginger-apps
+      #   run: bash -c "$(curl -fsSL https://raw.githubusercontent.com/ginger-society/infra-as-code-repo/main/rust-helpers/install-pipeline-clis.sh)"
 
       # - name: Authenticate with ginger-auth
       #   id: ginger-auth
