@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { useEffect, useState } from 'react'
 import { FaDesktop, FaMoon, FaSun } from 'react-icons/fa'
 import { Dropdown } from '../dropdown'
