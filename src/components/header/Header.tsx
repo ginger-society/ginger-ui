@@ -24,6 +24,8 @@ interface HeaderProps {
 	showThemeSwitcher?: boolean
 	arbitaryContent?: ReactNode
 	version?: string
+	onSettings?: () => void
+	settingsLabel?: string
 }
 
 export const Header = ({
@@ -35,7 +37,9 @@ export const Header = ({
 	onLogout,
 	showThemeSwitcher = true,
 	arbitaryContent,
-	version
+	version,
+	onSettings,
+	settingsLabel
 }: HeaderProps) => {
 	// Automatically detect and apply system theme if showThemeSwitcher is false
 	useEffect(() => {
@@ -90,6 +94,14 @@ export const Header = ({
 										<div>{user.email}</div>
 									</div>
 								</div>
+								{settingsLabel && (
+									<button
+										className={styles['logout-button']}
+										onClick={onSettings}
+									>
+										{settingsLabel}
+									</button>
+								)}
 								{version && (
 									<div className={styles['version-details']}>
 										Version : {version}

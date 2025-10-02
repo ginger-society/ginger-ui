@@ -16,6 +16,10 @@ export const LoggedIn = () => {
 			onLogout={handleLogout}
 			arbitaryContent={<span>Random text</span>}
 			version="0.0.1"
+			settingsLabel="Profile Settings"
+			onSettings={() => {
+				console.log('will navigare to settings page')
+			}}
 		/>
 	)
 }
