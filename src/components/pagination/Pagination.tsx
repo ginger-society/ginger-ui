@@ -57,11 +57,7 @@ const Pagination = ({
 					<Button
 						label={`${rowsPerPage} Rows per page`}
 						type={ButtonType.Tertiary}
-						endEnhancer={
-							<>
-								<FaAngleDown />
-							</>
-						}
+						endEnhancer={<FaAngleDown />}
 					/>
 				}
 			>
@@ -83,11 +79,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Prev"
-					startEnhancer={
-						<>
-							<FaAngleLeft />
-						</>
-					}
+					startEnhancer={<FaAngleLeft />}
 					onClick={handlePrevPage}
 					disabled={currentPage === 1}
 				/>
@@ -98,11 +90,7 @@ const Pagination = ({
 						<Button
 							label={`Page ${currentPage} of ${totalPages} pages`}
 							type={ButtonType.Tertiary}
-							endEnhancer={
-								<>
-									<FaAngleDown />
-								</>
-							}
+							endEnhancer={<FaAngleDown />}
 						/>
 					}
 				>
@@ -122,11 +110,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Next"
-					endEnhancer={
-						<>
-							<FaAngleRight />
-						</>
-					}
+					endEnhancer={<FaAngleRight />}
 					onClick={handleNextPage}
 					disabled={currentPage === totalPages}
 				/>

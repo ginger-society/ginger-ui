@@ -1,5 +1,6 @@
 {
 	"compilerOptions": {
+		"preserveSymlinks": true,
 		"baseUrl": ".",
 		"paths": {
 			"@src/*": ["src/*"]
