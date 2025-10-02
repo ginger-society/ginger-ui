@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ReactNode } from 'react'
+import { FaAngleDown } from 'react-icons/fa'
 import { Button, ButtonType } from '../button'
 import { Dropdown } from '../dropdown'
 import styles from './pagination.module.scss'
@@ -57,7 +57,7 @@ const Pagination = ({
 					<Button
 						label={`${rowsPerPage} Rows per page`}
 						type={ButtonType.Tertiary}
-						endEnhancer={'Down'}
+						endEnhancer={FaAngleDown({})}
 					/>
 				}
 			>
