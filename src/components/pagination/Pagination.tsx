@@ -4,6 +4,10 @@ import { Button, ButtonType } from '../button'
 import { Dropdown } from '../dropdown'
 import styles from './pagination.module.scss'
 
+const DownIcon = () => <FaAngleDown />
+const LeftIcon = () => <FaAngleLeft />
+const RightIcon = () => <FaAngleRight />
+
 interface PaginationProps {
 	totalRows: number
 	initialRowsPerPage?: number
@@ -57,7 +61,7 @@ const Pagination = ({
 					<Button
 						label={`${rowsPerPage} Rows per page`}
 						type={ButtonType.Tertiary}
-						endEnhancer={<FaAngleDown />}
+						endEnhancer={<DownIcon />}
 					/>
 				}
 			>
@@ -79,7 +83,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Prev"
-					startEnhancer={<FaAngleLeft />}
+					startEnhancer={<LeftIcon />}
 					onClick={handlePrevPage}
 					disabled={currentPage === 1}
 				/>
@@ -90,7 +94,7 @@ const Pagination = ({
 						<Button
 							label={`Page ${currentPage} of ${totalPages} pages`}
 							type={ButtonType.Tertiary}
-							endEnhancer={<FaAngleDown />}
+							endEnhancer={<DownIcon />}
 						/>
 					}
 				>
@@ -110,7 +114,7 @@ const Pagination = ({
 				<Button
 					type={ButtonType.Tertiary}
 					label="Next"
-					endEnhancer={<FaAngleRight />}
+					endEnhancer={<RightIcon />}
 					onClick={handleNextPage}
 					disabled={currentPage === totalPages}
 				/>
