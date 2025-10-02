@@ -24,6 +24,7 @@
 		"skipLibCheck": true,
 		"declaration": true,
 		"isolatedModules": true,
+		"skipDefaultLibCheck": true,
 		"plugins": [
 			{
 				"name": "typescript-plugin-css-modules"
