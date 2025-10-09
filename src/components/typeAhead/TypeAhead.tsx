@@ -33,13 +33,13 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	const debounceRef = useRef<NodeJS.Timeout>()
 
 	// 🔑 Keep input in sync with value
-	useEffect(() => {
-		if (value) {
-			setQuery(value.label)
-		} else {
-			setQuery('')
-		}
-	}, [value])
+	// useEffect(() => {
+	//   if (value && !value.preventAutoCompletion) {
+	//     setQuery(value.label)
+	//   } else {
+	//     setQuery('')
+	//   }
+	// }, [value])
 
 	useEffect(() => {
 		if (query.length < minChars) {

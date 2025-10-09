@@ -16,7 +16,7 @@ const mockFetchOptions = async (query: string): Promise<Option[]> => {
 		{ label: 'United Kingdom', value: 'GB' },
 		{ label: 'Germany', value: 'DE' },
 		{ label: 'France', value: 'FR' },
-		{ label: 'India', value: 'IN' },
+		{ label: 'India', value: 'IN', preventAutoCompletion: true },
 		{ label: 'Japan', value: 'JP' },
 		{ label: 'Brazil', value: 'BR' },
 		{ label: 'South Africa', value: 'ZA' }
