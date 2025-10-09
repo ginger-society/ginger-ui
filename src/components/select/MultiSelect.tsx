@@ -9,6 +9,7 @@ import styles from './select.module.scss'
 export interface Option {
 	label: string
 	value: string
+	[key: string]: unknown
 }
 
 const FEATURE_BREAK_COUNT = 10

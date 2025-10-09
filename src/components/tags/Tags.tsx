@@ -7,6 +7,7 @@ import styles from './tags.module.scss'
 export interface Option {
 	value: string
 	label: string
+	[key: string]: unknown
 }
 
 interface TagsProps {
