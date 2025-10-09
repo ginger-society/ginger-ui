@@ -76,6 +76,27 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		setOpen(false)
 	}
 
+	// 🧩 Handle focus — reopen dropdown if query already typed
+	const handleFocus = async () => {
+		if (query.length >= minChars) {
+			setLoading(true)
+			try {
+				const result = await fetchOptions(query)
+				setOptions(result)
+				setOpen(true)
+			} catch (err) {
+				console.error('TypeAhead focus fetch error:', err)
+			} finally {
+				setLoading(false)
+			}
+		}
+	}
+
+	const handleBlur = () => {
+		// Optionally close dropdown after a short delay
+		setTimeout(() => setOpen(false), 150)
+	}
+
 	return (
 		<div className={styles['container']}>
 			{label && <label>{label}</label>}
@@ -85,6 +106,8 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 						value={query}
 						placeholder={placeholder}
 						onChange={(e) => setQuery(e.target.value)}
+						onFocus={handleFocus}
+						onBlur={handleBlur}
 						clearable
 					/>
 				}
