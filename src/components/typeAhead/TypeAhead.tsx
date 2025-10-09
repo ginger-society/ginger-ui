@@ -70,7 +70,9 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 
 	const handleSelect = (option: Option) => {
 		onChange(option)
-		setQuery(option.label)
+		if (!option.preventAutoCompletion) {
+			setQuery(option.label)
+		}
 		setOpen(false)
 	}
 
