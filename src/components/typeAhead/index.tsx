@@ -1,1 +1,1 @@
-export { default, type TypeAheadUIType } from './TypeAhead'
+export { default, TypeAheadUIType } from './TypeAhead'
