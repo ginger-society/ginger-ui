@@ -51,11 +51,10 @@ const Dropdown = ({
 	const getAlignmentStyle = () => {
 		const dropdownWidthValue = parseInt(width, 10)
 		const widthDifference = dropdownWidthValue - triggerWidth
-		console.log({ dropdownWidthValue, widthDifference, align })
 		if (align === 'right') {
 			return { right: `-${widthDifference}px` }
 		} else if (align === 'left') {
-			return { left: `-${widthDifference}px` }
+			return { right: `0px` }
 		}
 		return {}
 	}
