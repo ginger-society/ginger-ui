@@ -154,7 +154,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	return (
 		<div className={styles['container']}>
 			{label && uiType !== TypeAheadUIType.TextArea && <label>{label}</label>}
-			<Dropdown label={renderInputField()} align="right" width="400px">
+			<Dropdown label={renderInputField()} align="left" width="400px">
 				{open && (
 					<div className={styles['options']}>
 						{loading ? (
