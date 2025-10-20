@@ -36,6 +36,17 @@ const Dropdown = ({
 			document.removeEventListener('mousedown', handleClickOutside)
 		}
 	}, [])
+
+	// Calculate negative width for right alignment
+	const getRightAlignmentStyle = () => {
+		if (align === 'right') {
+			// Extract numeric value from width string (e.g., "300px" -> 300)
+			const widthValue = parseInt(width, 10)
+			return { left: `-${widthValue}px` }
+		}
+		return {}
+	}
+
 	return (
 		<div
 			className={styles['wrapper']}
@@ -47,7 +58,10 @@ const Dropdown = ({
 			<div className={styles['dropdown']}>
 				{visible && (
 					<div
-						style={{ minWidth: width }}
+						style={{
+							minWidth: width,
+							...getRightAlignmentStyle()
+						}}
 						className={`${styles['dropdown-content']} ${
 							styles[`dropdown-${align}`]
 						}`}

@@ -4,11 +4,13 @@ import ContentEditable from '../contentEditable'
 import Dropdown from '../dropdown/Dropdown'
 import Input from '../input/Input'
 import { Option } from '../select/types'
+import TextArea from '../textarea/TextArea'
 import styles from './typeahead.module.scss'
 
 export enum TypeAheadUIType {
 	Input = 'input',
-	ContentEditable = 'contentEditable'
+	ContentEditable = 'contentEditable',
+	TextArea = 'textArea'
 }
 
 interface TypeAheadProps {
@@ -22,6 +24,7 @@ interface TypeAheadProps {
 	debounceMs?: number
 	uiType?: TypeAheadUIType
 	contentEditableClassName?: string
+	textAreaRows?: number
 }
 
 const TypeAhead: React.FC<TypeAheadProps> = ({
@@ -34,7 +37,8 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	minChars = 2,
 	debounceMs = 300,
 	uiType = TypeAheadUIType.Input,
-	contentEditableClassName = ''
+	contentEditableClassName = '',
+	textAreaRows = 3
 }) => {
 	const [query, setQuery] = useState('')
 	const [options, setOptions] = useState<Option[]>([])
@@ -121,6 +125,20 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 			)
 		}
 
+		if (uiType === TypeAheadUIType.TextArea) {
+			return (
+				<TextArea
+					label={label}
+					value={query}
+					placeholder={placeholder}
+					onChange={(e) => setQuery(e.target.value)}
+					onFocus={handleFocus}
+					onBlur={handleBlur}
+					rows={textAreaRows}
+				/>
+			)
+		}
+
 		return (
 			<Input
 				value={query}
@@ -135,7 +153,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 
 	return (
 		<div className={styles['container']}>
-			{label && <label>{label}</label>}
+			{label && uiType !== TypeAheadUIType.TextArea && <label>{label}</label>}
 			<Dropdown label={renderInputField()} align="right" width="400px">
 				{open && (
 					<div className={styles['options']}>

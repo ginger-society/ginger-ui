@@ -1,4 +1,4 @@
-// TypeAhead.stories.tsx (or inside your examples file)
+// TypeAhead.stories.tsx
 import SvgIcons8Bookmark from '@src/icons/Icons8Bookmark'
 import React, { useState } from 'react'
 import { Option } from '../select/types'
