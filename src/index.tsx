@@ -1,5 +1,3 @@
-import { TypeAheadUIType } from './components/typeAhead/TypeAhead'
-
 export * from './components/button'
 export * from './components/confirmationButton'
 export * from './components/avatar'
