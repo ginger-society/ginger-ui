@@ -1,9 +1,15 @@
 // TypeAhead.tsx
 import React, { useEffect, useRef, useState } from 'react'
+import ContentEditable from '../contentEditable'
 import Dropdown from '../dropdown/Dropdown'
 import Input from '../input/Input'
 import { Option } from '../select/types'
 import styles from './typeahead.module.scss'
+
+export enum TypeAheadUIType {
+	Input = 'input',
+	ContentEditable = 'contentEditable'
+}
 
 interface TypeAheadProps {
 	fetchOptions: (query: string) => Promise<Option[]> // async fetch API
@@ -14,6 +20,8 @@ interface TypeAheadProps {
 	label?: string
 	minChars?: number
 	debounceMs?: number
+	uiType?: TypeAheadUIType
+	contentEditableClassName?: string
 }
 
 const TypeAhead: React.FC<TypeAheadProps> = ({
@@ -24,7 +32,9 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	placeholder = 'Type to search...',
 	label,
 	minChars = 2,
-	debounceMs = 300
+	debounceMs = 300,
+	uiType = TypeAheadUIType.Input,
+	contentEditableClassName = ''
 }) => {
 	const [query, setQuery] = useState('')
 	const [options, setOptions] = useState<Option[]>([])
@@ -97,23 +107,36 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		setTimeout(() => setOpen(false), 150)
 	}
 
+	// Render input based on uiType
+	const renderInputField = () => {
+		if (uiType === TypeAheadUIType.ContentEditable) {
+			return (
+				<ContentEditable
+					value={query}
+					placeholder={placeholder}
+					onChange={(text) => setQuery(text)}
+					onBlur={handleBlur}
+					className={contentEditableClassName}
+				/>
+			)
+		}
+
+		return (
+			<Input
+				value={query}
+				placeholder={placeholder}
+				onChange={(e) => setQuery(e.target.value)}
+				onFocus={handleFocus}
+				onBlur={handleBlur}
+				clearable
+			/>
+		)
+	}
+
 	return (
 		<div className={styles['container']}>
 			{label && <label>{label}</label>}
-			<Dropdown
-				label={
-					<Input
-						value={query}
-						placeholder={placeholder}
-						onChange={(e) => setQuery(e.target.value)}
-						onFocus={handleFocus}
-						onBlur={handleBlur}
-						clearable
-					/>
-				}
-				align="left"
-				width="400px"
-			>
+			<Dropdown label={renderInputField()} align="left" width="400px">
 				{open && (
 					<div className={styles['options']}>
 						{loading ? (
