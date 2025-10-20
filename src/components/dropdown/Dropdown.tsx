@@ -16,6 +16,7 @@ const Dropdown = ({
 }: DropdownProps) => {
 	const [visible, setDropdownVisible] = useState(false)
 	const dropdownRef = useRef<HTMLDivElement>(null)
+	const [triggerWidth, setTriggerWidth] = useState(0)
 
 	const toggleDropdown = () => {
 		setDropdownVisible(!visible)
@@ -32,17 +33,29 @@ const Dropdown = ({
 
 	useEffect(() => {
 		document.addEventListener('mousedown', handleClickOutside)
+
+		// Get trigger width
+		if (dropdownRef.current) {
+			const trigger = dropdownRef.current.firstElementChild
+			if (trigger) {
+				setTriggerWidth(trigger.clientWidth)
+			}
+		}
+
 		return () => {
 			document.removeEventListener('mousedown', handleClickOutside)
 		}
 	}, [])
 
-	// Calculate negative width for right alignment
-	const getRightAlignmentStyle = () => {
+	// Calculate positioning based on alignment
+	const getAlignmentStyle = () => {
+		const dropdownWidthValue = parseInt(width, 10)
+		const widthDifference = dropdownWidthValue - triggerWidth
+		console.log({ dropdownWidthValue, widthDifference, align })
 		if (align === 'right') {
-			// Extract numeric value from width string (e.g., "300px" -> 300)
-			const widthValue = parseInt(width, 10)
-			return { left: `-${widthValue}px` }
+			return { left: `-${widthDifference}px` }
+		} else if (align === 'left') {
+			return { right: `-${widthDifference}px` }
 		}
 		return {}
 	}
@@ -60,7 +73,7 @@ const Dropdown = ({
 					<div
 						style={{
 							minWidth: width,
-							...getRightAlignmentStyle()
+							...getAlignmentStyle()
 						}}
 						className={`${styles['dropdown-content']} ${
 							styles[`dropdown-${align}`]
