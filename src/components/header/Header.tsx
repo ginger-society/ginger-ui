@@ -78,7 +78,7 @@ export const Header = ({
 				{user ? (
 					<div className={styles['welcome']}>
 						<Dropdown
-							align="left"
+							align="right"
 							label={
 								<div className={styles['avatar-container']}>
 									Welcome
