@@ -14,7 +14,7 @@ export enum TypeAheadUIType {
 }
 
 interface TypeAheadProps {
-	fetchOptions: (query: string) => Promise<Option[]> // async fetch API
+	fetchOptions: (query: string) => Promise<Option[]>
 	renderer?: (option: Option) => React.ReactNode
 	onChange: (value: Option | null) => void
 	value: Option | null
@@ -45,15 +45,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	const [loading, setLoading] = useState(false)
 	const [open, setOpen] = useState(false)
 	const debounceRef = useRef<NodeJS.Timeout>()
-
-	// 🔑 Keep input in sync with value
-	// useEffect(() => {
-	//   if (value && !value.preventAutoCompletion) {
-	//     setQuery(value.label)
-	//   } else {
-	//     setQuery('')
-	//   }
-	// }, [value])
+	const inputWrapperRef = useRef<HTMLDivElement>(null)
 
 	useEffect(() => {
 		if (query.length < minChars) {
@@ -90,7 +82,6 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		setOpen(false)
 	}
 
-	// 🧩 Handle focus — reopen dropdown if query already typed
 	const handleFocus = async () => {
 		if (query.length >= minChars) {
 			setLoading(true)
@@ -107,14 +98,15 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	}
 
 	const handleBlur = () => {
-		// Optionally close dropdown after a short delay
 		setTimeout(() => setOpen(false), 150)
 	}
 
-	// Render input based on uiType
+	// Render input based on uiType - wrapped in a div to ensure consistent width
 	const renderInputField = () => {
+		let inputElement
+
 		if (uiType === TypeAheadUIType.ContentEditable) {
-			return (
+			inputElement = (
 				<ContentEditable
 					value={query}
 					placeholder={placeholder}
@@ -123,10 +115,8 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 					className={contentEditableClassName}
 				/>
 			)
-		}
-
-		if (uiType === TypeAheadUIType.TextArea) {
-			return (
+		} else if (uiType === TypeAheadUIType.TextArea) {
+			inputElement = (
 				<TextArea
 					label={label}
 					value={query}
@@ -137,24 +127,42 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 					rows={textAreaRows}
 				/>
 			)
+		} else {
+			inputElement = (
+				<Input
+					value={query}
+					placeholder={placeholder}
+					onChange={(e) => setQuery(e.target.value)}
+					onFocus={handleFocus}
+					onBlur={handleBlur}
+					clearable
+				/>
+			)
 		}
 
 		return (
-			<Input
-				value={query}
-				placeholder={placeholder}
-				onChange={(e) => setQuery(e.target.value)}
-				onFocus={handleFocus}
-				onBlur={handleBlur}
-				clearable
-			/>
+			<div ref={inputWrapperRef} style={{ width: '100%', display: 'block' }}>
+				{inputElement}
+			</div>
 		)
+	}
+
+	// Calculate dropdown width based on input wrapper
+	const getDropdownWidth = () => {
+		if (inputWrapperRef.current) {
+			return `${inputWrapperRef.current.offsetWidth}px`
+		}
+		return '400px'
 	}
 
 	return (
 		<div className={styles['container']}>
 			{label && uiType !== TypeAheadUIType.TextArea && <label>{label}</label>}
-			<Dropdown label={renderInputField()} align="left" width="400px">
+			<Dropdown
+				label={renderInputField()}
+				align="left"
+				width={getDropdownWidth()}
+			>
 				{open && (
 					<div className={styles['options']}>
 						{loading ? (

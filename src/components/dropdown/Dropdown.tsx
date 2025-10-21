@@ -52,9 +52,9 @@ const Dropdown = ({
 		const dropdownWidthValue = parseInt(width, 10)
 		const widthDifference = dropdownWidthValue - triggerWidth
 		if (align === 'right') {
-			return { right: `-${widthDifference}px` }
+			return { left: `-${dropdownWidthValue}px` }
 		} else if (align === 'left') {
-			return { right: `0px` }
+			return { right: `-${widthDifference}px` }
 		}
 		return {}
 	}
