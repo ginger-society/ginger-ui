@@ -29,7 +29,10 @@ export const AllExamples: React.FC = () => {
 	// State for all examples
 	const [basicSelected, setBasicSelected] = useState<Option | null>(null)
 	const [rendererSelected, setRendererSelected] = useState<Option | null>(null)
-	const [fruitSelected, setFruitSelected] = useState<Option | null>(null)
+	const [fruitSelected, setFruitSelected] = useState<Option | null>({
+		label: 'Apple',
+		value: 'apple'
+	})
 	const [contentEditableSelected, setContentEditableSelected] =
 		useState<Option | null>(null)
 	const [textAreaSelected, setTextAreaSelected] = useState<Option | null>(null)

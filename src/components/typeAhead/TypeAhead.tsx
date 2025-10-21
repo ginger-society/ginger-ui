@@ -46,6 +46,16 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	const [open, setOpen] = useState(false)
 	const debounceRef = useRef<NodeJS.Timeout>()
 	const inputWrapperRef = useRef<HTMLDivElement>(null)
+	const [triggerHeight, setTriggerHeight] = useState(0)
+
+	// Sync query with value prop
+	useEffect(() => {
+		if (value && !value.preventAutoCompletion) {
+			setQuery(value.label)
+		} else if (!value) {
+			setQuery('')
+		}
+	}, [value])
 
 	useEffect(() => {
 		if (query.length < minChars) {
@@ -72,7 +82,28 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		return () => {
 			if (debounceRef.current) clearTimeout(debounceRef.current)
 		}
-	}, [query])
+	}, [query, minChars, debounceMs, fetchOptions])
+
+	// Update trigger height when input wrapper changes
+	useEffect(() => {
+		if (inputWrapperRef.current) {
+			const updateHeight = () => {
+				if (inputWrapperRef.current) {
+					setTriggerHeight(inputWrapperRef.current.offsetHeight)
+				}
+			}
+
+			updateHeight()
+
+			// Use ResizeObserver to handle dynamic height changes
+			const resizeObserver = new ResizeObserver(updateHeight)
+			resizeObserver.observe(inputWrapperRef.current)
+
+			return () => {
+				resizeObserver.disconnect()
+			}
+		}
+	}, [query, uiType])
 
 	const handleSelect = (option: Option) => {
 		onChange(option)
@@ -101,6 +132,15 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		setTimeout(() => setOpen(false), 150)
 	}
 
+	// Handle manual text changes (typing)
+	const handleQueryChange = (text: string) => {
+		setQuery(text)
+		// If user manually types, clear the selected value
+		if (value && text !== value.label) {
+			onChange(null)
+		}
+	}
+
 	// Render input based on uiType - wrapped in a div to ensure consistent width
 	const renderInputField = () => {
 		let inputElement
@@ -110,7 +150,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 				<ContentEditable
 					value={query}
 					placeholder={placeholder}
-					onChange={(text) => setQuery(text)}
+					onChange={handleQueryChange}
 					onBlur={handleBlur}
 					className={contentEditableClassName}
 				/>
@@ -121,7 +161,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 					label={label}
 					value={query}
 					placeholder={placeholder}
-					onChange={(e) => setQuery(e.target.value)}
+					onChange={(e) => handleQueryChange(e.target.value)}
 					onFocus={handleFocus}
 					onBlur={handleBlur}
 					rows={textAreaRows}
@@ -132,7 +172,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 				<Input
 					value={query}
 					placeholder={placeholder}
-					onChange={(e) => setQuery(e.target.value)}
+					onChange={(e) => handleQueryChange(e.target.value)}
 					onFocus={handleFocus}
 					onBlur={handleBlur}
 					clearable
@@ -162,6 +202,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 				label={renderInputField()}
 				align="left"
 				width={getDropdownWidth()}
+				triggerHeight={triggerHeight}
 			>
 				{open && (
 					<div className={styles['options']}>
