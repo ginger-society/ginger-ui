@@ -51,14 +51,15 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	// Sync query with value prop
 	useEffect(() => {
 		if (value) {
-			// Always sync the label, regardless of preventAutoCompletion
-			// preventAutoCompletion only affects behavior after selection
-			setQuery(value.label || '')
+			// Only sync if preventAutoCompletion is not explicitly true
+			if (value.preventAutoCompletion !== true) {
+				setQuery(value.label || '')
+			}
 		} else {
 			setQuery('')
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [value?.label])
+	}, [value?.label, value?.preventAutoCompletion])
 
 	useEffect(() => {
 		if (query.length < minChars) {
