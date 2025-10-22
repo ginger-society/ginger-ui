@@ -76,7 +76,7 @@ const ThemeToggle = () => {
 	}
 
 	return (
-		<Dropdown align="left" label={getCurrentThemeLabel()} width="150px">
+		<Dropdown align="right" label={getCurrentThemeLabel()} width="150px">
 			<div className={styles['theme-options']}>
 				<button
 					onClick={() => handleThemeChange('light')}
