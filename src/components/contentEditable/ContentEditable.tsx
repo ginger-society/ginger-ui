@@ -15,7 +15,7 @@ const ContentEditable: FC<ContentEditableProps> = ({
 	placeholder = 'Enter text',
 	onChange = () => null,
 	onBlur = () => null,
-	padding = '4px 8px',
+	padding = '0px 0px',
 	className = '',
 	validationRegex
 }) => {
