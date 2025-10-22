@@ -52,7 +52,10 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	useEffect(() => {
 		if (value) {
 			// Only sync if preventAutoCompletion is not explicitly true
-			if (value.preventAutoCompletion !== true) {
+			if (
+				!value.preventAutoCompletion ||
+				value.preventAutoCompletion !== true
+			) {
 				setQuery(value.label || '')
 			}
 		} else {
