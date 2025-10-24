@@ -142,6 +142,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	// Handle manual text changes (typing)
 	const handleQueryChange = (text: string) => {
 		setQuery(text)
+		setOpen(true)
 		// If user manually types, clear the selected value
 		if (value && text !== value.label) {
 			onChange(null)
