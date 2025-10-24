@@ -144,6 +144,8 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		setQuery(text)
 		if (text.length >= minChars) {
 			setOpen(true)
+		} else {
+			setOpen(false)
 		}
 		// If user manually types, clear the selected value
 		if (value && text !== value.label) {
