@@ -18,10 +18,12 @@
   text-overflow: ellipsis;
   cursor: text;
   margin: 0;
-  padding: 0; /* Remove all padding */
+  padding: 0;
   border: 1px solid transparent;
   border-radius: 2px;
   transition: border-color 0.2s;
+  position: relative;
+  z-index: 1;
 }
 
 /* Validation error */
@@ -37,7 +39,7 @@
   pointer-events: none;
   font: inherit;
   margin: 0;
-  padding: 0; /* Remove padding here too */
+  padding: 0;
 }
 
 /* Placeholder text when content is empty */
@@ -47,38 +49,26 @@
   pointer-events: none;
   white-space: nowrap;
   margin: 0;
-  padding: 0; /* Remove padding */
+  padding: 0;
+  z-index: 0;
 }
 
-/* Hover cue wrapper */
-.hoverCueWrapper {
-  position: relative;
-  display: inline-block;
-
-  /* The cue itself, overlays entire wrapper but pointer-events are none */
-  &::after {
-    content: '';
-    pointer-events: none;
-    border-radius: 4px;
-    position: absolute;
-    top: -4px;
-    left: -4px;
-    right: -4px;
-    bottom: -4px;
-    border: 1.5px dotted #888;
-    opacity: 0;
-    transition: opacity 0.18s;
-    z-index: 2;
-  }
-
-  /* Show cue on hover if not editing or invalid */
-  &:hover:not(.editing):not(.invalid)::after {
-    opacity: 1;
-  }
+/* Hover cue - separate element approach */
+.hoverCue {
+  pointer-events: none;
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border: 2px dotted black;
+  border-radius: 4px;
+  opacity: 0;
+  transition: opacity 0.18s;
+  z-index: 0;
 }
 
-/* Also: never show cue if error is on */
-.hoverCueWrapper.invalid::after,
-.hoverCueWrapper.editing::after {
-  opacity: 0 !important;
+/* Show cue on container hover */
+.container:hover .hoverCue {
+  opacity: 1;
 }

@@ -83,28 +83,26 @@ const ContentEditable: FC<ContentEditableProps> = ({
 				{placeholder}
 			</p>
 
-			<div
-				className={`${enableCues ? styles['hoverCueWrapper'] : ''} ${
-					isEditing ? styles['editing'] : ''
-				} ${isInvalid ? styles['invalid'] : ''}`}
-			>
-				<p
-					ref={pRef}
-					contentEditable
-					suppressContentEditableWarning
-					onInput={handleInput}
-					onPaste={handlePaste}
-					onKeyDown={handleKeyDown}
-					onFocus={handleFocus}
-					onBlur={handleBlur}
-					spellCheck="false"
-					className={`${styles['editable']} ${
-						isInvalid ? styles['invalid'] : ''
-					} ${className}`}
-					style={dynamicStyle}
-					role="presentation"
-				/>
-			</div>
+			{enableCues && !isEditing && !isInvalid && (
+				<div className={styles['hoverCue']} />
+			)}
+
+			<p
+				ref={pRef}
+				contentEditable
+				suppressContentEditableWarning
+				onInput={handleInput}
+				onPaste={handlePaste}
+				onKeyDown={handleKeyDown}
+				onFocus={handleFocus}
+				onBlur={handleBlur}
+				spellCheck="false"
+				className={`${styles['editable']} ${
+					isInvalid ? styles['invalid'] : ''
+				} ${className}`}
+				style={dynamicStyle}
+				role="presentation"
+			/>
 
 			{!content && (
 				<p className={styles['visiblePlaceholder']}>{placeholder}</p>
