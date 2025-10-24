@@ -123,10 +123,10 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	const handleFocus = async () => {
 		if (query.length >= minChars) {
 			setLoading(true)
+			setOpen(true)
 			try {
 				const result = await fetchOptions(query)
 				setOptions(result)
-				setOpen(true)
 			} catch (err) {
 				console.error('TypeAhead focus fetch error:', err)
 			} finally {
