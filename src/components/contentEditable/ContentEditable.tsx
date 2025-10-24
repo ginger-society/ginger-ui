@@ -1,5 +1,5 @@
 import { CSSProperties, FC, useEffect, useRef, useState } from 'react'
-import styles from './ContentEditable.module.scss'
+import styles from './contentEditable.module.scss'
 
 interface ContentEditableProps {
 	value?: string
