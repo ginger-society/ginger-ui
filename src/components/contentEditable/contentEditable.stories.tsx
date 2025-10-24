@@ -129,7 +129,7 @@ export const CustomPadding = () => {
 				<div style={{ marginBottom: '8px', fontWeight: 'bold' }}>
 					Large padding (12px 16px):
 				</div>
-				<ContentEditable placeholder="Large padding" padding="12px 16px" />
+				<ContentEditable placeholder="Large padding" />
 			</div>
 		</div>
 	)
@@ -285,21 +285,18 @@ export const InlineEditing = () => {
 					value={name}
 					placeholder="Your name"
 					onChange={setName}
-					padding="2px 6px"
 				/>{' '}
 				and I work at{' '}
 				<ContentEditable
 					value={company}
 					placeholder="Company name"
 					onChange={setCompany}
-					padding="2px 6px"
 				/>{' '}
 				as a{' '}
 				<ContentEditable
 					value={role}
 					placeholder="Your role"
 					onChange={setRole}
-					padding="2px 6px"
 				/>
 				. Click on any highlighted text to edit it inline.
 			</p>
