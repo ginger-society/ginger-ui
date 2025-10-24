@@ -6,7 +6,6 @@ interface ContentEditableProps {
 	placeholder?: string
 	onChange?: (text: string) => void
 	onBlur?: (text: string) => void
-	padding?: string
 	className?: string
 	validationRegex?: RegExp
 	enableCues?: boolean
@@ -17,7 +16,6 @@ const ContentEditable: FC<ContentEditableProps> = ({
 	placeholder = 'Enter text',
 	onChange = () => null,
 	onBlur = () => null,
-	padding = '0px 0px',
 	className = '',
 	validationRegex,
 	enableCues = true
@@ -76,17 +74,12 @@ const ContentEditable: FC<ContentEditableProps> = ({
 	}
 
 	const dynamicStyle: CSSProperties = {
-		padding,
 		minWidth
 	}
 
 	return (
 		<div className={styles['container']}>
-			<p
-				ref={placeholderRef}
-				className={styles['placeholderMeasure']}
-				style={{ padding }}
-			>
+			<p ref={placeholderRef} className={styles['placeholderMeasure']}>
 				{placeholder}
 			</p>
 
@@ -114,9 +107,7 @@ const ContentEditable: FC<ContentEditableProps> = ({
 			</div>
 
 			{!content && (
-				<p className={styles['visiblePlaceholder']} style={{ padding }}>
-					{placeholder}
-				</p>
+				<p className={styles['visiblePlaceholder']}>{placeholder}</p>
 			)}
 		</div>
 	)
