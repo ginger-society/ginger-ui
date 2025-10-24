@@ -1,4 +1,5 @@
 import { CSSProperties, FC, useEffect, useRef, useState } from 'react'
+import styles from './ContentEditable.module.scss'
 
 interface ContentEditableProps {
 	value?: string
@@ -8,6 +9,7 @@ interface ContentEditableProps {
 	padding?: string
 	className?: string
 	validationRegex?: RegExp
+	enableCues?: boolean
 }
 
 const ContentEditable: FC<ContentEditableProps> = ({
@@ -17,15 +19,16 @@ const ContentEditable: FC<ContentEditableProps> = ({
 	onBlur = () => null,
 	padding = '0px 0px',
 	className = '',
-	validationRegex
+	validationRegex,
+	enableCues = true
 }) => {
 	const [content, setContent] = useState<string>(value)
 	const [isInvalid, setIsInvalid] = useState<boolean>(false)
+	const [isEditing, setIsEditing] = useState(false)
 	const pRef = useRef<HTMLParagraphElement>(null)
 	const placeholderRef = useRef<HTMLParagraphElement>(null)
 	const [minWidth, setMinWidth] = useState<string>('auto')
 
-	// ✅ Update DOM only when external `value` changes
 	useEffect(() => {
 		if (pRef.current && pRef.current.textContent !== value) {
 			pRef.current.textContent = value
@@ -33,7 +36,6 @@ const ContentEditable: FC<ContentEditableProps> = ({
 		}
 	}, [value])
 
-	// Calculate min width based on placeholder
 	useEffect(() => {
 		if (placeholderRef.current) {
 			const width = placeholderRef.current.offsetWidth
@@ -60,83 +62,62 @@ const ContentEditable: FC<ContentEditableProps> = ({
 		}
 	}
 
+	const handleFocus = () => {
+		setIsEditing(true)
+	}
+
 	const handleBlur = (e: React.FocusEvent<HTMLParagraphElement>) => {
 		const text = e.currentTarget.textContent || ''
-
-		// Validate against regex if provided
-		if (validationRegex && text.length > 0) {
-			setIsInvalid(!validationRegex.test(text))
-		} else {
-			setIsInvalid(false)
-		}
-
+		setIsInvalid(
+			validationRegex && text.length > 0 ? !validationRegex.test(text) : false
+		)
+		setIsEditing(false)
 		onBlur(text)
 	}
 
-	const containerStyle: CSSProperties = {
-		display: 'inline-flex',
-		alignItems: 'center',
-		position: 'relative'
-	}
-
-	const placeholderPStyle: CSSProperties = {
-		visibility: 'hidden',
-		position: 'absolute',
-		whiteSpace: 'nowrap',
-		pointerEvents: 'none',
+	const dynamicStyle: CSSProperties = {
 		padding,
-		font: 'inherit',
-		margin: 0
-	}
-
-	const editablePStyle: CSSProperties = {
-		outline: 'none',
-		minWidth,
-		padding,
-		display: 'inline-block',
-		whiteSpace: 'nowrap',
-		overflow: 'hidden',
-		textOverflow: 'ellipsis',
-		cursor: 'text',
-		margin: 0,
-		border: isInvalid ? '1px solid #ef4444' : '1px solid transparent',
-		borderRadius: '2px',
-		transition: 'border-color 0.2s'
-	}
-
-	const visiblePlaceholderStyle: CSSProperties = {
-		position: 'absolute',
-		color: '#999',
-		pointerEvents: 'none',
-		padding,
-		whiteSpace: 'nowrap',
-		margin: 0
+		minWidth
 	}
 
 	return (
-		<div style={containerStyle}>
-			{/* Hidden placeholder to measure width */}
-			<p ref={placeholderRef} style={placeholderPStyle}>
+		<div className={styles['container']}>
+			<p
+				ref={placeholderRef}
+				className={styles['placeholderMeasure']}
+				style={{ padding }}
+			>
 				{placeholder}
 			</p>
 
-			{/* Editable paragraph (we let DOM manage its content) */}
-			<p
-				ref={pRef}
-				contentEditable
-				suppressContentEditableWarning
-				onInput={handleInput}
-				onPaste={handlePaste}
-				onKeyDown={handleKeyDown}
-				onBlur={handleBlur}
-				spellCheck="false"
-				style={editablePStyle}
-				className={className}
-				role="presentation"
-			/>
+			<div
+				className={`${enableCues ? styles['hoverCueWrapper'] : ''} ${
+					isEditing ? styles['editing'] : ''
+				} ${isInvalid ? styles['invalid'] : ''}`}
+			>
+				<p
+					ref={pRef}
+					contentEditable
+					suppressContentEditableWarning
+					onInput={handleInput}
+					onPaste={handlePaste}
+					onKeyDown={handleKeyDown}
+					onFocus={handleFocus}
+					onBlur={handleBlur}
+					spellCheck="false"
+					className={`${styles['editable']} ${
+						isInvalid ? styles['invalid'] : ''
+					} ${className}`}
+					style={dynamicStyle}
+					role="presentation"
+				/>
+			</div>
 
-			{/* Placeholder when empty */}
-			{!content && <p style={visiblePlaceholderStyle}>{placeholder}</p>}
+			{!content && (
+				<p className={styles['visiblePlaceholder']} style={{ padding }}>
+					{placeholder}
+				</p>
+			)}
 		</div>
 	)
 }

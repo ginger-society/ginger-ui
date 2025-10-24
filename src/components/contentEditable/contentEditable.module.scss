@@ -1,0 +1,79 @@
+.container {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Remove blue focus and box glow */
+.editable:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+/* Editable base */
+.editable {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+  margin: 0;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  transition: border-color 0.2s;
+}
+
+/* Validation error */
+.invalid {
+  border-color: #ef4444;
+}
+
+/* Placeholder measuring */
+.placeholderMeasure {
+  visibility: hidden;
+  position: absolute;
+  white-space: nowrap;
+  pointer-events: none;
+  font: inherit;
+  margin: 0;
+}
+
+/* Placeholder text when content is empty */
+.visiblePlaceholder {
+  position: absolute;
+  color: #999;
+  pointer-events: none;
+  white-space: nowrap;
+  margin: 0;
+}
+
+/* Hover cue wrapper */
+.hoverCueWrapper {
+  position: relative;
+
+  /* Hover cue only appears when not editing and not invalid */
+  &:not(.editing):not(.invalid):hover::after {
+    content: '';
+    position: absolute;
+    inset: 0; /* perfectly aligns to inner padding */
+    border: 1px dotted #888;
+    border-radius: 4px;
+    pointer-events: none;
+  }
+
+  /* No hover border by default */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border: 1px dotted transparent;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: border-color 0.15s ease;
+  }
+}
+
+/* Disable cue fully when editing */
+.editing::after {
+  border-color: transparent !important;
+}
