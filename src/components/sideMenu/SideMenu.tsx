@@ -11,9 +11,10 @@ interface SideMenuProps {
 	options: MenuItem[]
 	active: string
 	onChange: (newId: string) => void
+	topContent?: ReactNode // 👈 new optional prop for arbitrary top content
 }
 
-const SideMenu = ({ options, active, onChange }: SideMenuProps) => {
+const SideMenu = ({ options, active, onChange, topContent }: SideMenuProps) => {
 	const [expandedItems, setExpandedItems] = useState<{
 		[key: string]: boolean
 	}>({})
@@ -33,14 +34,10 @@ const SideMenu = ({ options, active, onChange }: SideMenuProps) => {
 		activeId: string
 	): MenuItem | null => {
 		for (const item of items) {
-			if (item.id === activeId) {
-				return item
-			}
+			if (item.id === activeId) return item
 			if (item.children) {
 				const activeChild = findActiveItem(item.children, activeId)
-				if (activeChild) {
-					return activeChild
-				}
+				if (activeChild) return activeChild
 			}
 		}
 		return null
@@ -104,7 +101,12 @@ const SideMenu = ({ options, active, onChange }: SideMenuProps) => {
 			)
 		})
 
-	return <ul className={styles['menu']}>{renderMenuItems(options)}</ul>
+	return (
+		<div className={styles['side-menu-container']}>
+			{topContent && <div className={styles['top-content']}>{topContent}</div>}
+			<ul className={styles['menu']}>{renderMenuItems(options)}</ul>
+		</div>
+	)
 }
 
 export default SideMenu

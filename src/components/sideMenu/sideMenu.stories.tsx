@@ -46,6 +46,7 @@ export const Example = () => {
 				options={sideMenuOptions}
 				active={activeItem}
 				onChange={handleMenuChange}
+				topContent={<h1>Menu</h1>}
 			/>
 			{/* Other content based on the selected menu item */}
 		</div>
