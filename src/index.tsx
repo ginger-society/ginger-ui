@@ -20,7 +20,10 @@ export * from './components/breadcrumb'
 export * from './components/progressBar'
 export * from './components/typography'
 export { default as TypeAhead, TypeAheadUIType } from './components/typeAhead'
-export { default as ContentEditable } from './components/contentEditable'
+export {
+	default as ContentEditable,
+	type ContentEditableHandle
+} from './components/contentEditable'
 export * from './components/accordion'
 export * from './components/fileField'
 export * from './components/tags'
