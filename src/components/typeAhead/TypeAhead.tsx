@@ -1,6 +1,6 @@
 // TypeAhead.tsx
 import React, { useEffect, useRef, useState } from 'react'
-import ContentEditable from '../contentEditable'
+import { ContentEditable } from '../contentEditable'
 import Dropdown from '../dropdown/Dropdown'
 import Input from '../input/Input'
 import { Option } from '../select/types'
