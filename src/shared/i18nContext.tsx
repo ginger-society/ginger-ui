@@ -46,7 +46,7 @@ export interface TranslationParams {
 
 // ============================================
 
-const I18nContext = createContext<I18nContextType | undefined>(undefined)
+export const I18nContext = createContext<I18nContextType | undefined>(undefined)
 
 interface I18nProviderProps {
 	children: ReactNode

@@ -1,3 +1,4 @@
+import { useOptionalTranslation } from '@src/shared/useOptionalTranslation'
 import { ReactNode, useEffect } from 'react'
 import { Avatar } from '../avatar'
 import { Dropdown } from '../dropdown'
@@ -41,6 +42,13 @@ export const Header = ({
 	onSettings,
 	settingsLabel
 }: HeaderProps) => {
+	// Use optional translation hook - returns default if i18n not available
+	const t = useOptionalTranslation({
+		'header.welcome': 'Welcome',
+		'header.logout': 'Logout',
+		'header.version': 'Version'
+	})
+
 	// Automatically detect and apply system theme if showThemeSwitcher is false
 	useEffect(() => {
 		if (!showThemeSwitcher) {
@@ -81,7 +89,7 @@ export const Header = ({
 							align="right"
 							label={
 								<div className={styles['avatar-container']}>
-									Welcome
+									{t('header.welcome')}
 									<Avatar name={user.name} />
 								</div>
 							}
@@ -104,11 +112,11 @@ export const Header = ({
 								)}
 								{version && (
 									<div className={styles['version-details']}>
-										Version : {version}
+										{t('header.version')} : {version}
 									</div>
 								)}
 								<button className={styles['logout-button']} onClick={onLogout}>
-									Logout
+									{t('header.logout')}
 								</button>
 							</>
 						</Dropdown>
@@ -121,3 +129,37 @@ export const Header = ({
 		</header>
 	)
 }
+
+// ============================================
+// Translation Structure for Consumer
+// ============================================
+/*
+In your translation files (en.ts, hi.ts, etc.), add:
+
+export const en = {
+	header: {
+		welcome: "Welcome",
+		logout: "Logout",
+		version: "Version"
+	},
+	// ... other translations
+}
+
+export const hi = {
+	header: {
+		welcome: "स्वागत है",
+		logout: "लॉगआउट",
+		version: "संस्करण"
+	},
+	// ... other translations
+}
+
+export const ta = {
+	header: {
+		welcome: "வரவேற்கிறோம்",
+		logout: "வெளியேறு",
+		version: "பதிப்பு"
+	},
+	// ... other translations
+}
+*/
