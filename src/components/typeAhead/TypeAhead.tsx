@@ -1,4 +1,5 @@
 // TypeAhead.tsx
+import { useOptionalTranslation } from '@src/shared/useOptionalTranslation'
 import React, { useEffect, useRef, useState } from 'react'
 import { ContentEditable } from '../contentEditable'
 import Dropdown from '../dropdown/Dropdown'
@@ -32,7 +33,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	renderer,
 	onChange,
 	value,
-	placeholder = 'Type to search...',
+	placeholder,
 	label,
 	minChars = 2,
 	debounceMs = 300,
@@ -47,6 +48,13 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 	const debounceRef = useRef<NodeJS.Timeout>()
 	const inputWrapperRef = useRef<HTMLDivElement>(null)
 	const [triggerHeight, setTriggerHeight] = useState(0)
+
+	// Use optional translation hook - returns defaults if i18n not available
+	const t = useOptionalTranslation({
+		'uiElement.typeAhead.placeholder': 'Type to search...',
+		'uiElement.typeAhead.loading': 'Loading...',
+		'uiElement.typeAhead.noResults': 'No results found'
+	})
 
 	// Sync query with value prop
 	useEffect(() => {
@@ -153,6 +161,11 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 		}
 	}
 
+	// Get placeholder text - use prop if provided, otherwise use translation
+	const getPlaceholder = () => {
+		return placeholder ?? t('uiElement.typeAhead.placeholder')
+	}
+
 	// Render input based on uiType - wrapped in a div to ensure consistent width
 	const renderInputField = () => {
 		let inputElement
@@ -161,7 +174,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 			inputElement = (
 				<ContentEditable
 					value={query}
-					placeholder={placeholder}
+					placeholder={getPlaceholder()}
 					onChange={handleQueryChange}
 					onBlur={handleBlur}
 					className={contentEditableClassName}
@@ -172,7 +185,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 				<TextArea
 					label={label}
 					value={query}
-					placeholder={placeholder}
+					placeholder={getPlaceholder()}
 					onChange={(e) => handleQueryChange(e.target.value)}
 					onFocus={handleFocus}
 					onBlur={handleBlur}
@@ -183,7 +196,7 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 			inputElement = (
 				<Input
 					value={query}
-					placeholder={placeholder}
+					placeholder={getPlaceholder()}
 					onChange={(e) => handleQueryChange(e.target.value)}
 					onFocus={handleFocus}
 					onBlur={handleBlur}
@@ -219,7 +232,9 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 				{open && (
 					<div className={styles['options']}>
 						{loading ? (
-							<div className={styles['loading']}>Loading...</div>
+							<div className={styles['loading']}>
+								{t('uiElement.typeAhead.loading')}
+							</div>
 						) : options.length > 0 ? (
 							options.map((option) => (
 								<div
@@ -232,7 +247,9 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 								</div>
 							))
 						) : (
-							<div className={styles['no-results']}>No results found</div>
+							<div className={styles['no-results']}>
+								{t('uiElement.typeAhead.noResults')}
+							</div>
 						)}
 					</div>
 				)}
@@ -242,3 +259,136 @@ const TypeAhead: React.FC<TypeAheadProps> = ({
 }
 
 export default TypeAhead
+
+// ============================================
+// Translation Structure for Consumer
+// ============================================
+/*
+In your translation files (en.ts, hi.ts, etc.), add:
+
+export const en = {
+  typeAhead: {
+    placeholder: "Type to search...",
+    loading: "Loading...",
+    noResults: "No results found"
+  },
+  // ... other translations
+}
+
+export const hi = {
+  typeAhead: {
+    placeholder: "खोजने के लिए टाइप करें...",
+    loading: "लोड हो रहा है...",
+    noResults: "कोई परिणाम नहीं मिला"
+  },
+  // ... other translations
+}
+
+export const ta = {
+  typeAhead: {
+    placeholder: "தேட டைப் செய்யவும்...",
+    loading: "ஏற்றுகிறது...",
+    noResults: "முடிவுகள் இல்லை"
+  },
+  // ... other translations
+}
+
+export const te = {
+  typeAhead: {
+    placeholder: "శోధించడానికి టైప్ చేయండి...",
+    loading: "లోడ్ అవుతోంది...",
+    noResults: "ఫలితాలు కనుగొనబడలేదు"
+  },
+  // ... other translations
+}
+
+export const kn = {
+  typeAhead: {
+    placeholder: "ಹುಡುಕಲು ಟೈಪ್ ಮಾಡಿ...",
+    loading: "ಲೋಡ್ ಆಗುತ್ತಿದೆ...",
+    noResults: "ಯಾವುದೇ ಫಲಿತಾಂಶಗಳು ಕಂಡುಬಂದಿಲ್ಲ"
+  },
+  // ... other translations
+}
+
+export const ml = {
+  typeAhead: {
+    placeholder: "തിരയാൻ ടൈപ്പ് ചെയ്യുക...",
+    loading: "ലോഡ് ചെയ്യുന്നു...",
+    noResults: "ഫലങ്ങളൊന്നും കണ്ടെത്തിയില്ല"
+  },
+  // ... other translations
+}
+
+export const gu = {
+  typeAhead: {
+    placeholder: "શોધવા માટે ટાઇપ કરો...",
+    loading: "લોડ થઈ રહ્યું છે...",
+    noResults: "કોઈ પરિણામો મળ્યાં નથી"
+  },
+  // ... other translations
+}
+
+export const bn = {
+  typeAhead: {
+    placeholder: "অনুসন্ধান করতে টাইপ করুন...",
+    loading: "লোড হচ্ছে...",
+    noResults: "কোনো ফলাফল পাওয়া যায়নি"
+  },
+  // ... other translations
+}
+
+export const pa = {
+  typeAhead: {
+    placeholder: "ਖੋਜਣ ਲਈ ਟਾਈਪ ਕਰੋ...",
+    loading: "ਲੋਡ ਹੋ ਰਿਹਾ ਹੈ...",
+    noResults: "ਕੋਈ ਨਤੀਜੇ ਨਹੀਂ ਮਿਲੇ"
+  },
+  // ... other translations
+}
+
+export const or = {
+  typeAhead: {
+    placeholder: "ଖୋଜିବା ପାଇଁ ଟାଇପ୍ କରନ୍ତୁ...",
+    loading: "ଲୋଡ୍ ହେଉଛି...",
+    noResults: "କୌଣସି ଫଳାଫଳ ମିଳିଲା ନାହିଁ"
+  },
+  // ... other translations
+}
+
+export const as = {
+  typeAhead: {
+    placeholder: "সন্ধান কৰিবলৈ টাইপ কৰক...",
+    loading: "ল'ড হৈ আছে...",
+    noResults: "কোনো ফলাফল পোৱা নগ'ল"
+  },
+  // ... other translations
+}
+
+export const mni = {
+  typeAhead: {
+    placeholder: "ꯊꯤꯕꯥ ꯇꯥꯏꯞ ꯇꯧ...",
+    loading: "ꯂꯣꯗ ꯇꯧꯔꯤ...",
+    noResults: "ꯔꯤꯖꯜꯇ ꯐꯪꯈ꯭ꯔꯦ"
+  },
+  // ... other translations
+}
+
+export const sat = {
+  typeAhead: {
+    placeholder: "ᱥᱮᱸᱫᱽᱨᱟ ᱞᱟᱹᱜᱤᱫ ᱴᱟᱭᱤᱯ ᱢᱮ...",
+    loading: "ᱞᱳᱰ ᱦᱩᱭᱩᱜ ᱠᱟᱱᱟ...",
+    noResults: "ᱪᱮᱫ ᱦᱚᱸ ᱵᱟᱝ ᱧᱟᱢ ᱞᱮᱱᱟ"
+  },
+  // ... other translations
+}
+
+export const ur = {
+  typeAhead: {
+    placeholder: "تلاش کرنے کے لیے ٹائپ کریں...",
+    loading: "لوڈ ہو رہا ہے...",
+    noResults: "کوئی نتائج نہیں ملے"
+  },
+  // ... other translations
+}
+*/
