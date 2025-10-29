@@ -1,5 +1,5 @@
+import { useOptionalTranslation } from '@src/shared/useOptionalTranslation'
 import { ReactNode, useEffect } from 'react'
-import { useOptionalTranslation } from '../../shared/useOptionalTranslation'
 import { Avatar } from '../avatar'
 import { Dropdown } from '../dropdown'
 import styles from './header.module.scss'
