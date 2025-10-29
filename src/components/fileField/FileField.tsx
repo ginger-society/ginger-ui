@@ -35,7 +35,7 @@ const FileField: React.FC<FileFieldProps> = ({
 				setFileName(file.name)
 				onChange(file)
 			} else {
-				alert(t('fileField.invalidFileType'))
+				alert(t('uiElement.fileField.invalidFileType'))
 				event.target.value = ''
 			}
 		} else {
@@ -70,7 +70,7 @@ const FileField: React.FC<FileFieldProps> = ({
 				setFileName(file.name)
 				onChange(file)
 			} else {
-				alert(t('fileField.invalidFileType'))
+				alert(t('uiElement.fileField.invalidFileType'))
 			}
 		}
 	}
@@ -97,7 +97,7 @@ const FileField: React.FC<FileFieldProps> = ({
 					style={{ display: 'none' }}
 				/>
 				<span className={styles['filefield-text']}>
-					{t('fileField.dragDrop')}
+					{t('uiElement.fileField.dragDrop')}
 				</span>
 				{fileName && (
 					<div className={styles['file-info']}>
@@ -109,7 +109,7 @@ const FileField: React.FC<FileFieldProps> = ({
 								e.stopPropagation()
 							}}
 						>
-							{t('fileField.clear')}
+							{t('uiElement.fileField.clear')}
 						</button>
 					</div>
 				)}
