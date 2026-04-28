@@ -89,7 +89,7 @@ jobs:
         run: pnpm install
 
       - name: Publish to npm
-        run: npm publish --no-git-checks --access public
+        run: npm publish --no-git-checks --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         continue-on-error: false
