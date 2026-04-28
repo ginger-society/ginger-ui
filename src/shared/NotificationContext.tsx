@@ -49,7 +49,7 @@ export const NotificationProvider = <TUser extends { userId?: string }>({
 		}
 
 		const accessToken = localStorage.getItem('access_token')
-		const websocketChannel = `${channelPrefix}_${user?.userId}`
+		const websocketChannel = `${user?.userId}`
 
 		function connectWebSocket() {
 			if (ws) {

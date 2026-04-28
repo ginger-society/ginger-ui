@@ -1,4 +1,37 @@
+## 0.126.0 - 2026-04-28
+
+fix:
+
+- [3a421ddbcd](https://github.com/ginger-society/ginger-ui3a421ddbcd83a29170900a6b638115cca0bcb009) (Ginger Society Admin) fix: pipeline
+- [f3d8f3af4d](https://github.com/ginger-society/ginger-uif3d8f3af4de5b1683c9c080771767dda31fa3d96) (Ginger Society Admin) fix: pipeline
+- [210baff2a5](https://github.com/ginger-society/ginger-ui210baff2a55389f810a6dd1af905d645633a5952) (Ginger Society Admin) fix: pipeline
+- [9eeb4e16c8](https://github.com/ginger-society/ginger-ui9eeb4e16c8fe9bacc08f513ef05cc419a9ce98ef) (Ginger Society Admin) fix: pipeline
+- [c975633863](https://github.com/ginger-society/ginger-uic975633863241c471510db127165e8f1139608dc) (Ginger Society Admin) fix: pipeline
+- [4e0e5a700c](https://github.com/ginger-society/ginger-ui4e0e5a700c83f585acdec951771ca56280ebc3d9) (Ginger Society Admin) fix: pipeline
+- [fc9b1335d7](https://github.com/ginger-society/ginger-uifc9b1335d77e29b206cb15d1106868684552b90f) (Ginger Society Admin) fix: pipeline
+- [98b615ad4e](https://github.com/ginger-society/ginger-ui98b615ad4e50c730d9f88c0a11b2b40569e17e89) (Ginger Society Admin) fix: pipeline
+- [7621c9b553](https://github.com/ginger-society/ginger-ui7621c9b553b9fe2a664bada53442b30b51be76e8) (Ginger Society Admin) fix: pipeline
+- [cf8a0cbc05](https://github.com/ginger-society/ginger-uicf8a0cbc05cc9b86e65c70e88f17c5b945500c9b) (Ginger Society Admin) fix: pipeline
+- [bbf22051ad](https://github.com/ginger-society/ginger-uibbf22051ad52646b57c7824b0331f691357465ff) (Ginger Society Admin) fix: pipeline
+- [1e16d49795](https://github.com/ginger-society/ginger-ui1e16d497957ee2d7ab78c9021e2e2b4093c03b5e) (Ginger Society Admin) fix: pipeline
+- [a136630c1a](https://github.com/ginger-society/ginger-uia136630c1a5e0054d29cccd0ae8475233c66ab63) (Ginger Society Admin) fix: pipeline
+- [6b00984c32](https://github.com/ginger-society/ginger-ui6b00984c3216db876f7dc2807d22c1d1860d20bd) (Ginger Society Admin) fix: pipeline
+
+chore:
+
+- [c2fc7f46e0](https://github.com/ginger-society/ginger-uic2fc7f46e016971bb6e2160e9766936819bfc37b) (Ginger Society Admin) chore: changing package name from ginger-society to gingersociety
+- [fa878a08f9](https://github.com/ginger-society/ginger-uifa878a08f94b8b56fb391d5ae5f8bb395c8a44be) (Ginger Society Admin) chore: cleanup
+- [c7301e3d20](https://github.com/ginger-society/ginger-uic7301e3d20c3c8ff6c61eecbb40ee519cb2dd9a9) (Ginger Society Admin) chore: debug
+
+feat:
+
+- [2b518b6a9f](https://github.com/ginger-society/ginger-ui2b518b6a9f4655b6f8d3c9cd7f746f413608f5eb) (Ginger Society Admin) feat: added envrc and pipeline updates
+
 ## 0.125.0 - 2026-04-28
+
+chore:
+
+- [e50a79b8ed](https://github.com/ginger-society/ginger-uie50a79b8ed009e28b22364dbc811454f508f924b) (Ginger Society Admin) chore: version bump to 0.125.0
 
 feat:
 
@@ -48,13 +81,13 @@ chore:
 
 ## 0.117.0 - 2025-10-29
 
-chore:
-
-- [27a390a991](https://github.com/ginger-society/ginger-ui27a390a99103e6674a9e1eb1a0858f98029b69c7) (Ginger Society Admin) chore: version bump to 0.117.0
-
 feat:
 
 - [5ca9561664](https://github.com/ginger-society/ginger-ui5ca9561664b97d562b7324ea840a9c6a49df3077) (Ginger Society Admin) feat: added trsnalation context
+
+chore:
+
+- [27a390a991](https://github.com/ginger-society/ginger-ui27a390a99103e6674a9e1eb1a0858f98029b69c7) (Ginger Society Admin) chore: version bump to 0.117.0
 
 ## 0.116.0 - 2025-10-26
 
@@ -118,13 +151,13 @@ chore:
 
 ## 0.106.0 - 2025-10-24
 
-chore:
-
-- [7e5ad2168b](https://github.com/ginger-society/ginger-ui7e5ad2168bc6a144ca1527e7e5ad2de931d2f3a6) (Ginger Society Admin) chore: version bump to 0.106.0
-
 fix:
 
 - [cf78ce1690](https://github.com/ginger-society/ginger-uicf78ce16907cacdfa39419f8d0aeae2d180d3d9f) (Ginger Society Admin) fix: highlight cue
+
+chore:
+
+- [7e5ad2168b](https://github.com/ginger-society/ginger-ui7e5ad2168bc6a144ca1527e7e5ad2de931d2f3a6) (Ginger Society Admin) chore: version bump to 0.106.0
 
 ## 0.105.0 - 2025-10-24
 
@@ -186,13 +219,13 @@ chore:
 
 ## 0.96.0 - 2025-10-21
 
-feat:
-
-- [720159b6a0](https://github.com/ginger-society/ginger-ui720159b6a0bc9349ab3cc7554b0eb550fd0d95f9) (Ginger Society Admin) feat: added content editable stories and fixed initial value for typeahead
-
 chore:
 
 - [9b427f7c07](https://github.com/ginger-society/ginger-ui9b427f7c07ecea5bb22d6c85375f4b5da73ad2ee) (Ginger Society Admin) chore: version bump to 0.96.0
+
+feat:
+
+- [720159b6a0](https://github.com/ginger-society/ginger-ui720159b6a0bc9349ab3cc7554b0eb550fd0d95f9) (Ginger Society Admin) feat: added content editable stories and fixed initial value for typeahead
 
 ## 0.95.0 - 2025-10-21
 
@@ -208,13 +241,13 @@ chore:
 
 ## 0.93.0 - 2025-10-21
 
-chore:
-
-- [b9908cf949](https://github.com/ginger-society/ginger-uib9908cf94910be2fbabb0ce759609a18a51a32cb) (Ginger Society Admin) chore: version bump to 0.93.0
-
 feat:
 
 - [a88a36a189](https://github.com/ginger-society/ginger-uia88a36a18932b4d4a80909f943497e8bd9903904) (Ginger Society Admin) feat: dropdown and typeahead position fixes
+
+chore:
+
+- [b9908cf949](https://github.com/ginger-society/ginger-uib9908cf94910be2fbabb0ce759609a18a51a32cb) (Ginger Society Admin) chore: version bump to 0.93.0
 
 ## 0.92.0 - 2025-10-20
 
@@ -273,14 +306,14 @@ chore:
 
 ## 0.83.0 - 2025-10-20
 
-chore:
-
-- [ad493bb1b4](https://github.com/ginger-society/ginger-uiad493bb1b4deb055fe352af90d303366dd9f62fa) (Ginger Society Admin) chore: version bump to 0.83.0
-
 feat:
 
 - [c2e823beb1](https://github.com/ginger-society/ginger-uic2e823beb10e43f94207b73860fce00835d64a89) (Ginger Society Admin) feat: added Typeahead ui type
 - [90342e98ed](https://github.com/ginger-society/ginger-ui90342e98ed8a2ea9217bec18e05d1b6cc92bb60c) (Ginger Society Admin) feat: added content editable component
+
+chore:
+
+- [ad493bb1b4](https://github.com/ginger-society/ginger-uiad493bb1b4deb055fe352af90d303366dd9f62fa) (Ginger Society Admin) chore: version bump to 0.83.0
 
 ## 0.82.0 - 2025-10-09
 
@@ -310,23 +343,23 @@ fix:
 
 ## 0.79.0 - 2025-10-09
 
-feat:
-
-- [d52c30063e](https://github.com/ginger-society/ginger-uid52c30063ed239a6c31361cc781712398a48dfb7) (Ginger Society Admin) feat: preventing auto completion in typeahead
-
 chore:
 
 - [5b28b46d61](https://github.com/ginger-society/ginger-ui5b28b46d619164600f7256724d4b0f35cb107c70) (Ginger Society Admin) chore: version bump to 0.79.0
 
-## 0.78.0 - 2025-10-09
-
 feat:
 
-- [cb60b9da54](https://github.com/ginger-society/ginger-uicb60b9da545a6bed7563e4ff31c9b67bdefaca6e) (Ginger Society Admin) feat: added additional kets properties for select option
+- [d52c30063e](https://github.com/ginger-society/ginger-uid52c30063ed239a6c31361cc781712398a48dfb7) (Ginger Society Admin) feat: preventing auto completion in typeahead
+
+## 0.78.0 - 2025-10-09
 
 chore:
 
 - [e3a405e911](https://github.com/ginger-society/ginger-uie3a405e91193170335418cc96b3db1268886780f) (Ginger Society Admin) chore: version bump to 0.78.0
+
+feat:
+
+- [cb60b9da54](https://github.com/ginger-society/ginger-uicb60b9da545a6bed7563e4ff31c9b67bdefaca6e) (Ginger Society Admin) feat: added additional kets properties for select option
 
 ## 0.77.0 - 2025-10-03
 
@@ -354,6 +387,12 @@ fix:
 - [cf0a5b53fc](https://github.com/ginger-society/ginger-uicf0a5b53fcece8cfaf0497c7e3188a264b782a72) (Ginger Society Admin) fix: ts error
 - [7fb2a23896](https://github.com/ginger-society/ginger-ui7fb2a238965d3fda5e57ac61009f3b7aaf15ca15) (Ginger Society Admin) fix: fixing the eslint error in pipeline
 
+feat:
+
+- [963fc7789f](https://github.com/ginger-society/ginger-ui963fc7789fb4d7acbddbae0e521be4ff1dd21d9e) (Ginger Society Admin) feat: using public npm for ginger book package
+- [57088dda3b](https://github.com/ginger-society/ginger-ui57088dda3b15728e8f290de8e8785c48bd29407e) (Ginger Society Admin) feat: supressed non essential steps in GH actions
+- [567995a619](https://github.com/ginger-society/ginger-ui567995a619218dff59a4398c845eb27ddd48f09d) (Ginger Society Admin) feat: fixing the base image for CI on github
+
 chore:
 
 - [700c7f125b](https://github.com/ginger-society/ginger-ui700c7f125bc5d574c21fe47d3dc494eb71b5452d) (Ginger Society Admin) chore: version bump to 0.75.0
@@ -363,12 +402,6 @@ chore:
 - [1a913fb956](https://github.com/ginger-society/ginger-ui1a913fb95661bff30fa8ee857c95cf7865a897b2) (Ginger Society Admin) chore: ts error fix
 - [40dd909d41](https://github.com/ginger-society/ginger-ui40dd909d4190a0faacd6d5d398f133e277236893) (Ginger Society Admin) chore: minor
 - [09deabeb5d](https://github.com/ginger-society/ginger-ui09deabeb5d6622fd487517b42379799ccbb4e72a) (Ginger Society Admin) chore: reverting the runner to ubuntu latest
-
-feat:
-
-- [963fc7789f](https://github.com/ginger-society/ginger-ui963fc7789fb4d7acbddbae0e521be4ff1dd21d9e) (Ginger Society Admin) feat: using public npm for ginger book package
-- [57088dda3b](https://github.com/ginger-society/ginger-ui57088dda3b15728e8f290de8e8785c48bd29407e) (Ginger Society Admin) feat: supressed non essential steps in GH actions
-- [567995a619](https://github.com/ginger-society/ginger-ui567995a619218dff59a4398c845eb27ddd48f09d) (Ginger Society Admin) feat: fixing the base image for CI on github
 
 ## 0.74.0 - 2025-04-11
 
@@ -388,13 +421,13 @@ feat:
 
 ## 0.72.0 - 2025-01-06
 
-feat:
-
-- [02af284b2e](https://github.com/ginger-society/ginger-ui02af284b2e2e887d676beef40e34fc72c91df38d) (Ginger Society Admin) feat: made group id optional in Permission HOC
-
 chore:
 
 - [10592e2020](https://github.com/ginger-society/ginger-ui10592e2020ca2db48cf31e3ef849cfc69b34acaa) (Ginger Society Admin) chore: version bump to 0.72.0
+
+feat:
+
+- [02af284b2e](https://github.com/ginger-society/ginger-ui02af284b2e2e887d676beef40e34fc72c91df38d) (Ginger Society Admin) feat: made group id optional in Permission HOC
 
 ## 0.71.0 - 2025-01-05
 
@@ -408,43 +441,43 @@ chore:
 
 ## 0.70.0 - 2025-01-05
 
-chore:
-
-- [44dce40fd2](https://github.com/ginger-society/ginger-ui44dce40fd21775cc9c43469ebdbbc9dd16a3f223) (Ginger Society Admin) chore: version bump to 0.70.0
-
 feat:
 
 - [4f1e0079d7](https://github.com/ginger-society/ginger-ui4f1e0079d75c34504b834fd4bc6283b488deae12) (Ginger Society Admin) feat: exporting type for permission
 
-## 0.69.0 - 2025-01-05
-
 chore:
 
-- [ac0ff3d30a](https://github.com/ginger-society/ginger-uiac0ff3d30a6d96b0ba9ca4841d8fba2a86e7f285) (Ginger Society Admin) chore: version bump to 0.69.0
+- [44dce40fd2](https://github.com/ginger-society/ginger-ui44dce40fd21775cc9c43469ebdbbc9dd16a3f223) (Ginger Society Admin) chore: version bump to 0.70.0
+
+## 0.69.0 - 2025-01-05
 
 feat:
 
 - [a4c039413e](https://github.com/ginger-society/ginger-uia4c039413eced8e04dec8fd3d59cb41a965eefeb) (Ginger Society Admin) feat: added Permission HOC
 
+chore:
+
+- [ac0ff3d30a](https://github.com/ginger-society/ginger-uiac0ff3d30a6d96b0ba9ca4841d8fba2a86e7f285) (Ginger Society Admin) chore: version bump to 0.69.0
+
 ## 0.68.0 - 2025-01-04
-
-feat:
-
-- [f1f9243719](https://github.com/ginger-society/ginger-uif1f92437196e39ad91fe5987770d9ba32c799621) (Ginger Society Admin) feat: made check session to return a promise
 
 chore:
 
 - [9f47bea9d8](https://github.com/ginger-society/ginger-ui9f47bea9d886bfdc8d3ea87d50fa5c51d52a0510) (Ginger Society Admin) chore: version bump to 0.68.0
 
+feat:
+
+- [f1f9243719](https://github.com/ginger-society/ginger-uif1f92437196e39ad91fe5987770d9ba32c799621) (Ginger Society Admin) feat: made check session to return a promise
+
 ## 0.67.0 - 2024-12-14
-
-fix:
-
-- [ef71ad81ea](https://github.com/ginger-society/ginger-uief71ad81eac7153b986e95c2699326b66e4b3888) (Ginger Society Admin) fix: redirect url getting saved in refresh token
 
 chore:
 
 - [af9a7f05c1](https://github.com/ginger-society/ginger-uiaf9a7f05c104ab130ebf53dc91832b85b71ee9bd) (Ginger Society Admin) chore: version bump to 0.67.0
+
+fix:
+
+- [ef71ad81ea](https://github.com/ginger-society/ginger-uief71ad81eac7153b986e95c2699326b66e4b3888) (Ginger Society Admin) fix: redirect url getting saved in refresh token
 
 ## 0.66.0 - 2024-12-14
 
@@ -455,23 +488,23 @@ chore:
 
 ## 0.65.0 - 2024-12-13
 
-chore:
-
-- [765184c675](https://github.com/ginger-society/ginger-ui765184c67573b4aba613049189fa209d92f2d0f4) (Ginger Society Admin) chore: version bump to 0.65.0
-
 fix:
 
 - [d3ff4010b9](https://github.com/ginger-society/ginger-uid3ff4010b947bbb5b9c007a1e5c7692b089a211b) (Ginger Society Admin) fix: auth context loading state
 
+chore:
+
+- [765184c675](https://github.com/ginger-society/ginger-ui765184c67573b4aba613049189fa209d92f2d0f4) (Ginger Society Admin) chore: version bump to 0.65.0
+
 ## 0.64.0 - 2024-12-12
-
-feat:
-
-- [ea7a11db0d](https://github.com/ginger-society/ginger-uiea7a11db0d7c2965c8543fd15368a98e6c19de76) (Ginger Society Admin) feat: added check session in auth context
 
 chore:
 
 - [c16e749158](https://github.com/ginger-society/ginger-uic16e74915806a01d59f4f82ac1fd6af9b39222a4) (Ginger Society Admin) chore: version bump to 0.64.0
+
+feat:
+
+- [ea7a11db0d](https://github.com/ginger-society/ginger-uiea7a11db0d7c2965c8543fd15368a98e6c19de76) (Ginger Society Admin) feat: added check session in auth context
 
 ## 0.63.0 - 2024-12-12
 
@@ -485,13 +518,13 @@ feat:
 
 ## 0.62.0 - 2024-12-07
 
-chore:
-
-- [9aa044d667](https://github.com/ginger-society/ginger-ui9aa044d667372b01f19bd61e69450cdbc7cd94dc) (Ginger Society Admin) chore: version bump to 0.62.0
-
 feat:
 
 - [7b82eaf39c](https://github.com/ginger-society/ginger-ui7b82eaf39c7134c622c8c775288bca3b442cec53) (Ginger Society Admin) feat: exporting breadcrumbItem interface
+
+chore:
+
+- [9aa044d667](https://github.com/ginger-society/ginger-ui9aa044d667372b01f19bd61e69450cdbc7cd94dc) (Ginger Society Admin) chore: version bump to 0.62.0
 
 ## 0.61.0 - 2024-11-17
 
@@ -516,13 +549,13 @@ fix:
 
 ## 0.59.0 - 2024-11-17
 
-feat:
-
-- [7da06381c6](https://github.com/ginger-society/ginger-ui7da06381c69d39e158a73e68bca7efa85917db1d) (Ginger Society Admin) feat: added notification context and auth context
-
 chore:
 
 - [4dc0d31bbc](https://github.com/ginger-society/ginger-ui4dc0d31bbc983242b4d1e9eaa06689b4d1d2f7e8) (Ginger Society Admin) chore: version bump to 0.59.0
+
+feat:
+
+- [7da06381c6](https://github.com/ginger-society/ginger-ui7da06381c69d39e158a73e68bca7efa85917db1d) (Ginger Society Admin) feat: added notification context and auth context
 
 ## 0.58.0 - 2024-11-17
 
@@ -537,35 +570,39 @@ fix:
 
 ## 0.57.0 - 2024-11-14
 
-chore:
-
-- [d60895f93d](https://github.com/ginger-society/ginger-uid60895f93d7dffd803490a8acb24dca6c7a6d533) (Ginger Society Admin) chore: version bump to 0.57.0
-
 feat:
 
 - [a5f18f0dc0](https://github.com/ginger-society/ginger-uia5f18f0dc0e0e56b4cc597ee03a51d567b5a061b) (Ginger Society Admin) feat: now triggering homepage build after stories are updated
 
-## 0.56.0 - 2024-11-14
-
 chore:
 
-- [2b683c655e](https://github.com/ginger-society/ginger-ui2b683c655e1a97f9832a4dad67c6a0908a283020) (Ginger Society Admin) chore: version bump to 0.56.0
+- [d60895f93d](https://github.com/ginger-society/ginger-uid60895f93d7dffd803490a8acb24dca6c7a6d533) (Ginger Society Admin) chore: version bump to 0.57.0
+
+## 0.56.0 - 2024-11-14
 
 feat:
 
 - [07100c5d4c](https://github.com/ginger-society/ginger-ui07100c5d4c917c6ba32c008600d5ef324d757b4b) (Ginger Society Admin) feat: added confirmation button as a new component to fix the circular import warning
 
+chore:
+
+- [2b683c655e](https://github.com/ginger-society/ginger-ui2b683c655e1a97f9832a4dad67c6a0908a283020) (Ginger Society Admin) chore: version bump to 0.56.0
+
 ## 0.55.0 - 2024-11-14
-
-fix:
-
-- [48d18a1add](https://github.com/ginger-society/ginger-ui48d18a1add29e119eb685b043fa75f8a1d1fafdf) (Ginger Society Admin) fix: adjusted min height for select to 25px
 
 chore:
 
 - [27d5f8e9fb](https://github.com/ginger-society/ginger-ui27d5f8e9fb5fe723f9d5a00c4353c07288b04e67) (Ginger Society Admin) chore: version bump to 0.55.0
 
+fix:
+
+- [48d18a1add](https://github.com/ginger-society/ginger-ui48d18a1add29e119eb685b043fa75f8a1d1fafdf) (Ginger Society Admin) fix: adjusted min height for select to 25px
+
 ## 0.54.0 - 2024-11-14
+
+fix:
+
+- [cf8fb1f42e](https://github.com/ginger-society/ginger-uicf8fb1f42e3f6da98449166fc14bacb67c0e23f7) (Ginger Society Admin) fix: build fixes
 
 chore:
 
@@ -574,10 +611,6 @@ chore:
 feat:
 
 - [6a57640829](https://github.com/ginger-society/ginger-ui6a5764082954f1f32ad1534b280482a33d444257) (Ginger Society Admin) feat: upgraded sass version
-
-fix:
-
-- [cf8fb1f42e](https://github.com/ginger-society/ginger-uicf8fb1f42e3f6da98449166fc14bacb67c0e23f7) (Ginger Society Admin) fix: build fixes
 
 ## 0.53.0 - 2024-11-14
 
@@ -591,23 +624,23 @@ feat:
 
 ## 0.52.0 - 2024-10-29
 
-fix:
-
-- [ea72681e87](https://github.com/ginger-society/ginger-uiea72681e87225d3c66834af99efb9a32bf3bdeb0) (Ginger Society Admin) fix: type fixes
-
 chore:
 
 - [647acc9c42](https://github.com/ginger-society/ginger-ui647acc9c4230b2719a26070e8a7892f68ea41b7d) (Ginger Society Admin) chore: version bump to 0.52.0
 
+fix:
+
+- [ea72681e87](https://github.com/ginger-society/ginger-uiea72681e87225d3c66834af99efb9a32bf3bdeb0) (Ginger Society Admin) fix: type fixes
+
 ## 0.51.0 - 2024-10-29
-
-feat:
-
-- [c02b97cb4f](https://github.com/ginger-society/ginger-uic02b97cb4f7719314f2ca88e2eb7d336205ed957) (Ginger Society Admin) feat: added event as optional argument in on click for button
 
 chore:
 
 - [c16048f844](https://github.com/ginger-society/ginger-uic16048f844b21677866dfb4ced4523187a095974) (Ginger Society Admin) chore: version bump to 0.51.0
+
+feat:
+
+- [c02b97cb4f](https://github.com/ginger-society/ginger-uic02b97cb4f7719314f2ca88e2eb7d336205ed957) (Ginger Society Admin) feat: added event as optional argument in on click for button
 
 ## 0.50.0 - 2024-10-29
 
@@ -617,13 +650,13 @@ chore:
 
 ## 0.49.0 - 2024-10-29
 
-chore:
-
-- [b84ec86614](https://github.com/ginger-society/ginger-uib84ec86614c9fef6e9e87353315cf23120bf7ead) (Ginger Society Admin) chore: version bump to 0.49.0
-
 feat:
 
 - [55aca43530](https://github.com/ginger-society/ginger-ui55aca435300528a903cd31a52b54687f34bf959c) (Ginger Society Admin) feat: added SystemThemePreferred component
+
+chore:
+
+- [b84ec86614](https://github.com/ginger-society/ginger-uib84ec86614c9fef6e9e87353315cf23120bf7ead) (Ginger Society Admin) chore: version bump to 0.49.0
 
 ## 0.48.0 - 2024-10-28
 
@@ -660,23 +693,23 @@ feat:
 
 ## 0.46.0 - 2024-10-02
 
-chore:
-
-- [652be4685f](https://github.com/ginger-society/ginger-ui652be4685fadce057c7d8f04c77c84a26d75a768) (Ginger Society Admin) chore: version bump to 0.46.0
-
 feat:
 
 - [16f264fd4f](https://github.com/ginger-society/ginger-ui16f264fd4fad430c1782137afae89c2670f39db0) (Ginger Society Admin) feat: cleanup and added step to trigger dependent pipelines in ci script
 
+chore:
+
+- [652be4685f](https://github.com/ginger-society/ginger-ui652be4685fadce057c7d8f04c77c84a26d75a768) (Ginger Society Admin) chore: version bump to 0.46.0
+
 ## 0.45.0 - 2024-09-24
-
-feat:
-
-- [b9e33a8ea8](https://github.com/ginger-society/ginger-uib9e33a8ea89e2ea3bc36d8e98472950e0e3e0e53) (Ginger Society Admin) feat: added onOpen prop for section for accordion
 
 chore:
 
 - [d8f2d7eed0](https://github.com/ginger-society/ginger-uid8f2d7eed0ed36921bd1ffa184f13d9ed3577070) (Ginger Society Admin) chore: version bump to 0.45.0
+
+feat:
+
+- [b9e33a8ea8](https://github.com/ginger-society/ginger-uib9e33a8ea89e2ea3bc36d8e98472950e0e3e0e53) (Ginger Society Admin) feat: added onOpen prop for section for accordion
 
 ## 0.44.0 - 2024-09-21
 
@@ -684,14 +717,14 @@ fix:
 
 - [33515d937f](https://github.com/ginger-society/ginger-ui33515d937f90c9e4c007d662b6a31e4b663d6d21) (Ginger Society Admin) fix: build
 
-chore:
-
-- [6d942365eb](https://github.com/ginger-society/ginger-ui6d942365ebc4e201ad1d593df10879aed2d97545) (Ginger Society Admin) chore: version bump to 0.44.0
-
 feat:
 
 - [a255c69bbd](https://github.com/ginger-society/ginger-uia255c69bbdc865f2a25bb4fcba7b85ee7a11373c) (Ginger Society Admin) feat: added pipeline action
 - [8118c21a78](https://github.com/ginger-society/ginger-ui8118c21a78afe495b89f642da7b2e8944bf37790) (Ginger Society Admin) feat: added ginger book build pipeline
+
+chore:
+
+- [6d942365eb](https://github.com/ginger-society/ginger-ui6d942365ebc4e201ad1d593df10879aed2d97545) (Ginger Society Admin) chore: version bump to 0.44.0
 
 ## 0.43.0 - 2024-09-17
 
@@ -716,13 +749,13 @@ chore:
 
 ## 0.40.0 - 2024-09-17
 
-chore:
-
-- [1022c6102b](https://github.com/ginger-society/ginger-ui1022c6102b4dcd2e8b8cdcdd8ec38f1b59d48eb7) (Ginger Society Admin) chore: version bump to 0.40.0
-
 feat:
 
 - [a4120410b9](https://github.com/ginger-society/ginger-uia4120410b9c670a5c0330d3797af2898c182d450) (Ginger Society Admin) feat: added fixed position support in header
+
+chore:
+
+- [1022c6102b](https://github.com/ginger-society/ginger-ui1022c6102b4dcd2e8b8cdcdd8ec38f1b59d48eb7) (Ginger Society Admin) chore: version bump to 0.40.0
 
 ## 0.39.0 - 2024-09-13
 
@@ -736,6 +769,11 @@ fix:
 
 ## 0.38.0 - 2024-09-10
 
+feat:
+
+- [72e3e9bc90](https://github.com/ginger-society/ginger-ui72e3e9bc9043218e90ed8b0308fb07d3ada265a6) (Ginger Society Admin) feat: updated config
+- [c8ffddfc48](https://github.com/ginger-society/ginger-uic8ffddfc48bb89a9350183811f5be9afef9acfa2) (Ginger Society Admin) feat: updated pipeline to publish status
+
 chore:
 
 - [ad53623bb0](https://github.com/ginger-society/ginger-uiad53623bb02abc6e6752da7d0013032941281c97) (Ginger Society Admin) chore: version bump to 0.38.0
@@ -744,11 +782,6 @@ chore:
 fix:
 
 - [701f5b5c7d](https://github.com/ginger-society/ginger-ui701f5b5c7da028c5186c048786c6789b0c6865a0) (Ginger Society Admin) fix: pipeline
-
-feat:
-
-- [72e3e9bc90](https://github.com/ginger-society/ginger-ui72e3e9bc9043218e90ed8b0308fb07d3ada265a6) (Ginger Society Admin) feat: updated config
-- [c8ffddfc48](https://github.com/ginger-society/ginger-uic8ffddfc48bb89a9350183811f5be9afef9acfa2) (Ginger Society Admin) feat: updated pipeline to publish status
 
 ## 0.37.0 - 2024-08-21
 
@@ -768,13 +801,13 @@ fix:
 
 ## 0.35.0 - 2024-08-21
 
-feat:
-
-- [5d9ec45c60](https://github.com/ginger-society/ginger-ui5d9ec45c605973ecbe483a0b059574d45f286523) (Ginger Society Admin) feat: added version in header , size in aside
-
 chore:
 
 - [655bf969ca](https://github.com/ginger-society/ginger-ui655bf969ca1c4583dbb2e3ab3d26b3b2bd6da2cd) (Ginger Society Admin) chore: version bump to 0.35.0
+
+feat:
+
+- [5d9ec45c60](https://github.com/ginger-society/ginger-ui5d9ec45c605973ecbe483a0b059574d45f286523) (Ginger Society Admin) feat: added version in header , size in aside
 
 ## 0.34.0 - 2024-07-18
 
@@ -788,13 +821,13 @@ fix:
 
 ## 0.33.0 - 2024-07-18
 
-chore:
-
-- [a31ac0d3e1](https://github.com/ginger-society/ginger-uia31ac0d3e141b8be7733a107c223177730ea6ac2) (Ginger Society Admin) chore: version bump to 0.33.0
-
 fix:
 
 - [ea5252715f](https://github.com/ginger-society/ginger-uiea5252715f611e1ef6366135c521585ea6b913ef) (Ginger Society Admin) fix: minor css fixes
+
+chore:
+
+- [a31ac0d3e1](https://github.com/ginger-society/ginger-uia31ac0d3e141b8be7733a107c223177730ea6ac2) (Ginger Society Admin) chore: version bump to 0.33.0
 
 ## 0.32.0 - 2024-07-17
 
@@ -850,13 +883,13 @@ feat:
 
 ## 0.26.0 - 2024-07-12
 
-chore:
-
-- [bb62b4234b](https://github.com/ginger-society/ginger-uibb62b4234b55d8a8f7b4414f8eeca84e67597a44) (Ginger Society Admin) chore: version bump to 0.26.0
-
 feat:
 
 - [b8665d679f](https://github.com/ginger-society/ginger-uib8665d679fcaa1dd76bca72fe22ee5ca640ec341) (Ginger Society Admin) feat: added inverted prop to Text
+
+chore:
+
+- [bb62b4234b](https://github.com/ginger-society/ginger-uibb62b4234b55d8a8f7b4414f8eeca84e67597a44) (Ginger Society Admin) chore: version bump to 0.26.0
 
 ## 0.25.0 - 2024-07-12
 
@@ -907,13 +940,13 @@ fix:
 
 ## 0.20.0 - 2024-07-10
 
-fix:
-
-- [b9c260a8d6](https://github.com/ginger-society/ginger-uib9c260a8d64092f8e8406c91101d83d2837ab1b0) (Ginger Society Admin) fix: textarea placeholder color change
-
 chore:
 
 - [1d9a63ad1b](https://github.com/ginger-society/ginger-ui1d9a63ad1bb360a5a7cf9bd8d5abebd46cf7039a) (Ginger Society Admin) chore: version bump to 0.20.0
+
+fix:
+
+- [b9c260a8d6](https://github.com/ginger-society/ginger-uib9c260a8d64092f8e8406c91101d83d2837ab1b0) (Ginger Society Admin) fix: textarea placeholder color change
 
 ## 0.19.0 - 2024-07-10
 
@@ -967,43 +1000,43 @@ chore:
 
 ## 0.14.0 - 2024-07-08
 
-fix:
-
-- [eab594740a](https://github.com/ginger-society/ginger-uieab594740a4918b9c6b4a13b4c19c83cb92b3968) (Ginger Society Admin) fix: modal background color
-
 chore:
 
 - [07ec801a4c](https://github.com/ginger-society/ginger-ui07ec801a4cc6f2af700bfe223a863490571c0b16) (Ginger Society Admin) chore: version bump to 0.14.0
 
-## 0.13.0 - 2024-07-08
-
 fix:
 
-- [1ef99fdc47](https://github.com/ginger-society/ginger-ui1ef99fdc47138c784a5251021a933e1f3bf84464) (Ginger Society Admin) fix: modal background color
+- [eab594740a](https://github.com/ginger-society/ginger-uieab594740a4918b9c6b4a13b4c19c83cb92b3968) (Ginger Society Admin) fix: modal background color
+
+## 0.13.0 - 2024-07-08
 
 chore:
 
 - [c116d10479](https://github.com/ginger-society/ginger-uic116d104799c64ca58d0c7ad7e796c52c83220ce) (Ginger Society Admin) chore: version bump to 0.13.0
 
+fix:
+
+- [1ef99fdc47](https://github.com/ginger-society/ginger-ui1ef99fdc47138c784a5251021a933e1f3bf84464) (Ginger Society Admin) fix: modal background color
+
 ## 0.12.0 - 2024-07-08
-
-chore:
-
-- [00e1431513](https://github.com/ginger-society/ginger-ui00e14315133933168137df29d1e00cb5c92df2a3) (Ginger Society Admin) chore: version bump to 0.12.0
 
 fix:
 
 - [2df8678bac](https://github.com/ginger-society/ginger-ui2df8678bac4d2983d538f2b75080e134d14d9113) (Ginger Society Admin) fix: modal background color
 
+chore:
+
+- [00e1431513](https://github.com/ginger-society/ginger-ui00e14315133933168137df29d1e00cb5c92df2a3) (Ginger Society Admin) chore: version bump to 0.12.0
+
 ## 0.11.0 - 2024-07-08
-
-fix:
-
-- [5dc547829e](https://github.com/ginger-society/ginger-ui5dc547829ed3d6b1a74f6c806d0d2e6ae3cd7e88) (Ginger Society Admin) fix: textare width
 
 chore:
 
 - [6ff8c5ebd0](https://github.com/ginger-society/ginger-ui6ff8c5ebd02a039e0d901eb7cdd868fe439552b9) (Ginger Society Admin) chore: version bump to 0.11.0
+
+fix:
+
+- [5dc547829e](https://github.com/ginger-society/ginger-ui5dc547829ed3d6b1a74f6c806d0d2e6ae3cd7e88) (Ginger Society Admin) fix: textare width
 
 ## 0.10.0 - 2024-07-08
 
@@ -1017,43 +1050,43 @@ fix:
 
 ## 0.9.0 - 2024-07-08
 
-chore:
-
-- [5cf6e08ded](https://github.com/ginger-society/ginger-ui5cf6e08ded836ac122a0df6b0f1d05d4a4dd9c40) (Ginger Society Admin) chore: version bump to 0.9.0
-
 fix:
 
 - [f7a723f242](https://github.com/ginger-society/ginger-uif7a723f242183379c3c4780e89b2b1eaf58c09d5) (Ginger Society Admin) fix: theme fixes for textarea
 
-## 0.8.0 - 2024-07-08
-
 chore:
 
-- [b3a9b4acae](https://github.com/ginger-society/ginger-uib3a9b4acaee04f100cb187f14a31499295a020d8) (Ginger Society Admin) chore: version bump to 0.8.0
+- [5cf6e08ded](https://github.com/ginger-society/ginger-ui5cf6e08ded836ac122a0df6b0f1d05d4a4dd9c40) (Ginger Society Admin) chore: version bump to 0.9.0
+
+## 0.8.0 - 2024-07-08
 
 fix:
 
 - [322c10c331](https://github.com/ginger-society/ginger-ui322c10c3319e3a6980eb78e83fc8880490b5fefc) (Ginger Society Admin) fix: aside bg color change
 
+chore:
+
+- [b3a9b4acae](https://github.com/ginger-society/ginger-uib3a9b4acaee04f100cb187f14a31499295a020d8) (Ginger Society Admin) chore: version bump to 0.8.0
+
 ## 0.7.0 - 2024-07-08
-
-fix:
-
-- [a481400501](https://github.com/ginger-society/ginger-uia4814005019823bc554b7e46dba9153a4c7e93bd) (Ginger Society Admin) fix: bg color for Aside
 
 chore:
 
 - [69e2d3f8f8](https://github.com/ginger-society/ginger-ui69e2d3f8f85bfaa50edacd927a872cd571b896b7) (Ginger Society Admin) chore: version bump to 0.7.0
 
-## 0.6.0 - 2024-07-08
-
 fix:
 
-- [92cc123a16](https://github.com/ginger-society/ginger-ui92cc123a16a29b7959eb326276388a212f55bb84) (Ginger Society Admin) fix: padding in Input component
+- [a481400501](https://github.com/ginger-society/ginger-uia4814005019823bc554b7e46dba9153a4c7e93bd) (Ginger Society Admin) fix: bg color for Aside
+
+## 0.6.0 - 2024-07-08
 
 chore:
 
 - [92586e6864](https://github.com/ginger-society/ginger-ui92586e68643bd7b77cedbfc14bb2506bda4d49ff) (Ginger Society Admin) chore: version bump to 0.6.0
+
+fix:
+
+- [92cc123a16](https://github.com/ginger-society/ginger-ui92cc123a16a29b7959eb326276388a212f55bb84) (Ginger Society Admin) fix: padding in Input component
 
 ## 0.5.0 - 2024-07-08
 
@@ -1077,56 +1110,29 @@ chore:
 
 ## 0.3.0 - 2024-07-08
 
-feat:
-
-- [247d92f419](https://github.com/ginger-society/ginger-ui247d92f419933637a2c98974b44c351267d83ea4) (Ginger Society Admin) feat: remove inset from box-shadow variable
-
 chore:
 
 - [f540c61d0c](https://github.com/ginger-society/ginger-uif540c61d0ceaaee3513c5c664cbce49e03e8848b) (Ginger Society Admin) chore: version bump to 0.3.0
 
-## 0.2.0 - 2024-07-07
-
-fix:
-
-- [9b9dad8752](https://github.com/ginger-society/ginger-ui9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
-
 feat:
 
-- [f3aac684e5](https://github.com/ginger-society/ginger-uif3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
+- [247d92f419](https://github.com/ginger-society/ginger-ui247d92f419933637a2c98974b44c351267d83ea4) (Ginger Society Admin) feat: remove inset from box-shadow variable
+
+## 0.2.0 - 2024-07-07
 
 chore:
 
 - [f8e0960f64](https://github.com/ginger-society/ginger-uif8e0960f6430c2adb8bb277a5e042ebfb642e31f) (Ginger Society Admin) chore: version bump to 0.2.0
 
-## 0.1.0 - 2024-07-07
+feat:
+
+- [f3aac684e5](https://github.com/ginger-society/ginger-uif3aac684e5c62db8dd461f5fc2ca2aefb80abac6) (Ginger Society Admin) feat: added arbitary content for header
 
 fix:
 
-- [bd43f36368](https://github.com/ginger-society/ginger-uibd43f36368b8ab2522cfe9ba92d1f76f3320a30b) (Ginger Society Admin) fix: dark theme fix for ProgressBar
-- [2ab509048b](https://github.com/ginger-society/ginger-ui2ab509048b37e6269f6d1012a3504e04fb7e1c11) (Ginger Society Admin) fix: exported tags from index
-- [7d56e15e26](https://github.com/ginger-society/ginger-ui7d56e15e268508c3aec37405783455989c6baab0) (Ginger Society Admin) fix: buid fixes
-- [3e53dcec18](https://github.com/ginger-society/ginger-ui3e53dcec18be3f1f0c80eccec90ed9671d8d68ec) (Ginger Society Admin) fix: build fixes
-- [27aff30ea6](https://github.com/ginger-society/ginger-ui27aff30ea6f702e0bc08dabaae2aefb1c502ecba) (Ginger Society Admin) fix: build fixes
-- [61a4a7890e](https://github.com/ginger-society/ginger-ui61a4a7890eaf650d7f3800aeee90a93fa42e8a79) (Ginger Society Admin) fix: lint fixes
-- [1719425882](https://github.com/ginger-society/ginger-ui1719425882642b5c85647d96642faa4e20d013b7) (Ginger Society Admin) fix: renamed formExample to page example, added sideMenu component
-- [34ae05508b](https://github.com/ginger-society/ginger-ui34ae05508b1128980daa8ec765cc6e76304b6586) (Ginger Society Admin) fix: style fixes for dark and light theme for select and input
-- [aeed513e79](https://github.com/ginger-society/ginger-uiaeed513e79ae0647380a97d4a9060eb7e35755af) (Ginger Society Admin) fix: theme fixes for checkbox
-- [0267a6e7f6](https://github.com/ginger-society/ginger-ui0267a6e7f605f9b4bacfed750213b3338f586f3e) (Ginger Society Admin) fix: typo
-- [197ae904f8](https://github.com/ginger-society/ginger-ui197ae904f80ad9a7113003bb0c8ef269a4815073) (Ginger Society Admin) fix: build fixes
-- [ade9747a80](https://github.com/ginger-society/ginger-uiade9747a80355361aca5bef4c5b85177ceec52fa) (Ginger Society Admin) fix: export changes
-- [234ac5a91f](https://github.com/ginger-society/ginger-ui234ac5a91f9529250bf219f440d7af36b778f62f) (Ginger Society Admin) fix: import fixes
-- [b8fa892df1](https://github.com/ginger-society/ginger-uib8fa892df14d6253856e923505e29c3ad7e4e521) (Ginger Society Admin) fix: updated exports from Button component
-- [571bf8c582](https://github.com/ginger-society/ginger-ui571bf8c5826d714c25eacad0c2506e23b5456b30) (Ginger Society Admin) fix: minor css changes in input component
-- [65ec0564af](https://github.com/ginger-society/ginger-ui65ec0564afd70e5fdba2692d268eccd5e0abbe57) (Ginger Society Admin) fix: moved ginger-book to dev dependencies
-- [1d1c68c849](https://github.com/ginger-society/ginger-ui1d1c68c84928591cfadd45fb08d2a6cee7e12981) (Ginger Society Admin) fix: typo fixes
-- [17d2ad7632](https://github.com/ginger-society/ginger-ui17d2ad76324738de2c0ce6591f689b5429e07bee) (Ginger Society Admin) fix: updated publish config for public access
-- [682adf007d](https://github.com/ginger-society/ginger-ui682adf007d65f41dc7f4041cb4aa07a64b29a7fd) (Ginger Society Admin) fix: pipeline to ignore unstaged git changes
-- [7e167e5a72](https://github.com/ginger-society/ginger-ui7e167e5a722d96e7344783e707689a24fb12b212) (Ginger Society Admin) fix: updated git ignore
-- [82bdb1c58b](https://github.com/ginger-society/ginger-ui82bdb1c58bf2bc90efa754a52546012867b71dc1) (Ginger Society Admin) fix: pipeline
-- [e5fd34b274](https://github.com/ginger-society/ginger-uie5fd34b2740fcf31df54c4f4dec81b588b276f00) (Ginger Society Admin) fix: updated gen-icons command to use native unix command
-- [33dd2aac6b](https://github.com/ginger-society/ginger-ui33dd2aac6be756232bc2893f952bb8aa1a554b22) (Ginger Society Admin) fix: build fixes
-- [f87de2cbeb](https://github.com/ginger-society/ginger-uif87de2cbebd7dc3a2cdf1e8cd7c93d180d22ca02) (Ginger Society Admin) fix: build fixes
+- [9b9dad8752](https://github.com/ginger-society/ginger-ui9b9dad875292eda7a41f1c10f9f7f8d53c7eed6b) (Ginger Society Admin) fix: minor workflow changes
+
+## 0.1.0 - 2024-07-07
 
 feat:
 
@@ -1207,3 +1213,30 @@ chore:
 - [f39f59e73c](https://github.com/ginger-society/ginger-uif39f59e73c8847b4629275f8cec695f63f251b7f) (Ginger Society Admin) chore: added readme to the project
 - [5e055ef961](https://github.com/ginger-society/ginger-ui5e055ef961c85909486be20ec2b2192df547b7cb) (Ginger Society Admin) chore: cleanup
 - [f6a9cb91b5](https://github.com/ginger-society/ginger-uif6a9cb91b5b9e75b0b05f5816b046a6711d09616) (Ginger Society Admin) chore: first commit
+
+fix:
+
+- [bd43f36368](https://github.com/ginger-society/ginger-uibd43f36368b8ab2522cfe9ba92d1f76f3320a30b) (Ginger Society Admin) fix: dark theme fix for ProgressBar
+- [2ab509048b](https://github.com/ginger-society/ginger-ui2ab509048b37e6269f6d1012a3504e04fb7e1c11) (Ginger Society Admin) fix: exported tags from index
+- [7d56e15e26](https://github.com/ginger-society/ginger-ui7d56e15e268508c3aec37405783455989c6baab0) (Ginger Society Admin) fix: buid fixes
+- [3e53dcec18](https://github.com/ginger-society/ginger-ui3e53dcec18be3f1f0c80eccec90ed9671d8d68ec) (Ginger Society Admin) fix: build fixes
+- [27aff30ea6](https://github.com/ginger-society/ginger-ui27aff30ea6f702e0bc08dabaae2aefb1c502ecba) (Ginger Society Admin) fix: build fixes
+- [61a4a7890e](https://github.com/ginger-society/ginger-ui61a4a7890eaf650d7f3800aeee90a93fa42e8a79) (Ginger Society Admin) fix: lint fixes
+- [1719425882](https://github.com/ginger-society/ginger-ui1719425882642b5c85647d96642faa4e20d013b7) (Ginger Society Admin) fix: renamed formExample to page example, added sideMenu component
+- [34ae05508b](https://github.com/ginger-society/ginger-ui34ae05508b1128980daa8ec765cc6e76304b6586) (Ginger Society Admin) fix: style fixes for dark and light theme for select and input
+- [aeed513e79](https://github.com/ginger-society/ginger-uiaeed513e79ae0647380a97d4a9060eb7e35755af) (Ginger Society Admin) fix: theme fixes for checkbox
+- [0267a6e7f6](https://github.com/ginger-society/ginger-ui0267a6e7f605f9b4bacfed750213b3338f586f3e) (Ginger Society Admin) fix: typo
+- [197ae904f8](https://github.com/ginger-society/ginger-ui197ae904f80ad9a7113003bb0c8ef269a4815073) (Ginger Society Admin) fix: build fixes
+- [ade9747a80](https://github.com/ginger-society/ginger-uiade9747a80355361aca5bef4c5b85177ceec52fa) (Ginger Society Admin) fix: export changes
+- [234ac5a91f](https://github.com/ginger-society/ginger-ui234ac5a91f9529250bf219f440d7af36b778f62f) (Ginger Society Admin) fix: import fixes
+- [b8fa892df1](https://github.com/ginger-society/ginger-uib8fa892df14d6253856e923505e29c3ad7e4e521) (Ginger Society Admin) fix: updated exports from Button component
+- [571bf8c582](https://github.com/ginger-society/ginger-ui571bf8c5826d714c25eacad0c2506e23b5456b30) (Ginger Society Admin) fix: minor css changes in input component
+- [65ec0564af](https://github.com/ginger-society/ginger-ui65ec0564afd70e5fdba2692d268eccd5e0abbe57) (Ginger Society Admin) fix: moved ginger-book to dev dependencies
+- [1d1c68c849](https://github.com/ginger-society/ginger-ui1d1c68c84928591cfadd45fb08d2a6cee7e12981) (Ginger Society Admin) fix: typo fixes
+- [17d2ad7632](https://github.com/ginger-society/ginger-ui17d2ad76324738de2c0ce6591f689b5429e07bee) (Ginger Society Admin) fix: updated publish config for public access
+- [682adf007d](https://github.com/ginger-society/ginger-ui682adf007d65f41dc7f4041cb4aa07a64b29a7fd) (Ginger Society Admin) fix: pipeline to ignore unstaged git changes
+- [7e167e5a72](https://github.com/ginger-society/ginger-ui7e167e5a722d96e7344783e707689a24fb12b212) (Ginger Society Admin) fix: updated git ignore
+- [82bdb1c58b](https://github.com/ginger-society/ginger-ui82bdb1c58bf2bc90efa754a52546012867b71dc1) (Ginger Society Admin) fix: pipeline
+- [e5fd34b274](https://github.com/ginger-society/ginger-uie5fd34b2740fcf31df54c4f4dec81b588b276f00) (Ginger Society Admin) fix: updated gen-icons command to use native unix command
+- [33dd2aac6b](https://github.com/ginger-society/ginger-ui33dd2aac6be756232bc2893f952bb8aa1a554b22) (Ginger Society Admin) fix: build fixes
+- [f87de2cbeb](https://github.com/ginger-society/ginger-uif87de2cbebd7dc3a2cdf1e8cd7c93d180d22ca02) (Ginger Society Admin) fix: build fixes
