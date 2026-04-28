@@ -13,7 +13,7 @@ interface NotificationContextValue<T> {
 
 // Define the props for the NotificationProvider component
 interface NotificationProviderProps<TUser> {
-	channel?: string
+	channelPrefix?: string
 	children: React.ReactNode
 	url: string
 	user: TUser | null
@@ -31,7 +31,7 @@ export const NotificationContext = createContext<NotificationContextValue<any>>(
 )
 
 export const NotificationProvider = <TUser extends { userId?: string }>({
-	channel,
+	channelPrefix,
 	children,
 	url,
 	user
@@ -43,13 +43,13 @@ export const NotificationProvider = <TUser extends { userId?: string }>({
 	const reconnectInterval = useRef<NodeJS.Timeout | null>(null)
 
 	useEffect(() => {
-		if (!user && !channel) {
-			console.log('Neither user nor the channel is provided')
+		if (!user) {
+			console.log('User value is not loaded yet')
 			return
 		}
 
 		const accessToken = localStorage.getItem('access_token')
-		const websocketChannel = channel || user?.userId
+		const websocketChannel = `${channelPrefix}_${user?.userId}`
 
 		function connectWebSocket() {
 			if (ws) {
@@ -118,7 +118,7 @@ export const NotificationProvider = <TUser extends { userId?: string }>({
 			}
 		}
 		// eslint-disable-next-line react-hooks/exhaustive-deps
-	}, [user, channel])
+	}, [user, channelPrefix])
 
 	const subscribeToTopic = (topic: string, callback: (msg: any) => void) => {
 		subscriptions.current[topic] = callback
