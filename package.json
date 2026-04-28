@@ -115,7 +115,7 @@
 		"build": "pnpm gen-icons;NODE_ENV=production rollup -c;mv dist/cjs/index.css dist/index.css",
 		"build-book": "ginger-book build",
 		"commitlint": "commitlint --edit",
-		"gen-icons": "rm -rf src/icons && npx @svgr/cli -d src/icons src/svgs/assets --icon --typescript --jsx-runtime 'automatic'",
+		"gen-icons": "rm -rf src/icons && npx @svgr/cli -d src/icons src/svgs/assets --icon --typescript --jsx-runtime 'automatic' && node -p \"require('fs').readdirSync('src/icons').filter(f=>f.endsWith('.tsx')).sort().map(f=>\\`export { default as \\${f.slice(0,-4)} } from './\\${f.slice(0,-4)}'\\`).join('\\\\n')\" > src/icons/index.tsx",
 		"lint": "eslint . --ext .ts,.tsx,.js,.jsx",
 		"prepare": "husky install",
 		"script1": "tsx scripts/main.ts",
