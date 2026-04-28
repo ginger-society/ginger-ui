@@ -2,18 +2,8 @@ FROM gingersociety/vite-react-builder:latest
 
 COPY . .
 
-# Set environment variables using build arguments
-ARG NPM_TOKEN
-
-# Configure npm authentication
-RUN echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc && \
-  echo "email=admin@gingersociety.org" >> ~/.npmrc
-
 # Install dependencies
 RUN pnpm install
 
 # Build the library
 RUN pnpm build
-
-# Publish to npm
-RUN pnpm publish --no-git-checks
