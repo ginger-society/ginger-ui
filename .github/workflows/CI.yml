@@ -32,22 +32,22 @@ jobs:
       - name: Update pipeline to running
         run: ginger-connector update-pipeline stage running
 
-      - name: Publish stories
-        run: |
-          docker buildx build . \
-            -t ginger-ui-storybook-builder \
-            -f Dockerfile.book \
-            --build-arg GINGER_TOKEN=${{ secrets.GINGER_TOKEN }} \
-            --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
-            --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
-            --build-arg AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
-            --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }}
-        continue-on-error: false
+      # - name: Publish stories
+      #   run: |
+      #     docker buildx build . \
+      #       -t ginger-ui-storybook-builder \
+      #       -f Dockerfile.book \
+      #       --build-arg GINGER_TOKEN=${{ secrets.GINGER_TOKEN }} \
+      #       --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
+      #       --build-arg AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }} \
+      #       --build-arg AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }} \
+      #       --build-arg DISTRIBUTION_ID=${{ secrets.DISTRIBUTION_ID }}
+      #   continue-on-error: false
 
-      - name: Fail if Publish stories failed
-        if: failure()
-        run: ginger-connector update-pipeline stage failed
-        continue-on-error: false
+      # - name: Fail if Publish stories failed
+      #   if: failure()
+      #   run: ginger-connector update-pipeline stage failed
+      #   continue-on-error: false
 
       - name: Build library in Docker
         run: |
@@ -79,9 +79,13 @@ jobs:
         with:
           node-version: 20.5
           registry-url: 'https://registry.npmjs.org'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Publish to npm
-        run: npm publish --no-git-checks --ignore-scripts --access public
+        run: npm publish --no-git-checks --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         continue-on-error: false
