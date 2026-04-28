@@ -63,14 +63,9 @@ jobs:
 
       - name: Copy built artifacts from Docker
         run: |
-          # Create a container from the image
           docker create --name ginger-ui-temp ginger-ui-builder
-
-          # Copy the dist folder and package.json from container
           docker cp ginger-ui-temp:/app/dist ./dist
           docker cp ginger-ui-temp:/app/package.json ./package.json
-
-          # Clean up the temporary container
           docker rm ginger-ui-temp
         continue-on-error: false
 
@@ -79,27 +74,16 @@ jobs:
         run: ginger-connector update-pipeline stage failed
         continue-on-error: false
 
-      - uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 8.7.1
-
       - name: Setup Node.js environment
         uses: actions/setup-node@v3
         with:
           node-version: 20.5
-          cache: 'pnpm'
-
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            email=admin@gingersociety.org
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Publish to npm
-        run: pnpm publish --no-git-checks --ignore-scripts
+        run: npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         continue-on-error: false
 
       - name: Fail if npm publish failed
