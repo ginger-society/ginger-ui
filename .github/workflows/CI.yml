@@ -45,9 +45,6 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install dependencies
-        run: pnpm gen-icons
-
       - name: Creating .npmrc
         run: |
           cat << EOF > "$HOME/.npmrc"

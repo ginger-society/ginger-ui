@@ -25,7 +25,7 @@
 		"@rollup/plugin-commonjs": "^24.0.0",
 		"@rollup/plugin-node-resolve": "^15.0.1",
 		"@rollup/plugin-terser": "^0.3.0",
-		"@svgr/cli": "^8.0.1",
+		"@svgr/cli": "8.1.0",
 		"@testing-library/jest-dom": "^5.16.5",
 		"@testing-library/react": "^13.4.0",
 		"@testing-library/user-event": "^14.4.3",
