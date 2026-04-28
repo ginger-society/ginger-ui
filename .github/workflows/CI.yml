@@ -32,32 +32,10 @@ jobs:
       - name: Update pipeline to running
         run: ginger-connector update-pipeline stage running
 
-      - uses: pnpm/action-setup@v4.0.0
-        with:
-          version: 8.7.1
-
-      - name: Setup Node.js environment
-        uses: actions/setup-node@v3
-        with:
-          node-version: 20.5
-          cache: 'pnpm'
-
-      - name: Install dependencies
-        run: pnpm install
-
-      - name: Creating .npmrc
-        run: |
-          cat << EOF > "$HOME/.npmrc"
-            email=admin@gingersociety.org
-            //registry.npmjs.org/:_authToken=$NPM_TOKEN
-          EOF
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-
       - name: Publish stories
         run: |
           docker buildx build . \
-            -t deb-portal-builder \
+            -t ginger-ui-storybook-builder \
             -f Dockerfile.book \
             --build-arg GINGER_TOKEN=${{ secrets.GINGER_TOKEN }} \
             --build-arg AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }} \
@@ -70,25 +48,16 @@ jobs:
         if: failure()
         run: ginger-connector update-pipeline stage failed
         continue-on-error: false
-      - name: debug
-        run: ls -la src/icons
+
+      - name: Build and publish library to npm
+        run: |
+          docker buildx build . \
+            -t ginger-ui-npm-publisher \
+            -f Dockerfile.publish \
+            --build-arg NPM_TOKEN=${{ secrets.NPM_TOKEN }}
         continue-on-error: false
 
-      - name: Build prod release
-        run: pnpm build
-        continue-on-error: false
-
-      - name: Fail if Build prod release failed
-        if: failure()
-        run: ginger-connector update-pipeline stage failed
-        continue-on-error: false
-
-      - name: Publish to npm
-        if: success()
-        run: pnpm publish --no-git-checks
-        continue-on-error: false
-
-      - name: Fail if prod publish failed
+      - name: Fail if npm publish failed
         if: failure()
         run: ginger-connector update-pipeline stage failed
         continue-on-error: false
