@@ -70,6 +70,9 @@ jobs:
         if: failure()
         run: ginger-connector update-pipeline stage failed
         continue-on-error: false
+      - name: debug
+        run: ls -la src/icons
+        continue-on-error: false
 
       - name: Build prod release
         run: pnpm build
